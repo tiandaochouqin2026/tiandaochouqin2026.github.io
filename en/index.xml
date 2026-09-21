@@ -6,6 +6,42 @@
     <description>Recent content on Local AI Lab</description>
     <generator>Hugo</generator>
     <language>en</language>
+    <lastBuildDate>Mon, 21 Sep 2026 13:00:00 +0800</lastBuildDate>
     <atom:link href="https://tiandaochouqin2026.github.io/en/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Windows Deployment of Ollama Troubleshooting: GitHub Download Failure, Local Network Access, OLLAMA_HOST</title>
+      <link>https://tiandaochouqin2026.github.io/en/posts/04-ollama-windows-pitfalls/</link>
+      <pubDate>Mon, 21 Sep 2026 13:00:00 +0800</pubDate>
+      <guid>https://tiandaochouqin2026.github.io/en/posts/04-ollama-windows-pitfalls/</guid>
+      <description>Three real issues encountered when deploying Ollama on Windows: download failure due to domestic network, default listening only on loopback, and OLLAMA_HOST settings not being recognized after service restart.</description>
+    </item>
+    <item>
+      <title>correct-way-to-auto-start-ollama-on-windows-without-black-window</title>
+      <link>https://tiandaochouqin2026.github.io/en/posts/05-ollama-windows-autostart/</link>
+      <pubDate>Mon, 21 Sep 2026 12:57:23 +0800</pubDate>
+      <guid>https://tiandaochouqin2026.github.io/en/posts/05-ollama-windows-autostart/</guid>
+      <description>this-article-will-provide-a-detailed-guide-on-how-to-set-up-ollama-to-auto-start-on-windows-without-displaying-a-black-window-ideal-for-users-needing-ollama-to-run-continuously</description>
+    </item>
+    <item>
+      <title>Running 14B Model with 12GB VRAM: Practical Measurements on Q4 Quantization, Context Window, and CPU/GPU Hybrid</title>
+      <link>https://tiandaochouqin2026.github.io/en/posts/03-12gb-vram-14b-realworld/</link>
+      <pubDate>Mon, 21 Sep 2026 12:00:00 +0800</pubDate>
+      <guid>https://tiandaochouqin2026.github.io/en/posts/03-12gb-vram-14b-realworld/</guid>
+      <description>Real-world VRAM allocation measurements for Qwen2.5-14B on RTX 4070 SUPER 12G: GPU/CPU ratio and inference speed under different context lengths.</description>
+    </item>
+    <item>
+      <title>Deploying OpenClaw in Practice: Setting Up a Personal AI Assistant with Local Large Models</title>
+      <link>https://tiandaochouqin2026.github.io/en/posts/02-openclaw-local-ai-agent/</link>
+      <pubDate>Mon, 21 Sep 2026 11:00:00 +0800</pubDate>
+      <guid>https://tiandaochouqin2026.github.io/en/posts/02-openclaw-local-ai-agent/</guid>
+      <description>A complete deployment guide for OpenClaw 2026.9.5 on Windows, integrating with a local Ollama instance running Qwen2.5-14B, detailing the challenges encountered.</description>
+    </item>
+    <item>
+      <title>Full Guide to Running Qwen2.5-14B on RTX 4070 SUPER 12G (Windows &#43; Ollama)</title>
+      <link>https://tiandaochouqin2026.github.io/en/posts/01-qwen25-14b-on-4070s/</link>
+      <pubDate>Mon, 21 Sep 2026 10:00:00 +0800</pubDate>
+      <guid>https://tiandaochouqin2026.github.io/en/posts/01-qwen25-14b-on-4070s/</guid>
+      <description>A comprehensive guide to deploying Qwen2.5-14B on Windows with a 4070 SUPER 12G: download, model pull, local network access, and performance testing.</description>
+    </item>
   </channel>
 </rss>

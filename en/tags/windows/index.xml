@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Windows on Local AI Lab</title>
+    <link>https://tiandaochouqin2026.github.io/en/tags/windows/</link>
+    <description>Recent content in Windows on Local AI Lab</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 21 Sep 2026 13:00:00 +0800</lastBuildDate>
+    <atom:link href="https://tiandaochouqin2026.github.io/en/tags/windows/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Windows Deployment of Ollama Troubleshooting: GitHub Download Failure, Local Network Access, OLLAMA_HOST</title>
+      <link>https://tiandaochouqin2026.github.io/en/posts/04-ollama-windows-pitfalls/</link>
+      <pubDate>Mon, 21 Sep 2026 13:00:00 +0800</pubDate>
+      <guid>https://tiandaochouqin2026.github.io/en/posts/04-ollama-windows-pitfalls/</guid>
+      <description>Three real issues encountered when deploying Ollama on Windows: download failure due to domestic network, default listening only on loopback, and OLLAMA_HOST settings not being recognized after service restart.</description>
+    </item>
+    <item>
+      <title>correct-way-to-auto-start-ollama-on-windows-without-black-window</title>
+      <link>https://tiandaochouqin2026.github.io/en/posts/05-ollama-windows-autostart/</link>
+      <pubDate>Mon, 21 Sep 2026 12:57:23 +0800</pubDate>
+      <guid>https://tiandaochouqin2026.github.io/en/posts/05-ollama-windows-autostart/</guid>
+      <description>this-article-will-provide-a-detailed-guide-on-how-to-set-up-ollama-to-auto-start-on-windows-without-displaying-a-black-window-ideal-for-users-needing-ollama-to-run-continuously</description>
+    </item>
+    <item>
+      <title>Full Guide to Running Qwen2.5-14B on RTX 4070 SUPER 12G (Windows &#43; Ollama)</title>
+      <link>https://tiandaochouqin2026.github.io/en/posts/01-qwen25-14b-on-4070s/</link>
+      <pubDate>Mon, 21 Sep 2026 10:00:00 +0800</pubDate>
+      <guid>https://tiandaochouqin2026.github.io/en/posts/01-qwen25-14b-on-4070s/</guid>
+      <description>A comprehensive guide to deploying Qwen2.5-14B on Windows with a 4070 SUPER 12G: download, model pull, local network access, and performance testing.</description>
+    </item>
+  </channel>
+</rss>

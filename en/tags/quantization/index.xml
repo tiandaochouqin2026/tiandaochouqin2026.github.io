@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Quantization on Local AI Lab</title>
+    <link>https://tiandaochouqin2026.github.io/en/tags/quantization/</link>
+    <description>Recent content in Quantization on Local AI Lab</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 21 Sep 2026 12:00:00 +0800</lastBuildDate>
+    <atom:link href="https://tiandaochouqin2026.github.io/en/tags/quantization/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Running 14B Model with 12GB VRAM: Practical Measurements on Q4 Quantization, Context Window, and CPU/GPU Hybrid</title>
+      <link>https://tiandaochouqin2026.github.io/en/posts/03-12gb-vram-14b-realworld/</link>
+      <pubDate>Mon, 21 Sep 2026 12:00:00 +0800</pubDate>
+      <guid>https://tiandaochouqin2026.github.io/en/posts/03-12gb-vram-14b-realworld/</guid>
+      <description>Real-world VRAM allocation measurements for Qwen2.5-14B on RTX 4070 SUPER 12G: GPU/CPU ratio and inference speed under different context lengths.</description>
+    </item>
+  </channel>
+</rss>

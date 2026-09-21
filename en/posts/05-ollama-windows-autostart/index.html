@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="zh-cn" dir="auto" data-theme="auto">
+<html lang="en" dir="auto" data-theme="auto">
 
 <head><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
-<title>correct-way-to-auto-start-ollama-on-windows-without-black-window | 本地 AI 实验室</title>
+<title>correct-way-to-auto-start-ollama-on-windows-without-black-window | Local AI Lab</title>
 <meta name="keywords" content="ollama, windows">
 <meta name="description" content="this-article-will-provide-a-detailed-guide-on-how-to-set-up-ollama-to-auto-start-on-windows-without-displaying-a-black-window-ideal-for-users-needing-ollama-to-run-continuously">
 <meta name="author" content="Local AI Lab">
@@ -18,7 +18,8 @@
 <link rel="mask-icon" href="https://tiandaochouqin2026.github.io/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="zh-cn" href="https://tiandaochouqin2026.github.io/en/posts/05-ollama-windows-autostart/">
+<link rel="alternate" hreflang="zh-cn" href="https://tiandaochouqin2026.github.io/posts/05-ollama-windows-autostart/">
+<link rel="alternate" hreflang="en" href="https://tiandaochouqin2026.github.io/en/posts/05-ollama-windows-autostart/">
 <noscript>
     <style>
         #theme-toggle,
@@ -65,12 +66,12 @@
     }
 
 </script><meta property="og:url" content="https://tiandaochouqin2026.github.io/en/posts/05-ollama-windows-autostart/">
-  <meta property="og:site_name" content="本地 AI 实验室">
+  <meta property="og:site_name" content="Local AI Lab">
   <meta property="og:title" content="correct-way-to-auto-start-ollama-on-windows-without-black-window">
   <meta property="og:description" content="this-article-will-provide-a-detailed-guide-on-how-to-set-up-ollama-to-auto-start-on-windows-without-displaying-a-black-window-ideal-for-users-needing-ollama-to-run-continuously">
-  <meta property="og:locale" content="zh_cn">
+  <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
-    <meta property="article:section" content="en">
+    <meta property="article:section" content="posts">
     <meta property="article:published_time" content="2026-09-21T12:57:23+08:00">
     <meta property="article:modified_time" content="2026-09-21T12:57:23+08:00">
     <meta property="article:tag" content="Ollama">
@@ -89,18 +90,12 @@
     {
       "@type": "ListItem",
       "position":  1 ,
-      "name": "Ens",
-      "item": "https://tiandaochouqin2026.github.io/en/"
-    }, 
-    {
-      "@type": "ListItem",
-      "position":  2 ,
       "name": "Posts",
       "item": "https://tiandaochouqin2026.github.io/en/posts/"
     }, 
     {
       "@type": "ListItem",
-      "position":  3 ,
+      "position":  2 ,
       "name": "correct-way-to-auto-start-ollama-on-windows-without-black-window",
       "item": "https://tiandaochouqin2026.github.io/en/posts/05-ollama-windows-autostart/"
     }
@@ -119,7 +114,7 @@
   ],
   "articleBody": "Deploying Ollama and setting it up to auto-start on Windows can greatly enhance daily use. However, using the default command-line method may result in a black window popping up at each boot, affecting aesthetics and user experience. This article will provide a detailed guide on how to set up Ollama to auto-start on Windows without displaying a black window, ideal for users needing Ollama to run continuously.\nInstalling Ollama First, you need to install Ollama on your Windows system. Visit the Ollama official website or related resource pages to download the appropriate installation package for Windows. Follow the official documentation to complete the installation steps, ensuring that Ollama is correctly installed.\nPreparing the Run Script To avoid the black window, we need to prepare a run script. Create a new text file named run_ollama.bat, and add the following content:\n@echo off start /b \"\" \"C:\\Path\\To\\Ollama.exe\" Make sure to replace C:\\Path\\To\\Ollama.exe with the actual path to the Ollama executable file. The start /b parameter is used to start the program in the background without displaying the command prompt window.\nCreating a Windows Service Next, we need to use the sc command to create a Windows service to manage Ollama’s startup. Open the command prompt and enter the following command:\nsc create OllamaService binPath= \"C:\\Path\\To\\run_ollama.bat\" Ensure that C:\\Path\\To\\run_ollama.bat is replaced with the actual path to the run script. After creating the service, you can use the following command to set it to auto-start:\nsc config OllamaService start= auto Verification and Testing After completing the above steps, restart your computer and check if Ollama auto-starts without displaying a black window. If everything is set up correctly, you should see Ollama running in the background.\nConfiguration Optimization For further optimization, consider using Task Scheduler to periodically check if Ollama is running normally and automatically restart it if the process does not exist. Create a new task with the trigger set to “At startup” and the action set to start the Ollama run script.\n",
   "wordCount" : "379",
-  "inLanguage": "zh-cn",
+  "inLanguage": "en",
   "datePublished": "2026-09-21T12:57:23+08:00",
   "dateModified": "2026-09-21T12:57:23+08:00",
   "author":{
@@ -132,7 +127,7 @@
   },
   "publisher": {
     "@type": "Organization",
-    "name": "本地 AI 实验室",
+    "name": "Local AI Lab",
     "logo": {
       "@type": "ImageObject",
       "url": "https://tiandaochouqin2026.github.io/favicon.ico"
@@ -145,7 +140,7 @@
     <header class="header">
     <nav class="header-nav">
         <div class="logo">
-            <a href="https://tiandaochouqin2026.github.io/" accesskey="h" title="🏠 Local AI Lab (Alt + H)">🏠 Local AI Lab</a>
+            <a href="https://tiandaochouqin2026.github.io/en/" accesskey="h" title="🏠 Local AI Lab (Alt + H)">🏠 Local AI Lab</a>
             <div class="logo-switches">
                 <button id="theme-toggle" class="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
                     <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
@@ -169,26 +164,31 @@
                 </button><span class="nav-sep">|</span>
                     <ul class="lang-menu">
                         <li>
-                            <a href="https://tiandaochouqin2026.github.io/en/" title="🇬🇧 English"
-                                aria-label="🇬🇧 English">En</a>
+                            <a href="https://tiandaochouqin2026.github.io/" title="🇨🇳 中文"
+                                aria-label="🇨🇳 中文">Zh-Cn</a>
                         </li>
                     </ul>
             </div>
         </div>
         <ul id="menu" class="menu">
             <li>
-                <a href="https://tiandaochouqin2026.github.io/archives/" title="归档">
-                    <span>归档</span>
+                <a href="https://tiandaochouqin2026.github.io/en/archives/" title="Archives">
+                    <span>Archives</span>
                 </a>
             </li>
             <li>
-                <a href="https://tiandaochouqin2026.github.io/categories/" title="分类">
-                    <span>分类</span>
+                <a href="https://tiandaochouqin2026.github.io/en/categories/" title="Categories">
+                    <span>Categories</span>
                 </a>
             </li>
             <li>
-                <a href="https://tiandaochouqin2026.github.io/tags/" title="标签">
-                    <span>标签</span>
+                <a href="https://tiandaochouqin2026.github.io/en/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://tiandaochouqin2026.github.io/en/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
                 </a>
             </li>
         </ul>
@@ -199,12 +199,7 @@
 <article class="post-single">
   <header class="post-header">
     <nav class="breadcrumbs" role="navigation" aria-label="Breadcrumb">
-            <a href="/">Home</a>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
-                <polyline points="9 18 15 12 9 6"></polyline>
-            </svg>
-            <a href="/en/">Ens</a>
+            <a href="/en/">Home</a>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                 stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
                 <polyline points="9 18 15 12 9 6"></polyline>
@@ -223,7 +218,12 @@
     </div>
     <div class="post-meta">
 
-<span title='2026-09-21 12:57:23 +0800 CST'>September 21, 2026</span>&nbsp;·&nbsp;<span>2 min</span>&nbsp;·&nbsp;<span>Local AI Lab</span>
+<span title='2026-09-21 12:57:23 +0800 CST'>September 21, 2026</span>&nbsp;·&nbsp;<span>2 min</span>&nbsp;·&nbsp;<span>Local AI Lab</span>&nbsp;|&nbsp;<span>Translations:</span>
+    <ul class="i18n_list">
+        <li>
+            <a href="https://tiandaochouqin2026.github.io/posts/05-ollama-windows-autostart/">Zh-Cn</a>
+        </li>
+    </ul>
 
 </div>
   </header> 
@@ -260,16 +260,26 @@
 
   <footer class="post-footer">
     <ul class="post-tags">
-      <li><a href="https://tiandaochouqin2026.github.io/tags/ollama/">Ollama</a></li>
-      <li><a href="https://tiandaochouqin2026.github.io/tags/windows/">Windows</a></li>
+      <li><a href="https://tiandaochouqin2026.github.io/en/tags/ollama/">Ollama</a></li>
+      <li><a href="https://tiandaochouqin2026.github.io/en/tags/windows/">Windows</a></li>
     </ul>
+<nav class="paginav">
+  <a class="prev" href="https://tiandaochouqin2026.github.io/en/posts/04-ollama-windows-pitfalls/">
+    <span class="title">« Prev</span>
+    <span>Windows Deployment of Ollama Troubleshooting: GitHub Download Failure, Local Network Access, OLLAMA_HOST</span>
+  </a>
+  <a class="next" href="https://tiandaochouqin2026.github.io/en/posts/03-12gb-vram-14b-realworld/">
+    <span class="title">Next »</span>
+    <span>Running 14B Model with 12GB VRAM: Practical Measurements on Q4 Quantization, Context Window, and CPU/GPU Hybrid</span>
+  </a>
+</nav>
 
   </footer>
 </article>
     </main>
     
 <footer class="footer">
-        <span>&copy; 2026 <a href="https://tiandaochouqin2026.github.io/">本地 AI 实验室</a></span> · 
+        <span>&copy; 2026 <a href="https://tiandaochouqin2026.github.io/en/">Local AI Lab</a></span> · 
 
     
     

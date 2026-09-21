@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Tutorial on Local AI Lab</title>
+    <link>https://tiandaochouqin2026.github.io/en/categories/tutorial/</link>
+    <description>Recent content in Tutorial on Local AI Lab</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 21 Sep 2026 11:00:00 +0800</lastBuildDate>
+    <atom:link href="https://tiandaochouqin2026.github.io/en/categories/tutorial/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Deploying OpenClaw in Practice: Setting Up a Personal AI Assistant with Local Large Models</title>
+      <link>https://tiandaochouqin2026.github.io/en/posts/02-openclaw-local-ai-agent/</link>
+      <pubDate>Mon, 21 Sep 2026 11:00:00 +0800</pubDate>
+      <guid>https://tiandaochouqin2026.github.io/en/posts/02-openclaw-local-ai-agent/</guid>
+      <description>A complete deployment guide for OpenClaw 2026.9.5 on Windows, integrating with a local Ollama instance running Qwen2.5-14B, detailing the challenges encountered.</description>
+    </item>
+    <item>
+      <title>Full Guide to Running Qwen2.5-14B on RTX 4070 SUPER 12G (Windows &#43; Ollama)</title>
+      <link>https://tiandaochouqin2026.github.io/en/posts/01-qwen25-14b-on-4070s/</link>
+      <pubDate>Mon, 21 Sep 2026 10:00:00 +0800</pubDate>
+      <guid>https://tiandaochouqin2026.github.io/en/posts/01-qwen25-14b-on-4070s/</guid>
+      <description>A comprehensive guide to deploying Qwen2.5-14B on Windows with a 4070 SUPER 12G: download, model pull, local network access, and performance testing.</description>
+    </item>
+  </channel>
+</rss>

@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="zh-cn" dir="auto" data-theme="auto">
+<html lang="en" dir="auto" data-theme="auto">
 
 <head><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
-<title>Windows Deployment of Ollama Troubleshooting: GitHub Download Failure, Local Network Access, OLLAMA_HOST | 本地 AI 实验室</title>
+<title>Windows Deployment of Ollama Troubleshooting: GitHub Download Failure, Local Network Access, OLLAMA_HOST | Local AI Lab</title>
 <meta name="keywords" content="Ollama, Windows, Local Network, Network">
 <meta name="description" content="Three real issues encountered when deploying Ollama on Windows: download failure due to domestic network, default listening only on loopback, and OLLAMA_HOST settings not being recognized after service restart.">
 <meta name="author" content="Local AI Lab">
@@ -18,7 +18,8 @@
 <link rel="mask-icon" href="https://tiandaochouqin2026.github.io/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="zh-cn" href="https://tiandaochouqin2026.github.io/en/posts/04-ollama-windows-pitfalls/">
+<link rel="alternate" hreflang="zh-cn" href="https://tiandaochouqin2026.github.io/posts/04-ollama-windows-pitfalls/">
+<link rel="alternate" hreflang="en" href="https://tiandaochouqin2026.github.io/en/posts/04-ollama-windows-pitfalls/">
 <noscript>
     <style>
         #theme-toggle,
@@ -65,12 +66,12 @@
     }
 
 </script><meta property="og:url" content="https://tiandaochouqin2026.github.io/en/posts/04-ollama-windows-pitfalls/">
-  <meta property="og:site_name" content="本地 AI 实验室">
+  <meta property="og:site_name" content="Local AI Lab">
   <meta property="og:title" content="Windows Deployment of Ollama Troubleshooting: GitHub Download Failure, Local Network Access, OLLAMA_HOST">
   <meta property="og:description" content="Three real issues encountered when deploying Ollama on Windows: download failure due to domestic network, default listening only on loopback, and OLLAMA_HOST settings not being recognized after service restart.">
-  <meta property="og:locale" content="zh_cn">
+  <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
-    <meta property="article:section" content="en">
+    <meta property="article:section" content="posts">
     <meta property="article:published_time" content="2026-09-21T13:00:00+08:00">
     <meta property="article:modified_time" content="2026-09-21T13:00:00+08:00">
     <meta property="article:tag" content="Ollama">
@@ -91,18 +92,12 @@
     {
       "@type": "ListItem",
       "position":  1 ,
-      "name": "Ens",
-      "item": "https://tiandaochouqin2026.github.io/en/"
-    }, 
-    {
-      "@type": "ListItem",
-      "position":  2 ,
       "name": "Posts",
       "item": "https://tiandaochouqin2026.github.io/en/posts/"
     }, 
     {
       "@type": "ListItem",
-      "position":  3 ,
+      "position":  2 ,
       "name": "Windows Deployment of Ollama Troubleshooting: GitHub Download Failure, Local Network Access, OLLAMA_HOST",
       "item": "https://tiandaochouqin2026.github.io/en/posts/04-ollama-windows-pitfalls/"
     }
@@ -121,7 +116,7 @@
   ],
   "articleBody": "Deploying Ollama locally seems like a straightforward process, but there are three unexpected issues you might encounter. Here’s a record of them.\nPit 1: Direct Download from Official Website Fails Symptoms: Accessing https://ollama.com/download/OllamaSetup.exe results in PowerShell errors such as Could not resolve host: github.com or Unable to connect to remote server.\nCause: The Ollama official website is just a redirect page, and the actual installation package is hosted on GitHub Releases. Accessing GitHub from domestic networks is unstable and unreliable.\nSolution:\nFirst, get the latest version number from https://api.github.com/repos/ollama/ollama/releases/latest. Add a mirror prefix to the GitHub download link, for example: https://ghproxy.net/https://github.com/ollama/ollama/releases/download/vX.Y.Z/OllamaSetup.exe Use curl or a browser to download the file and verify its size (Ollama installation package is approximately 1.4GB). Pit 2: Default Listening Only on 127.0.0.1, Unreachable from Other Devices Symptoms: Ollama runs successfully, but http://192.168.x.x:11434/api/tags cannot be accessed from other devices, while curl http://127.0.0.1:11434/api/tags works fine on the local machine.\nCause: By default, Ollama sets OLLAMA_HOST=127.0.0.1 for security reasons, which does not expose the service to the local network.\nSolution (Run as Administrator in PowerShell):\n[Environment]::SetEnvironmentVariable('OLLAMA_HOST','0.0.0.0','User') Then, restart the Ollama service for the changes to take effect. In Task Manager, end all ollama.exe processes and restart the Ollama application.\nUse netstat -ano | findstr 11434 to confirm that the listening address has changed to 0.0.0.0:11434.\nPit 3: Environment Variable Set but Not Read by Service Symptoms: After setting OLLAMA_HOST=0.0.0.0, Ollama still listens on 127.0.0.1 after a restart.\nCause: The Ollama Windows version is a tray application (ollama app.exe), and it starts with the environment variables set at login time. After modifying the user-level environment variable, the tray application must be completely closed (right-click the tray icon → Quit) and restarted. Only restarting the command line ollama serve inherits the current shell environment, but the tray application does not.\nSolution:\nCheck Task Manager to ensure there are no lingering ollama.exe processes. Restart Ollama from the Start Menu. Use netstat to verify. Pit 4: Windows Firewall Blocks External Access Symptoms: The local machine can access http://192.168.x.x:11434, but mobile devices cannot.\nCause: The Windows Defender Firewall blocks external inbound connections to port 11434 by default.\nSolution (Run as Administrator in PowerShell):\nNew-NetFirewallRule -DisplayName \"Ollama\" -Direction Inbound -LocalPort 11434 -Protocol TCP -Action Allow To open only to the local network for security:\nNew-NetFirewallRule -DisplayName \"Ollama LAN\" -Direction Inbound -LocalPort 11434 -Protocol TCP -RemoteAddress 192.168.0.0/16 -Action Allow Summary The four issues are not bugs in Ollama itself but rather common obstacles when exposing a local service to the network on Windows. Follow this sequence: use a mirror for downloading → change OLLAMA_HOST → completely restart → allow firewall rules. Once you’ve encountered these issues, you can resolve them in about 10 minutes next time.\n",
   "wordCount" : "451",
-  "inLanguage": "zh-cn",
+  "inLanguage": "en",
   "datePublished": "2026-09-21T13:00:00+08:00",
   "dateModified": "2026-09-21T13:00:00+08:00",
   "author":{
@@ -134,7 +129,7 @@
   },
   "publisher": {
     "@type": "Organization",
-    "name": "本地 AI 实验室",
+    "name": "Local AI Lab",
     "logo": {
       "@type": "ImageObject",
       "url": "https://tiandaochouqin2026.github.io/favicon.ico"
@@ -147,7 +142,7 @@
     <header class="header">
     <nav class="header-nav">
         <div class="logo">
-            <a href="https://tiandaochouqin2026.github.io/" accesskey="h" title="🏠 Local AI Lab (Alt + H)">🏠 Local AI Lab</a>
+            <a href="https://tiandaochouqin2026.github.io/en/" accesskey="h" title="🏠 Local AI Lab (Alt + H)">🏠 Local AI Lab</a>
             <div class="logo-switches">
                 <button id="theme-toggle" class="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
                     <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
@@ -171,26 +166,31 @@
                 </button><span class="nav-sep">|</span>
                     <ul class="lang-menu">
                         <li>
-                            <a href="https://tiandaochouqin2026.github.io/en/" title="🇬🇧 English"
-                                aria-label="🇬🇧 English">En</a>
+                            <a href="https://tiandaochouqin2026.github.io/" title="🇨🇳 中文"
+                                aria-label="🇨🇳 中文">Zh-Cn</a>
                         </li>
                     </ul>
             </div>
         </div>
         <ul id="menu" class="menu">
             <li>
-                <a href="https://tiandaochouqin2026.github.io/archives/" title="归档">
-                    <span>归档</span>
+                <a href="https://tiandaochouqin2026.github.io/en/archives/" title="Archives">
+                    <span>Archives</span>
                 </a>
             </li>
             <li>
-                <a href="https://tiandaochouqin2026.github.io/categories/" title="分类">
-                    <span>分类</span>
+                <a href="https://tiandaochouqin2026.github.io/en/categories/" title="Categories">
+                    <span>Categories</span>
                 </a>
             </li>
             <li>
-                <a href="https://tiandaochouqin2026.github.io/tags/" title="标签">
-                    <span>标签</span>
+                <a href="https://tiandaochouqin2026.github.io/en/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://tiandaochouqin2026.github.io/en/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
                 </a>
             </li>
         </ul>
@@ -201,12 +201,7 @@
 <article class="post-single">
   <header class="post-header">
     <nav class="breadcrumbs" role="navigation" aria-label="Breadcrumb">
-            <a href="/">Home</a>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
-                <polyline points="9 18 15 12 9 6"></polyline>
-            </svg>
-            <a href="/en/">Ens</a>
+            <a href="/en/">Home</a>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                 stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
                 <polyline points="9 18 15 12 9 6"></polyline>
@@ -225,7 +220,12 @@
     </div>
     <div class="post-meta">
 
-<span title='2026-09-21 13:00:00 +0800 CST'>September 21, 2026</span>&nbsp;·&nbsp;<span>3 min</span>&nbsp;·&nbsp;<span>Local AI Lab</span>
+<span title='2026-09-21 13:00:00 +0800 CST'>September 21, 2026</span>&nbsp;·&nbsp;<span>3 min</span>&nbsp;·&nbsp;<span>Local AI Lab</span>&nbsp;|&nbsp;<span>Translations:</span>
+    <ul class="i18n_list">
+        <li>
+            <a href="https://tiandaochouqin2026.github.io/posts/04-ollama-windows-pitfalls/">Zh-Cn</a>
+        </li>
+    </ul>
 
 </div>
   </header> 
@@ -272,18 +272,24 @@
 
   <footer class="post-footer">
     <ul class="post-tags">
-      <li><a href="https://tiandaochouqin2026.github.io/tags/ollama/">Ollama</a></li>
-      <li><a href="https://tiandaochouqin2026.github.io/tags/windows/">Windows</a></li>
-      <li><a href="https://tiandaochouqin2026.github.io/tags/local-network/">Local Network</a></li>
-      <li><a href="https://tiandaochouqin2026.github.io/tags/network/">Network</a></li>
+      <li><a href="https://tiandaochouqin2026.github.io/en/tags/ollama/">Ollama</a></li>
+      <li><a href="https://tiandaochouqin2026.github.io/en/tags/windows/">Windows</a></li>
+      <li><a href="https://tiandaochouqin2026.github.io/en/tags/local-network/">Local Network</a></li>
+      <li><a href="https://tiandaochouqin2026.github.io/en/tags/network/">Network</a></li>
     </ul>
+<nav class="paginav">
+  <a class="next" href="https://tiandaochouqin2026.github.io/en/posts/05-ollama-windows-autostart/">
+    <span class="title">Next »</span>
+    <span>correct-way-to-auto-start-ollama-on-windows-without-black-window</span>
+  </a>
+</nav>
 
   </footer>
 </article>
     </main>
     
 <footer class="footer">
-        <span>&copy; 2026 <a href="https://tiandaochouqin2026.github.io/">本地 AI 实验室</a></span> · 
+        <span>&copy; 2026 <a href="https://tiandaochouqin2026.github.io/en/">Local AI Lab</a></span> · 
 
     
     

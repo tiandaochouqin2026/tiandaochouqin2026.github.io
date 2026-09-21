@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Local Network on Local AI Lab</title>
+    <link>https://tiandaochouqin2026.github.io/en/tags/local-network/</link>
+    <description>Recent content in Local Network on Local AI Lab</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 21 Sep 2026 13:00:00 +0800</lastBuildDate>
+    <atom:link href="https://tiandaochouqin2026.github.io/en/tags/local-network/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Windows Deployment of Ollama Troubleshooting: GitHub Download Failure, Local Network Access, OLLAMA_HOST</title>
+      <link>https://tiandaochouqin2026.github.io/en/posts/04-ollama-windows-pitfalls/</link>
+      <pubDate>Mon, 21 Sep 2026 13:00:00 +0800</pubDate>
+      <guid>https://tiandaochouqin2026.github.io/en/posts/04-ollama-windows-pitfalls/</guid>
+      <description>Three real issues encountered when deploying Ollama on Windows: download failure due to domestic network, default listening only on loopback, and OLLAMA_HOST settings not being recognized after service restart.</description>
+    </item>
+  </channel>
+</rss>
