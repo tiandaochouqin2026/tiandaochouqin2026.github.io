@@ -6,20 +6,27 @@
     <description>Recent content in Tags on 本地 AI 实验室</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 21 Sep 2026 12:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 21 Sep 2026 12:57:23 +0800</lastBuildDate>
     <atom:link href="https://tiandaochouqin2026.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ollama</title>
+      <link>https://tiandaochouqin2026.github.io/tags/ollama/</link>
+      <pubDate>Mon, 21 Sep 2026 12:57:23 +0800</pubDate>
+      <guid>https://tiandaochouqin2026.github.io/tags/ollama/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Windows</title>
+      <link>https://tiandaochouqin2026.github.io/tags/windows/</link>
+      <pubDate>Mon, 21 Sep 2026 12:57:23 +0800</pubDate>
+      <guid>https://tiandaochouqin2026.github.io/tags/windows/</guid>
+      <description></description>
+    </item>
     <item>
       <title>4070s</title>
       <link>https://tiandaochouqin2026.github.io/tags/4070s/</link>
       <pubDate>Mon, 21 Sep 2026 12:00:00 +0800</pubDate>
       <guid>https://tiandaochouqin2026.github.io/tags/4070s/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Ollama</title>
-      <link>https://tiandaochouqin2026.github.io/tags/ollama/</link>
-      <pubDate>Mon, 21 Sep 2026 12:00:00 +0800</pubDate>
-      <guid>https://tiandaochouqin2026.github.io/tags/ollama/</guid>
       <description></description>
     </item>
     <item>
@@ -72,7 +79,7 @@
       <description></description>
     </item>
     <item>
-      <title>Openclaw</title>
+      <title>OpenClaw</title>
       <link>https://tiandaochouqin2026.github.io/tags/openclaw/</link>
       <pubDate>Mon, 21 Sep 2026 11:00:00 +0800</pubDate>
       <guid>https://tiandaochouqin2026.github.io/tags/openclaw/</guid>
@@ -90,13 +97,6 @@
       <link>https://tiandaochouqin2026.github.io/tags/%E8%87%AA%E6%89%98%E7%AE%A1/</link>
       <pubDate>Mon, 21 Sep 2026 11:00:00 +0800</pubDate>
       <guid>https://tiandaochouqin2026.github.io/tags/%E8%87%AA%E6%89%98%E7%AE%A1/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Windows</title>
-      <link>https://tiandaochouqin2026.github.io/tags/windows/</link>
-      <pubDate>Mon, 21 Sep 2026 10:00:00 +0800</pubDate>
-      <guid>https://tiandaochouqin2026.github.io/tags/windows/</guid>
       <description></description>
     </item>
   </channel>

@@ -6,8 +6,22 @@
     <description>Recent content in Windows on 本地 AI 实验室</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 21 Sep 2026 10:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 21 Sep 2026 12:57:23 +0800</lastBuildDate>
     <atom:link href="https://tiandaochouqin2026.github.io/tags/windows/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>correct-way-to-auto-start-ollama-on-windows-without-black-window</title>
+      <link>https://tiandaochouqin2026.github.io/en/posts/05-ollama-windows-autostart/</link>
+      <pubDate>Mon, 21 Sep 2026 12:57:23 +0800</pubDate>
+      <guid>https://tiandaochouqin2026.github.io/en/posts/05-ollama-windows-autostart/</guid>
+      <description>this-article-will-provide-a-detailed-guide-on-how-to-set-up-ollama-to-auto-start-on-windows-without-displaying-a-black-window-ideal-for-users-needing-ollama-to-run-continuously</description>
+    </item>
+    <item>
+      <title>Windows 开机自启 Ollama 的正确姿势（不弹黑窗口）</title>
+      <link>https://tiandaochouqin2026.github.io/posts/05-ollama-windows-autostart/</link>
+      <pubDate>Mon, 21 Sep 2026 12:57:23 +0800</pubDate>
+      <guid>https://tiandaochouqin2026.github.io/posts/05-ollama-windows-autostart/</guid>
+      <description>本文将详细介绍如何在 Windows 系统下实现 Ollama 的开机自启动，并且不弹出黑窗口，适合需要长时间运行 Ollama 服务的用户。</description>
+    </item>
     <item>
       <title>Full Guide to Running Qwen2.5-14B on RTX 4070 SUPER 12G (Windows &#43; Ollama)</title>
       <link>https://tiandaochouqin2026.github.io/en/posts/01-qwen25-14b-on-4070s/</link>

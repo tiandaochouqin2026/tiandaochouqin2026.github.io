@@ -6,8 +6,15 @@
     <description>Recent content in Posts on 本地 AI 实验室</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 21 Sep 2026 12:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 21 Sep 2026 12:57:23 +0800</lastBuildDate>
     <atom:link href="https://tiandaochouqin2026.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Windows 开机自启 Ollama 的正确姿势（不弹黑窗口）</title>
+      <link>https://tiandaochouqin2026.github.io/posts/05-ollama-windows-autostart/</link>
+      <pubDate>Mon, 21 Sep 2026 12:57:23 +0800</pubDate>
+      <guid>https://tiandaochouqin2026.github.io/posts/05-ollama-windows-autostart/</guid>
+      <description>本文将详细介绍如何在 Windows 系统下实现 Ollama 的开机自启动，并且不弹出黑窗口，适合需要长时间运行 Ollama 服务的用户。</description>
+    </item>
     <item>
       <title>12GB 显存跑 14B 模型：Q4 量化、上下文窗口、CPU/GPU 混合的实测</title>
       <link>https://tiandaochouqin2026.github.io/posts/03-12gb-vram-14b-realworld/</link>
