@@ -7,7 +7,7 @@
 <meta name="robots" content="index, follow">
 <title>Ollama | 本地 AI 实验室</title>
 <meta name="keywords" content="">
-<meta name="description" content="在自己的电脑上跑开源大模型。教程、踩坑记录、个人 AI 自动化实践。">
+<meta name="description" content="在自己的电脑上跑开源大模型。教程、踩坑记录、个人 AI 自动化实践。 / Run open-source LLMs on your own machine.">
 <meta name="author" content="Local AI Lab">
 <link rel="canonical" href="https://tiandaochouqin2026.github.io/tags/ollama/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.cd9298b33628769aa1bc1acebbbfd7aa11ce81dfe03484d479e1907760249a1d.css" integrity="sha256-zZKYszYodpqhvBrOu7/XqhHOgd/gNITUeeGQd2Akmh0=" rel="preload stylesheet" as="style">
@@ -68,20 +68,20 @@
 </script><meta property="og:url" content="https://tiandaochouqin2026.github.io/tags/ollama/">
   <meta property="og:site_name" content="本地 AI 实验室">
   <meta property="og:title" content="Ollama">
-  <meta property="og:description" content="在自己的电脑上跑开源大模型。教程、踩坑记录、个人 AI 自动化实践。">
+  <meta property="og:description" content="在自己的电脑上跑开源大模型。教程、踩坑记录、个人 AI 自动化实践。 / Run open-source LLMs on your own machine.">
   <meta property="og:locale" content="zh_cn">
   <meta property="og:type" content="website">
 
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Ollama">
-  <meta name="twitter:description" content="在自己的电脑上跑开源大模型。教程、踩坑记录、个人 AI 自动化实践。">
+  <meta name="twitter:description" content="在自己的电脑上跑开源大模型。教程、踩坑记录、个人 AI 自动化实践。 / Run open-source LLMs on your own machine.">
 
 </head>
 <body class="list" id="top">
     <header class="header">
     <nav class="header-nav">
         <div class="logo">
-            <a href="https://tiandaochouqin2026.github.io/" accesskey="h" title="🏠 本地 AI 实验室 (Alt + H)">🏠 本地 AI 实验室</a>
+            <a href="https://tiandaochouqin2026.github.io/" accesskey="h" title="🏠 Local AI Lab (Alt + H)">🏠 Local AI Lab</a>
             <div class="logo-switches">
                 <button id="theme-toggle" class="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
                     <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
@@ -102,7 +102,13 @@
                         <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
                         <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
                     </svg>
-                </button>
+                </button><span class="nav-sep">|</span>
+                    <ul class="lang-menu">
+                        <li>
+                            <a href="https://tiandaochouqin2026.github.io/en/" title="🇬🇧 English"
+                                aria-label="🇬🇧 English">En</a>
+                        </li>
+                    </ul>
             </div>
         </div>
         <ul id="menu" class="menu">
@@ -119,11 +125,6 @@
             <li>
                 <a href="https://tiandaochouqin2026.github.io/tags/" title="标签">
                     <span>标签</span>
-                </a>
-            </li>
-            <li>
-                <a href="https://tiandaochouqin2026.github.io/search/" title="搜索">
-                    <span>搜索</span>
                 </a>
             </li>
         </ul>
@@ -157,6 +158,54 @@
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
+    <h2 class="entry-hint-parent">12GB 显存跑 14B 模型：Q4 量化、上下文窗口、CPU/GPU 混合的实测
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>问题 12GB 显存跑 14B 模型，到底能开多大上下文？这是部署本地大模型时最关心的问题之一。本文用真实数据回答。
+测试环境 显卡：RTX 4070 SUPER（12GB） 模型：Qwen2.5-14B-Instruct，Q4_K_M 量化，权重约 9GB 推理引擎：Ollama 0.34 监控命令：ollama ps 实测数据 上下文长度 (num_ctx) 模型占用 GPU/CPU 比例 推理速度 4096 9.5 GB 100% GPU ~49 tok/s 16384 ~11 GB 100% GPU（临界） ~40 tok/s 32768 ~15 GB 34% CPU &#43; 66% GPU ~15-20 tok/s 65536 爆显存 大量 CPU 不可用 原理 14B Q4 的权重约 9GB。剩下的 3GB 显存要放：
+...</p>
+  </div>
+  <footer class="entry-footer">
+
+<span title='2026-09-21 12:00:00 +0800 CST'>September 21, 2026</span>&nbsp;·&nbsp;<span>2 min</span>&nbsp;·&nbsp;<span>Local AI Lab</span></footer>
+  <a class="entry-link" aria-label="post link to 12GB 显存跑 14B 模型：Q4 量化、上下文窗口、CPU/GPU 混合的实测" href="https://tiandaochouqin2026.github.io/posts/03-12gb-vram-14b-realworld/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Running 14B Model with 12GB VRAM: Practical Measurements on Q4 Quantization, Context Window, and CPU/GPU Hybrid
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Problem How much context can a 12GB VRAM handle when running a 14B model? This is one of the most critical questions when deploying large models locally. This article answers it with real data.
+Test Environment GPU: RTX 4070 SUPER (12GB) Model: Qwen2.5-14B-Instruct, Q4_K_M quantization, weights around 9GB Inference Engine: Ollama 0.34 Monitoring Command: ollama ps Practical Measurements Context Length (num_ctx) Model Usage GPU/CPU Ratio Inference Speed 4096 9.5 GB 100% GPU ~49 tok/s 16384 ~11 GB 100% GPU (critical) ~40 tok/s 32768 ~15 GB 34% CPU &#43; 66% GPU ~15-20 tok/s 65536 VRAM overflow Mostly CPU Unavailable Principles The weights of a 14B Q4 model are around 9GB. The remaining 3GB VRAM must accommodate:
+...</p>
+  </div>
+  <footer class="entry-footer">
+
+<span title='2026-09-21 12:00:00 +0800 CST'>September 21, 2026</span>&nbsp;·&nbsp;<span>2 min</span>&nbsp;·&nbsp;<span>Local AI Lab</span></footer>
+  <a class="entry-link" aria-label="post link to Running 14B Model with 12GB VRAM: Practical Measurements on Q4 Quantization, Context Window, and CPU/GPU Hybrid" href="https://tiandaochouqin2026.github.io/en/posts/03-12gb-vram-14b-realworld/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Deploying OpenClaw in Practice: Setting Up a Personal AI Assistant with Local Large Models
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>What is OpenClaw OpenClaw is an open-source AI Agent Gateway that runs on your own machine, connecting chat channels (Telegram, Discord, Lark, Web UI, etc.) to large models. It is licensed under MIT and has over 100,000 stars on GitHub.
+Its value lies in: you send a message, it calls the model, executes tools, maintains sessions, and retains memory—essentially, it upgrades “ollama in the command line” into a truly functional assistant.
+...</p>
+  </div>
+  <footer class="entry-footer">
+
+<span title='2026-09-21 11:00:00 +0800 CST'>September 21, 2026</span>&nbsp;·&nbsp;<span>3 min</span>&nbsp;·&nbsp;<span>Local AI Lab</span></footer>
+  <a class="entry-link" aria-label="post link to Deploying OpenClaw in Practice: Setting Up a Personal AI Assistant with Local Large Models" href="https://tiandaochouqin2026.github.io/en/posts/02-openclaw-local-ai-agent/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
     <h2 class="entry-hint-parent">OpenClaw 部署实战：用本地大模型搭一个个人 AI 助手
     </h2>
   </header>
@@ -168,6 +217,22 @@
 
 <span title='2026-09-21 11:00:00 +0800 CST'>September 21, 2026</span>&nbsp;·&nbsp;<span>2 min</span>&nbsp;·&nbsp;<span>Local AI Lab</span></footer>
   <a class="entry-link" aria-label="post link to OpenClaw 部署实战：用本地大模型搭一个个人 AI 助手" href="https://tiandaochouqin2026.github.io/posts/02-openclaw-local-ai-agent/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Full Guide to Running Qwen2.5-14B on RTX 4070 SUPER 12G (Windows &#43; Ollama)
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Hardware and Conclusion Item Configuration GPU RTX 4070 SUPER (12GB VRAM) Model Qwen2.5-14B-Instruct (Q4_K_M quantization, approximately 9GB) Software Ollama for Windows 0.34 Performance Approximately 49 tokens/s after warm-up (100% GPU) Conclusion: 12GB VRAM is sufficient for running 14B Q4 models. The model itself is about 9GB, and with the context KV cache, it does not exceed VRAM capacity.
+Step 1: Install Ollama Download the Windows installer from ollama.com/download and run it silently by double-clicking.
+...</p>
+  </div>
+  <footer class="entry-footer">
+
+<span title='2026-09-21 10:00:00 +0800 CST'>September 21, 2026</span>&nbsp;·&nbsp;<span>2 min</span>&nbsp;·&nbsp;<span>Local AI Lab</span></footer>
+  <a class="entry-link" aria-label="post link to Full Guide to Running Qwen2.5-14B on RTX 4070 SUPER 12G (Windows &#43; Ollama)" href="https://tiandaochouqin2026.github.io/en/posts/01-qwen25-14b-on-4070s/"></a>
 </article>
 
 <article class="post-entry tag-entry"> 

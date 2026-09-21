@@ -6,8 +6,57 @@
     <description>Recent content in Tags on 本地 AI 实验室</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 21 Sep 2026 11:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 21 Sep 2026 12:00:00 +0800</lastBuildDate>
     <atom:link href="https://tiandaochouqin2026.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>4070s</title>
+      <link>https://tiandaochouqin2026.github.io/tags/4070s/</link>
+      <pubDate>Mon, 21 Sep 2026 12:00:00 +0800</pubDate>
+      <guid>https://tiandaochouqin2026.github.io/tags/4070s/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Ollama</title>
+      <link>https://tiandaochouqin2026.github.io/tags/ollama/</link>
+      <pubDate>Mon, 21 Sep 2026 12:00:00 +0800</pubDate>
+      <guid>https://tiandaochouqin2026.github.io/tags/ollama/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Quantization</title>
+      <link>https://tiandaochouqin2026.github.io/tags/quantization/</link>
+      <pubDate>Mon, 21 Sep 2026 12:00:00 +0800</pubDate>
+      <guid>https://tiandaochouqin2026.github.io/tags/quantization/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Qwen2.5</title>
+      <link>https://tiandaochouqin2026.github.io/tags/qwen2.5/</link>
+      <pubDate>Mon, 21 Sep 2026 12:00:00 +0800</pubDate>
+      <guid>https://tiandaochouqin2026.github.io/tags/qwen2.5/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Vram</title>
+      <link>https://tiandaochouqin2026.github.io/tags/vram/</link>
+      <pubDate>Mon, 21 Sep 2026 12:00:00 +0800</pubDate>
+      <guid>https://tiandaochouqin2026.github.io/tags/vram/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>量化</title>
+      <link>https://tiandaochouqin2026.github.io/tags/%E9%87%8F%E5%8C%96/</link>
+      <pubDate>Mon, 21 Sep 2026 12:00:00 +0800</pubDate>
+      <guid>https://tiandaochouqin2026.github.io/tags/%E9%87%8F%E5%8C%96/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>显存</title>
+      <link>https://tiandaochouqin2026.github.io/tags/%E6%98%BE%E5%AD%98/</link>
+      <pubDate>Mon, 21 Sep 2026 12:00:00 +0800</pubDate>
+      <guid>https://tiandaochouqin2026.github.io/tags/%E6%98%BE%E5%AD%98/</guid>
+      <description></description>
+    </item>
     <item>
       <title>AI 助手</title>
       <link>https://tiandaochouqin2026.github.io/tags/ai-%E5%8A%A9%E6%89%8B/</link>
@@ -16,17 +65,24 @@
       <description></description>
     </item>
     <item>
-      <title>Ollama</title>
-      <link>https://tiandaochouqin2026.github.io/tags/ollama/</link>
+      <title>Ai-Assistant</title>
+      <link>https://tiandaochouqin2026.github.io/tags/ai-assistant/</link>
       <pubDate>Mon, 21 Sep 2026 11:00:00 +0800</pubDate>
-      <guid>https://tiandaochouqin2026.github.io/tags/ollama/</guid>
+      <guid>https://tiandaochouqin2026.github.io/tags/ai-assistant/</guid>
       <description></description>
     </item>
     <item>
-      <title>OpenClaw</title>
+      <title>Openclaw</title>
       <link>https://tiandaochouqin2026.github.io/tags/openclaw/</link>
       <pubDate>Mon, 21 Sep 2026 11:00:00 +0800</pubDate>
       <guid>https://tiandaochouqin2026.github.io/tags/openclaw/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Self-Hosted</title>
+      <link>https://tiandaochouqin2026.github.io/tags/self-hosted/</link>
+      <pubDate>Mon, 21 Sep 2026 11:00:00 +0800</pubDate>
+      <guid>https://tiandaochouqin2026.github.io/tags/self-hosted/</guid>
       <description></description>
     </item>
     <item>
@@ -34,20 +90,6 @@
       <link>https://tiandaochouqin2026.github.io/tags/%E8%87%AA%E6%89%98%E7%AE%A1/</link>
       <pubDate>Mon, 21 Sep 2026 11:00:00 +0800</pubDate>
       <guid>https://tiandaochouqin2026.github.io/tags/%E8%87%AA%E6%89%98%E7%AE%A1/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>4070S</title>
-      <link>https://tiandaochouqin2026.github.io/tags/4070s/</link>
-      <pubDate>Mon, 21 Sep 2026 10:00:00 +0800</pubDate>
-      <guid>https://tiandaochouqin2026.github.io/tags/4070s/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Qwen2.5</title>
-      <link>https://tiandaochouqin2026.github.io/tags/qwen2.5/</link>
-      <pubDate>Mon, 21 Sep 2026 10:00:00 +0800</pubDate>
-      <guid>https://tiandaochouqin2026.github.io/tags/qwen2.5/</guid>
       <description></description>
     </item>
     <item>

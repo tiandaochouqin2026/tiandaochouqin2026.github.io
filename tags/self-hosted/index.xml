@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Self-Hosted on 本地 AI 实验室</title>
+    <link>https://tiandaochouqin2026.github.io/tags/self-hosted/</link>
+    <description>Recent content in Self-Hosted on 本地 AI 实验室</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Mon, 21 Sep 2026 11:00:00 +0800</lastBuildDate>
+    <atom:link href="https://tiandaochouqin2026.github.io/tags/self-hosted/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Deploying OpenClaw in Practice: Setting Up a Personal AI Assistant with Local Large Models</title>
+      <link>https://tiandaochouqin2026.github.io/en/posts/02-openclaw-local-ai-agent/</link>
+      <pubDate>Mon, 21 Sep 2026 11:00:00 +0800</pubDate>
+      <guid>https://tiandaochouqin2026.github.io/en/posts/02-openclaw-local-ai-agent/</guid>
+      <description>A complete deployment guide for OpenClaw 2026.9.5 on Windows, integrating with a local Ollama instance running Qwen2.5-14B, detailing the challenges encountered.</description>
+    </item>
+  </channel>
+</rss>
