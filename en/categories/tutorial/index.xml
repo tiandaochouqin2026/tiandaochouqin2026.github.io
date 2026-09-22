@@ -16,6 +16,13 @@
       <description>benchmarking qwen2.5 model&amp;#39;s 7B and 14B versions for speed, quality, and memory usage</description>
     </item>
     <item>
+      <title>The Coming War on Memory and Storage: How Much VRAM, RAM, and Disk Will You Need in the Next Two Years?</title>
+      <link>https://tiandaochouqin2026.github.io/en/posts/15-ai-memory-storage-outlook/</link>
+      <pubDate>Tue, 22 Sep 2026 11:30:00 +0800</pubDate>
+      <guid>https://tiandaochouqin2026.github.io/en/posts/15-ai-memory-storage-outlook/</guid>
+      <description>Based on real experience running a 14B model on a 4070 SUPER 12G, this post looks at how local AI hardware requirements will evolve over the next 1-2 years and what ordinary users should upgrade.</description>
+    </item>
+    <item>
       <title>Deploying OpenClaw in Practice: Setting Up a Personal AI Assistant with Local Large Models</title>
       <link>https://tiandaochouqin2026.github.io/en/posts/02-openclaw-local-ai-agent/</link>
       <pubDate>Mon, 21 Sep 2026 11:00:00 +0800</pubDate>

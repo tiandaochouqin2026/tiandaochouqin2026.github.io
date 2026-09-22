@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto" data-theme="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>The Coming War on Memory and Storage: How Much VRAM, RAM, and Disk Will You Need in the Next Two Years? | Local AI Lab</title>
+<meta name="keywords" content="ai-hardware, vram, ram, storage, outlook">
+<meta name="description" content="Based on real experience running a 14B model on a 4070 SUPER 12G, this post looks at how local AI hardware requirements will evolve over the next 1-2 years and what ordinary users should upgrade.">
+<meta name="author" content="Local AI Lab">
+<link rel="canonical" href="https://tiandaochouqin2026.github.io/en/posts/15-ai-memory-storage-outlook/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.cd9298b33628769aa1bc1acebbbfd7aa11ce81dfe03484d479e1907760249a1d.css" integrity="sha256-zZKYszYodpqhvBrOu7/XqhHOgd/gNITUeeGQd2Akmh0=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://tiandaochouqin2026.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://tiandaochouqin2026.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://tiandaochouqin2026.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://tiandaochouqin2026.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://tiandaochouqin2026.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="zh-cn" href="https://tiandaochouqin2026.github.io/posts/15-ai-memory-storage-outlook/">
+<link rel="alternate" hreflang="en" href="https://tiandaochouqin2026.github.io/en/posts/15-ai-memory-storage-outlook/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><meta property="og:url" content="https://tiandaochouqin2026.github.io/en/posts/15-ai-memory-storage-outlook/">
+  <meta property="og:site_name" content="Local AI Lab">
+  <meta property="og:title" content="The Coming War on Memory and Storage: How Much VRAM, RAM, and Disk Will You Need in the Next Two Years?">
+  <meta property="og:description" content="Based on real experience running a 14B model on a 4070 SUPER 12G, this post looks at how local AI hardware requirements will evolve over the next 1-2 years and what ordinary users should upgrade.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2026-09-22T11:30:00+08:00">
+    <meta property="article:modified_time" content="2026-09-22T11:30:00+08:00">
+    <meta property="article:tag" content="Ai-Hardware">
+    <meta property="article:tag" content="Vram">
+    <meta property="article:tag" content="Ram">
+    <meta property="article:tag" content="Storage">
+    <meta property="article:tag" content="Outlook">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="The Coming War on Memory and Storage: How Much VRAM, RAM, and Disk Will You Need in the Next Two Years?">
+  <meta name="twitter:description" content="Based on real experience running a 14B model on a 4070 SUPER 12G, this post looks at how local AI hardware requirements will evolve over the next 1-2 years and what ordinary users should upgrade.">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://tiandaochouqin2026.github.io/en/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "The Coming War on Memory and Storage: How Much VRAM, RAM, and Disk Will You Need in the Next Two Years?",
+      "item": "https://tiandaochouqin2026.github.io/en/posts/15-ai-memory-storage-outlook/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "The Coming War on Memory and Storage: How Much VRAM, RAM, and Disk Will You Need in the Next Two Years?",
+  "name": "The Coming War on Memory and Storage: How Much VRAM, RAM, and Disk Will You Need in the Next Two Years?",
+  "description": "Based on real experience running a 14B model on a 4070 SUPER 12G, this post looks at how local AI hardware requirements will evolve over the next 1-2 years and what ordinary users should upgrade.",
+  "keywords": [
+    "ai-hardware", "vram", "ram", "storage", "outlook"
+  ],
+  "articleBody": "My RTX 4070 SUPER 12G runs qwen2.5:14b at Q4 quantization right at the edge of VRAM limits — 9 GB for the model itself, 2 GB for the KV cache, less than 1 GB to spare. That’s the “sweet spot” of 2026. But will this setup still be enough in two years?\nThis article isn’t about AGI predictions. It’s about one practical question: over the next 1-2 years, how much VRAM, system RAM, and disk will a regular person need to run local LLMs?\nVRAM: 12 GB Is Entry-Level, 24 GB Is the Comfort Zone Here’s where we stand today. The VRAM footprint (Q4 quantization) of mainstream open-source models in 2026:\nModel size Q4 VRAM usage GPU that can run it 7B-8B ~5 GB Any 8 GB card, even integrated graphics 14B ~9-10 GB 12 GB cards (exactly my setup) 32B ~20 GB 24 GB cards (4090/5090 class) 70B ~40 GB+ Dual cards or professional GPUs Two trends are pulling in opposite directions over the next two years:\nTrend 1: Models keep getting bigger. Every new generation from DeepSeek, Qwen, and Llama pushes the “open-source flagship” higher. In two years, the mainstream open-source workhorse may be in the 30B-50B range, matching today’s 120B models.\nTrend 2: Quantization keeps getting better. This is the friendliest trend for ordinary users. Q4_K_M is already usable; Q3 and Q2 quantizations, despite quality loss, can fit a 30B model into 12 GB. MoE architectures (like DeepSeek’s) separate total parameters from activated parameters, letting 12 GB VRAM call “sparse models” with hundreds of billions of parameters.\nMy take:\nToday’s 12 GB cards (4070/4070S/4070Ti) will still run mainstream models for another two years, kept alive by quantization and MoE. If you’re building or upgrading now, 24 GB VRAM (a 5090 or used 3090/4090) is the real “comfort zone” — you can reliably run 30B-class models without fighting quantization every day. Cards with 8 GB or less will be “AI toys” in two years, unable to run serious productive models. System RAM: 32 GB Is the Floor, 64 GB Is Not Wasteful Many people ignore system RAM, but its role in local LLM inference keeps growing:\nModel offloading: Ollama automatically spills layers that don’t fit in VRAM into RAM. On my 12 GB card running a 14B Q4 model, about 2-4 GB spills into system memory. Context window: Long conversations and RAG knowledge bases add KV cache in RAM; a 128K context eats several GB more than a 4K context. Parallel workloads: Running a model alongside a browser and IDE already takes 16 GB in the background. My recommendation:\n16 GB RAM is already the bare minimum — you’ll feel the squeeze when running models. 32 GB is the new sweet spot — a 14B model plus daily work fits comfortably. 64 GB means “no panic for two years” — you can run 32B models in CPU/GPU hybrid mode, even run multiple models in parallel. Storage (SSD): Model Files Will Eat Your Drive This is the most underrated item. A 14B Q4 model file is about 9 GB, a 32B is 20 GB, and a 70B is 40 GB+. You won’t just keep one model — you’ll want to try Qwen, Llama, DeepSeek, Mistral, and keep multiple quantized versions of each.\nMy current model library:\nqwen2.5:14b (9 GB) qwen2.5:7b (4.7 GB) Various embedding models (1-2 GB each) OpenClaw, Open WebUI, and similar apps themselves (several GB) In two years, a local model library will easily reach 100-200 GB. Add a RAG knowledge base (your PDFs, notes, code) and the vector index is another few dozen GB.\nAdvice:\nA 1 TB SSD as your system drive is the floor. Carve out a dedicated 1-2 TB HDD or large SSD for the model library. You don’t need everything on NVMe — models stay in VRAM after loading, so storage speed barely affects inference speed. Don’t install models on your C: drive! Ollama defaults there; I moved it to a 2 TB data drive. The Realistic Picture in 1-2 Years Putting all three together, here’s what I expect:\nA “local AI entry rig” in 2027:\nGPU: 16-24 GB VRAM (RTX 5060 Ti 16G or used 3090) RAM: 32-64 GB Storage: 2 TB SSD/HDD mix for models A “local AI main rig” in 2027:\nGPU: 48 GB+ (dual 5090 or professional card) RAM: 128 GB+ Storage: 4 TB What I won’t do: buy a 5090 or professional card now just to run local models. The reason is that quantization is improving faster than hardware. Two years from now, your 12 GB card — thanks to Q3 quantization and MoE architecture — may run what today is a 30B model’s capability.\nThree Pieces of Advice for Ordinary Users 12 GB VRAM + 32 GB RAM + 1 TB SSD today is enough for two years. Don’t panic, don’t upgrade yet. If you do upgrade, add RAM and storage before the GPU. Going from 16 GB to 32 GB RAM improves the experience more than going from 12 GB to 16 GB VRAM. Watch quantization and MoE architectures. These two trends directly determine how many more years your current GPU will last. The hardware war for local AI doesn’t refresh like a phone every year. Your 12 GB VRAM has at least two more years of battle left in it.\n",
+  "wordCount" : "886",
+  "inLanguage": "en",
+  "datePublished": "2026-09-22T11:30:00+08:00",
+  "dateModified": "2026-09-22T11:30:00+08:00",
+  "author":{
+    "@type": "Person",
+    "name": "Local AI Lab"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://tiandaochouqin2026.github.io/en/posts/15-ai-memory-storage-outlook/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Local AI Lab",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://tiandaochouqin2026.github.io/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="header-nav">
+        <div class="logo">
+            <a href="https://tiandaochouqin2026.github.io/en/" accesskey="h" title="🏠 Local AI Lab (Alt + H)">🏠 Local AI Lab</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" class="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg class="sun" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button><span class="nav-sep">|</span>
+                    <ul class="lang-menu">
+                        <li>
+                            <a href="https://tiandaochouqin2026.github.io/" title="🇨🇳 中文"
+                                aria-label="🇨🇳 中文">Zh-Cn</a>
+                        </li>
+                    </ul>
+            </div>
+        </div>
+        <ul id="menu" class="menu">
+            <li>
+                <a href="https://tiandaochouqin2026.github.io/en/archives/" title="Archives">
+                    <span>Archives</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://tiandaochouqin2026.github.io/en/categories/" title="Categories">
+                    <span>Categories</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://tiandaochouqin2026.github.io/en/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://tiandaochouqin2026.github.io/en/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <nav class="breadcrumbs" role="navigation" aria-label="Breadcrumb">
+            <a href="/en/">Home</a>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+                <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+            <a href="/en/posts/">Posts</a>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+        <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+</nav>
+    <h1 class="post-title entry-hint-parent">
+      The Coming War on Memory and Storage: How Much VRAM, RAM, and Disk Will You Need in the Next Two Years?
+    </h1>
+    <div class="post-description">
+      Based on real experience running a 14B model on a 4070 SUPER 12G, this post looks at how local AI hardware requirements will evolve over the next 1-2 years and what ordinary users should upgrade.
+    </div>
+    <div class="post-meta">
+
+<span title='2026-09-22 11:30:00 +0800 CST'>September 22, 2026</span>&nbsp;·&nbsp;<span>5 min</span>&nbsp;·&nbsp;<span>Local AI Lab</span>&nbsp;|&nbsp;<span>Translations:</span>
+    <ul class="i18n_list">
+        <li>
+            <a href="https://tiandaochouqin2026.github.io/posts/15-ai-memory-storage-outlook/">Zh-Cn</a>
+        </li>
+    </ul>
+
+</div>
+  </header> 
+  <div class="post-content md-content"><p>My RTX 4070 SUPER 12G runs qwen2.5:14b at Q4 quantization right at the edge of VRAM limits — 9 GB for the model itself, 2 GB for the KV cache, less than 1 GB to spare. That&rsquo;s the &ldquo;sweet spot&rdquo; of 2026. But will this setup still be enough in two years?</p>
+<p>This article isn&rsquo;t about AGI predictions. It&rsquo;s about one practical question: <strong>over the next 1-2 years, how much VRAM, system RAM, and disk will a regular person need to run local LLMs?</strong></p>
+<h2 id="vram-12-gb-is-entry-level-24-gb-is-the-comfort-zone">VRAM: 12 GB Is Entry-Level, 24 GB Is the Comfort Zone<a hidden class="anchor" aria-hidden="true" href="#vram-12-gb-is-entry-level-24-gb-is-the-comfort-zone">#</a></h2>
+<p>Here&rsquo;s where we stand today. The VRAM footprint (Q4 quantization) of mainstream open-source models in 2026:</p>
+<table>
+	<thead>
+			<tr>
+					<th>Model size</th>
+					<th>Q4 VRAM usage</th>
+					<th>GPU that can run it</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>7B-8B</td>
+					<td>~5 GB</td>
+					<td>Any 8 GB card, even integrated graphics</td>
+			</tr>
+			<tr>
+					<td>14B</td>
+					<td>~9-10 GB</td>
+					<td>12 GB cards (exactly my setup)</td>
+			</tr>
+			<tr>
+					<td>32B</td>
+					<td>~20 GB</td>
+					<td>24 GB cards (4090/5090 class)</td>
+			</tr>
+			<tr>
+					<td>70B</td>
+					<td>~40 GB+</td>
+					<td>Dual cards or professional GPUs</td>
+			</tr>
+	</tbody>
+</table>
+<p>Two trends are pulling in opposite directions over the next two years:</p>
+<p><strong>Trend 1: Models keep getting bigger.</strong> Every new generation from DeepSeek, Qwen, and Llama pushes the &ldquo;open-source flagship&rdquo; higher. In two years, the mainstream open-source workhorse may be in the 30B-50B range, matching today&rsquo;s 120B models.</p>
+<p><strong>Trend 2: Quantization keeps getting better.</strong> This is the friendliest trend for ordinary users. Q4_K_M is already usable; Q3 and Q2 quantizations, despite quality loss, can fit a 30B model into 12 GB. MoE architectures (like DeepSeek&rsquo;s) separate total parameters from activated parameters, letting 12 GB VRAM call &ldquo;sparse models&rdquo; with hundreds of billions of parameters.</p>
+<p><strong>My take:</strong></p>
+<ul>
+<li>Today&rsquo;s 12 GB cards (4070/4070S/4070Ti) will still run mainstream models for another two years, kept alive by quantization and MoE.</li>
+<li>If you&rsquo;re building or upgrading now, <strong>24 GB VRAM (a 5090 or used 3090/4090) is the real &ldquo;comfort zone&rdquo;</strong> — you can reliably run 30B-class models without fighting quantization every day.</li>
+<li>Cards with 8 GB or less will be &ldquo;AI toys&rdquo; in two years, unable to run serious productive models.</li>
+</ul>
+<h2 id="system-ram-32-gb-is-the-floor-64-gb-is-not-wasteful">System RAM: 32 GB Is the Floor, 64 GB Is Not Wasteful<a hidden class="anchor" aria-hidden="true" href="#system-ram-32-gb-is-the-floor-64-gb-is-not-wasteful">#</a></h2>
+<p>Many people ignore system RAM, but its role in local LLM inference keeps growing:</p>
+<ol>
+<li><strong>Model offloading</strong>: Ollama automatically spills layers that don&rsquo;t fit in VRAM into RAM. On my 12 GB card running a 14B Q4 model, about 2-4 GB spills into system memory.</li>
+<li><strong>Context window</strong>: Long conversations and RAG knowledge bases add KV cache in RAM; a 128K context eats several GB more than a 4K context.</li>
+<li><strong>Parallel workloads</strong>: Running a model alongside a browser and IDE already takes 16 GB in the background.</li>
+</ol>
+<p><strong>My recommendation:</strong></p>
+<ul>
+<li><strong>16 GB RAM is already the bare minimum</strong> — you&rsquo;ll feel the squeeze when running models.</li>
+<li><strong>32 GB is the new sweet spot</strong> — a 14B model plus daily work fits comfortably.</li>
+<li><strong>64 GB means &ldquo;no panic for two years&rdquo;</strong> — you can run 32B models in CPU/GPU hybrid mode, even run multiple models in parallel.</li>
+</ul>
+<h2 id="storage-ssd-model-files-will-eat-your-drive">Storage (SSD): Model Files Will Eat Your Drive<a hidden class="anchor" aria-hidden="true" href="#storage-ssd-model-files-will-eat-your-drive">#</a></h2>
+<p>This is the most underrated item. A 14B Q4 model file is about 9 GB, a 32B is 20 GB, and a 70B is 40 GB+. You won&rsquo;t just keep one model — you&rsquo;ll want to try Qwen, Llama, DeepSeek, Mistral, and keep multiple quantized versions of each.</p>
+<p>My current model library:</p>
+<ul>
+<li>qwen2.5:14b (9 GB)</li>
+<li>qwen2.5:7b (4.7 GB)</li>
+<li>Various embedding models (1-2 GB each)</li>
+<li>OpenClaw, Open WebUI, and similar apps themselves (several GB)</li>
+</ul>
+<p><strong>In two years</strong>, a local model library will easily reach 100-200 GB. Add a RAG knowledge base (your PDFs, notes, code) and the vector index is another few dozen GB.</p>
+<p><strong>Advice:</strong></p>
+<ul>
+<li>A 1 TB SSD as your system drive is the floor.</li>
+<li><strong>Carve out a dedicated 1-2 TB HDD or large SSD for the model library.</strong> You don&rsquo;t need everything on NVMe — models stay in VRAM after loading, so storage speed barely affects inference speed.</li>
+<li>Don&rsquo;t install models on your C: drive! Ollama defaults there; I moved it to a 2 TB data drive.</li>
+</ul>
+<h2 id="the-realistic-picture-in-1-2-years">The Realistic Picture in 1-2 Years<a hidden class="anchor" aria-hidden="true" href="#the-realistic-picture-in-1-2-years">#</a></h2>
+<p>Putting all three together, here&rsquo;s what I expect:</p>
+<p><strong>A &ldquo;local AI entry rig&rdquo; in 2027:</strong></p>
+<ul>
+<li>GPU: 16-24 GB VRAM (RTX 5060 Ti 16G or used 3090)</li>
+<li>RAM: 32-64 GB</li>
+<li>Storage: 2 TB SSD/HDD mix for models</li>
+</ul>
+<p><strong>A &ldquo;local AI main rig&rdquo; in 2027:</strong></p>
+<ul>
+<li>GPU: 48 GB+ (dual 5090 or professional card)</li>
+<li>RAM: 128 GB+</li>
+<li>Storage: 4 TB</li>
+</ul>
+<p><strong>What I won&rsquo;t do</strong>: buy a 5090 or professional card now just to run local models. The reason is that <strong>quantization is improving faster than hardware</strong>. Two years from now, your 12 GB card — thanks to Q3 quantization and MoE architecture — may run what today is a 30B model&rsquo;s capability.</p>
+<h2 id="three-pieces-of-advice-for-ordinary-users">Three Pieces of Advice for Ordinary Users<a hidden class="anchor" aria-hidden="true" href="#three-pieces-of-advice-for-ordinary-users">#</a></h2>
+<ol>
+<li><strong>12 GB VRAM + 32 GB RAM + 1 TB SSD today is enough for two years.</strong> Don&rsquo;t panic, don&rsquo;t upgrade yet.</li>
+<li><strong>If you do upgrade, add RAM and storage before the GPU.</strong> Going from 16 GB to 32 GB RAM improves the experience more than going from 12 GB to 16 GB VRAM.</li>
+<li><strong>Watch quantization and MoE architectures.</strong> These two trends directly determine how many more years your current GPU will last.</li>
+</ol>
+<p>The hardware war for local AI doesn&rsquo;t refresh like a phone every year. Your 12 GB VRAM has at least two more years of battle left in it.</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://tiandaochouqin2026.github.io/en/tags/ai-hardware/">Ai-Hardware</a></li>
+      <li><a href="https://tiandaochouqin2026.github.io/en/tags/vram/">Vram</a></li>
+      <li><a href="https://tiandaochouqin2026.github.io/en/tags/ram/">Ram</a></li>
+      <li><a href="https://tiandaochouqin2026.github.io/en/tags/storage/">Storage</a></li>
+      <li><a href="https://tiandaochouqin2026.github.io/en/tags/outlook/">Outlook</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="https://tiandaochouqin2026.github.io/en/posts/06-qwen7b-vs-14b-comparison/">
+    <span class="title">« Prev</span>
+    <span>qwen2.5:7b-vs-14b-performance-comparison</span>
+  </a>
+  <a class="next" href="https://tiandaochouqin2026.github.io/en/posts/04-ollama-windows-pitfalls/">
+    <span class="title">Next »</span>
+    <span>Windows Deployment of Ollama Troubleshooting: GitHub Download Failure, Local Network Access, OLLAMA_HOST</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="https://tiandaochouqin2026.github.io/en/">Local AI Lab</a></span> · 
+
+    
+    
+    <span>
+        Powered by
+        <a href="https://gohugo.io/?utm_source=papermod" rel="noopener" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" id="top-link" class="top-link hidden" aria-label="go to top" title="Go to Top (Alt + G)" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevrons-up">
+        <polyline points="17 11 12 6 7 11"></polyline>
+        <polyline points="17 18 12 13 7 18"></polyline>
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var toplink = document.getElementById("top-link");
+    window.onscroll = function () {
+        const scrollThreshold = window.innerHeight;
+        if (document.body.scrollTop > scrollThreshold || document.documentElement.scrollTop > scrollThreshold) {
+            toplink.classList.remove("hidden");
+        } else {
+            toplink.classList.add("hidden");
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

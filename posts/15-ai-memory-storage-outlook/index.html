@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="auto" data-theme="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>AI 对内存和存储的下一场战争：未来两年我需要多大的显存和硬盘？ | 本地 AI 实验室</title>
+<meta name="keywords" content="AI硬件, 显存, 内存, 存储, 展望">
+<meta name="description" content="从 4070 SUPER 12G 跑 14B 模型的真实体验出发，聊聊未来一两年本地 AI 对显存、内存、硬盘的需求会怎么走，普通用户该怎么升级。">
+<meta name="author" content="Local AI Lab">
+<link rel="canonical" href="https://tiandaochouqin2026.github.io/posts/15-ai-memory-storage-outlook/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.cd9298b33628769aa1bc1acebbbfd7aa11ce81dfe03484d479e1907760249a1d.css" integrity="sha256-zZKYszYodpqhvBrOu7/XqhHOgd/gNITUeeGQd2Akmh0=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://tiandaochouqin2026.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://tiandaochouqin2026.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://tiandaochouqin2026.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://tiandaochouqin2026.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://tiandaochouqin2026.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="zh-cn" href="https://tiandaochouqin2026.github.io/posts/15-ai-memory-storage-outlook/">
+<link rel="alternate" hreflang="en" href="https://tiandaochouqin2026.github.io/en/posts/15-ai-memory-storage-outlook/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><meta property="og:url" content="https://tiandaochouqin2026.github.io/posts/15-ai-memory-storage-outlook/">
+  <meta property="og:site_name" content="本地 AI 实验室">
+  <meta property="og:title" content="AI 对内存和存储的下一场战争：未来两年我需要多大的显存和硬盘？">
+  <meta property="og:description" content="从 4070 SUPER 12G 跑 14B 模型的真实体验出发，聊聊未来一两年本地 AI 对显存、内存、硬盘的需求会怎么走，普通用户该怎么升级。">
+  <meta property="og:locale" content="zh_cn">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2026-09-22T11:30:00+08:00">
+    <meta property="article:modified_time" content="2026-09-22T11:30:00+08:00">
+    <meta property="article:tag" content="AI硬件">
+    <meta property="article:tag" content="显存">
+    <meta property="article:tag" content="内存">
+    <meta property="article:tag" content="存储">
+    <meta property="article:tag" content="展望">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="AI 对内存和存储的下一场战争：未来两年我需要多大的显存和硬盘？">
+  <meta name="twitter:description" content="从 4070 SUPER 12G 跑 14B 模型的真实体验出发，聊聊未来一两年本地 AI 对显存、内存、硬盘的需求会怎么走，普通用户该怎么升级。">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "文章",
+      "item": "https://tiandaochouqin2026.github.io/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "AI 对内存和存储的下一场战争：未来两年我需要多大的显存和硬盘？",
+      "item": "https://tiandaochouqin2026.github.io/posts/15-ai-memory-storage-outlook/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "AI 对内存和存储的下一场战争：未来两年我需要多大的显存和硬盘？",
+  "name": "AI 对内存和存储的下一场战争：未来两年我需要多大的显存和硬盘？",
+  "description": "从 4070 SUPER 12G 跑 14B 模型的真实体验出发，聊聊未来一两年本地 AI 对显存、内存、硬盘的需求会怎么走，普通用户该怎么升级。",
+  "keywords": [
+    "AI硬件", "显存", "内存", "存储", "展望"
+  ],
+  "articleBody": "我手里这台 RTX 4070 SUPER 12G，跑 qwen2.5:14b Q4 量化版刚好卡在显存边界——模型本体占 9GB，KV cache 留 2GB，还剩不到 1GB 浮动。这是 2026 年的\"甜点配置\"，但两年后这套还够吗？\n这篇文章不预测 AGI，只聊一件事：未来 1-2 年，普通玩家本地跑大模型，需要多大的显存、内存和硬盘。\n显存（VRAM）：12G 是入门，24G 是舒适区 先看现状。2026 年主流开源模型的显存门槛（Q4 量化）：\n模型规模 Q4 显存占用 能跑的显卡 7B-8B ~5 GB 任何 8G 显卡、核显都能凑合 14B ~9-10 GB 12G 显卡刚好（我现在的配置） 32B ~20 GB 24G 显卡（4090/5090 级别） 70B ~40 GB+ 双卡或专业卡 未来一两年的趋势有两个方向同时在走：\n方向一：模型继续变大。 DeepSeek、Qwen、Llama 每一代都在把\"开源旗舰\"往上推。两年后开源主力可能是 30B-50B 级别，能力对标今天的 120B。\n方向二：量化技术继续压缩。 这是对普通用户最友好的方向。Q4_K_M 已经能用，Q3、Q2 量化虽然损失质量但能把 30B 压到 12G 里跑。MoE 架构（比如 DeepSeek 那种）更是把\"总参数\"和\"单次激活参数\"分开，12G 显存也能调用几百 B 的\"稀疏模型\"。\n我的判断：\n现在 12G 显卡（4070/4070S/4070Ti）未来两年还能跑主流模型，靠量化和 MoE 续命 如果你现在装机或者升级，24G 显存（5090 或二手 3090/4090）是真正的\"舒适区\"，能稳定跑 30B 级别模型，不用天天和量化较劲 8G 以下的卡，两年后基本只能当\"AI 玩具\"，跑不了正经生产力模型 内存（RAM）：32GB 起步，64GB 不亏 很多人忽略系统内存，但本地跑大模型时它的角色越来越重要：\n模型溢出：Ollama 默认把装不下的层放内存，14B Q4 在 12G 卡上，溢出到内存的部分大约 2-4GB 上下文窗口：长对话、RAG 知识库的 KV cache 会占用内存，128K 上下文比 4K 多吃几个 GB 并行任务：你同时跑模型 + 浏览器 + IDE，光这些后台就 16GB 我的建议：\n16GB 内存现在已经是底线，跑模型时会明显紧张 32GB 是新的甜点，14B 模型 + 日常工作刚好 64GB 是\"未来两年不慌\"的配置，可以跑 32B 模型的 CPU/GPU 混合推理，甚至做多模型并行 存储（SSD）：模型文件会吃掉你的硬盘 这是最被低估的一项。一个 14B Q4 模型文件大约 9GB，32B 是 20GB，70B 是 40GB+。你不会只装一个模型——你会想试 qwen、llama、deepseek、mistral，每个还想留几个量化版本。\n我的模型库现状：\nqwen2.5:14b（9GB） qwen2.5:7b（4.7GB） 各种 embedding 模型（1-2GB 每个） OpenClaw、Open WebUI 等应用本身（几 GB） 两年后，本地模型库轻松 100-200GB。如果再搭 RAG 知识库（你的 PDF、笔记、代码），向量索引又是几十 GB。\n建议：\n系统盘 1TB SSD 是底线 专门划一个 1-2TB 的机械硬盘或大容量 SSD 放模型库，不用全塞 NVMe——模型加载一次后常驻显存，存储速度对推理速度影响不大 别用 C 盘装模型！Ollama 默认存在 C 盘，我专门改到了 2T 数据盘 一两年后的现实图景 把上面三条合起来，我的预测：\n2027 年的\"本地 AI 入门机\"：\n显卡：16-24GB 显存（RTX 5060 Ti 16G 或二手 3090） 内存：32-64GB 存储：2TB SSD/HDD 混放模型 2027 年的\"本地 AI 主力机\"：\n显卡：48GB+（双 5090 或专业卡） 内存：128GB+ 存储：4TB 我不会做的事：为了跑本地模型现在就买 5090 或专业卡。原因是——量化技术进步的速度，可能比硬件升级还快。两年后你手里的 12G 卡，靠 Q3 量化 + MoE 架构，可能能跑今天 30B 模型的能力。\n给普通用户的三条建议 现在 12G 显存 + 32GB 内存 + 1TB SSD，够你玩两年。 别焦虑，别现在就升级。 真要升级，先加内存和硬盘，再换显卡。 内存从 16G 到 32G 的体验提升，比显卡从 12G 到 16G 还明显。 盯着量化技术和 MoE 架构。 这两个方向的进步，直接决定你现在这张卡还能战几年。 本地 AI 的硬件战争，不像手机那样一年一换。你的 12G 显存，至少还能打两年。\n",
+  "wordCount" : "1637",
+  "inLanguage": "zh-cn",
+  "datePublished": "2026-09-22T11:30:00+08:00",
+  "dateModified": "2026-09-22T11:30:00+08:00",
+  "author":{
+    "@type": "Person",
+    "name": "Local AI Lab"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://tiandaochouqin2026.github.io/posts/15-ai-memory-storage-outlook/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "本地 AI 实验室",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://tiandaochouqin2026.github.io/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="header-nav">
+        <div class="logo">
+            <a href="https://tiandaochouqin2026.github.io/" accesskey="h" title="🏠 本地 AI 实验室 (Alt + H)">🏠 本地 AI 实验室</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" class="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg class="sun" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button><span class="nav-sep">|</span>
+                    <ul class="lang-menu">
+                        <li>
+                            <a href="https://tiandaochouqin2026.github.io/en/" title="🇬🇧 English"
+                                aria-label="🇬🇧 English">En</a>
+                        </li>
+                    </ul>
+            </div>
+        </div>
+        <ul id="menu" class="menu">
+            <li>
+                <a href="https://tiandaochouqin2026.github.io/archives/" title="归档">
+                    <span>归档</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://tiandaochouqin2026.github.io/categories/" title="分类">
+                    <span>分类</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://tiandaochouqin2026.github.io/tags/" title="标签">
+                    <span>标签</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://tiandaochouqin2026.github.io/search/" title="搜索 (Alt &#43; /)" accesskey=/>
+                    <span>搜索</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <nav class="breadcrumbs" role="navigation" aria-label="Breadcrumb">
+            <a href="/">Home</a>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+                <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+            <a href="/posts/">文章</a>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+        <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+</nav>
+    <h1 class="post-title entry-hint-parent">
+      AI 对内存和存储的下一场战争：未来两年我需要多大的显存和硬盘？
+    </h1>
+    <div class="post-description">
+      从 4070 SUPER 12G 跑 14B 模型的真实体验出发，聊聊未来一两年本地 AI 对显存、内存、硬盘的需求会怎么走，普通用户该怎么升级。
+    </div>
+    <div class="post-meta">
+
+<span title='2026-09-22 11:30:00 +0800 CST'>September 22, 2026</span>&nbsp;·&nbsp;<span>4 min</span>&nbsp;·&nbsp;<span>Local AI Lab</span>&nbsp;|&nbsp;<span>Translations:</span>
+    <ul class="i18n_list">
+        <li>
+            <a href="https://tiandaochouqin2026.github.io/en/posts/15-ai-memory-storage-outlook/">En</a>
+        </li>
+    </ul>
+
+</div>
+  </header> 
+  <div class="post-content md-content"><p>我手里这台 RTX 4070 SUPER 12G，跑 qwen2.5:14b Q4 量化版刚好卡在显存边界——模型本体占 9GB，KV cache 留 2GB，还剩不到 1GB 浮动。这是 2026 年的&quot;甜点配置&quot;，但两年后这套还够吗？</p>
+<p>这篇文章不预测 AGI，只聊一件事：<strong>未来 1-2 年，普通玩家本地跑大模型，需要多大的显存、内存和硬盘</strong>。</p>
+<h2 id="显存vram12g-是入门24g-是舒适区">显存（VRAM）：12G 是入门，24G 是舒适区<a hidden class="anchor" aria-hidden="true" href="#显存vram12g-是入门24g-是舒适区">#</a></h2>
+<p>先看现状。2026 年主流开源模型的显存门槛（Q4 量化）：</p>
+<table>
+	<thead>
+			<tr>
+					<th>模型规模</th>
+					<th>Q4 显存占用</th>
+					<th>能跑的显卡</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>7B-8B</td>
+					<td>~5 GB</td>
+					<td>任何 8G 显卡、核显都能凑合</td>
+			</tr>
+			<tr>
+					<td>14B</td>
+					<td>~9-10 GB</td>
+					<td>12G 显卡刚好（我现在的配置）</td>
+			</tr>
+			<tr>
+					<td>32B</td>
+					<td>~20 GB</td>
+					<td>24G 显卡（4090/5090 级别）</td>
+			</tr>
+			<tr>
+					<td>70B</td>
+					<td>~40 GB+</td>
+					<td>双卡或专业卡</td>
+			</tr>
+	</tbody>
+</table>
+<p>未来一两年的趋势有两个方向同时在走：</p>
+<p><strong>方向一：模型继续变大。</strong> DeepSeek、Qwen、Llama 每一代都在把&quot;开源旗舰&quot;往上推。两年后开源主力可能是 30B-50B 级别，能力对标今天的 120B。</p>
+<p><strong>方向二：量化技术继续压缩。</strong> 这是对普通用户最友好的方向。Q4_K_M 已经能用，Q3、Q2 量化虽然损失质量但能把 30B 压到 12G 里跑。MoE 架构（比如 DeepSeek 那种）更是把&quot;总参数&quot;和&quot;单次激活参数&quot;分开，12G 显存也能调用几百 B 的&quot;稀疏模型&quot;。</p>
+<p><strong>我的判断</strong>：</p>
+<ul>
+<li>现在 12G 显卡（4070/4070S/4070Ti）未来两年还能跑主流模型，靠量化和 MoE 续命</li>
+<li>如果你现在装机或者升级，<strong>24G 显存（5090 或二手 3090/4090）是真正的&quot;舒适区&quot;</strong>，能稳定跑 30B 级别模型，不用天天和量化较劲</li>
+<li>8G 以下的卡，两年后基本只能当&quot;AI 玩具&quot;，跑不了正经生产力模型</li>
+</ul>
+<h2 id="内存ram32gb-起步64gb-不亏">内存（RAM）：32GB 起步，64GB 不亏<a hidden class="anchor" aria-hidden="true" href="#内存ram32gb-起步64gb-不亏">#</a></h2>
+<p>很多人忽略系统内存，但本地跑大模型时它的角色越来越重要：</p>
+<ol>
+<li><strong>模型溢出</strong>：Ollama 默认把装不下的层放内存，14B Q4 在 12G 卡上，溢出到内存的部分大约 2-4GB</li>
+<li><strong>上下文窗口</strong>：长对话、RAG 知识库的 KV cache 会占用内存，128K 上下文比 4K 多吃几个 GB</li>
+<li><strong>并行任务</strong>：你同时跑模型 + 浏览器 + IDE，光这些后台就 16GB</li>
+</ol>
+<p><strong>我的建议</strong>：</p>
+<ul>
+<li><strong>16GB 内存现在已经是底线</strong>，跑模型时会明显紧张</li>
+<li><strong>32GB 是新的甜点</strong>，14B 模型 + 日常工作刚好</li>
+<li><strong>64GB 是&quot;未来两年不慌&quot;的配置</strong>，可以跑 32B 模型的 CPU/GPU 混合推理，甚至做多模型并行</li>
+</ul>
+<h2 id="存储ssd模型文件会吃掉你的硬盘">存储（SSD）：模型文件会吃掉你的硬盘<a hidden class="anchor" aria-hidden="true" href="#存储ssd模型文件会吃掉你的硬盘">#</a></h2>
+<p>这是最被低估的一项。一个 14B Q4 模型文件大约 9GB，32B 是 20GB，70B 是 40GB+。你不会只装一个模型——你会想试 qwen、llama、deepseek、mistral，每个还想留几个量化版本。</p>
+<p>我的模型库现状：</p>
+<ul>
+<li>qwen2.5:14b（9GB）</li>
+<li>qwen2.5:7b（4.7GB）</li>
+<li>各种 embedding 模型（1-2GB 每个）</li>
+<li>OpenClaw、Open WebUI 等应用本身（几 GB）</li>
+</ul>
+<p><strong>两年后</strong>，本地模型库轻松 100-200GB。如果再搭 RAG 知识库（你的 PDF、笔记、代码），向量索引又是几十 GB。</p>
+<p><strong>建议</strong>：</p>
+<ul>
+<li>系统盘 1TB SSD 是底线</li>
+<li><strong>专门划一个 1-2TB 的机械硬盘或大容量 SSD 放模型库</strong>，不用全塞 NVMe——模型加载一次后常驻显存，存储速度对推理速度影响不大</li>
+<li>别用 C 盘装模型！Ollama 默认存在 C 盘，我专门改到了 2T 数据盘</li>
+</ul>
+<h2 id="一两年后的现实图景">一两年后的现实图景<a hidden class="anchor" aria-hidden="true" href="#一两年后的现实图景">#</a></h2>
+<p>把上面三条合起来，我的预测：</p>
+<p><strong>2027 年的&quot;本地 AI 入门机&quot;</strong>：</p>
+<ul>
+<li>显卡：16-24GB 显存（RTX 5060 Ti 16G 或二手 3090）</li>
+<li>内存：32-64GB</li>
+<li>存储：2TB SSD/HDD 混放模型</li>
+</ul>
+<p><strong>2027 年的&quot;本地 AI 主力机&quot;</strong>：</p>
+<ul>
+<li>显卡：48GB+（双 5090 或专业卡）</li>
+<li>内存：128GB+</li>
+<li>存储：4TB</li>
+</ul>
+<p><strong>我不会做的事</strong>：为了跑本地模型现在就买 5090 或专业卡。原因是——量化技术进步的速度，可能比硬件升级还快。两年后你手里的 12G 卡，靠 Q3 量化 + MoE 架构，可能能跑今天 30B 模型的能力。</p>
+<h2 id="给普通用户的三条建议">给普通用户的三条建议<a hidden class="anchor" aria-hidden="true" href="#给普通用户的三条建议">#</a></h2>
+<ol>
+<li><strong>现在 12G 显存 + 32GB 内存 + 1TB SSD，够你玩两年。</strong> 别焦虑，别现在就升级。</li>
+<li><strong>真要升级，先加内存和硬盘，再换显卡。</strong> 内存从 16G 到 32G 的体验提升，比显卡从 12G 到 16G 还明显。</li>
+<li><strong>盯着量化技术和 MoE 架构。</strong> 这两个方向的进步，直接决定你现在这张卡还能战几年。</li>
+</ol>
+<p>本地 AI 的硬件战争，不像手机那样一年一换。你的 12G 显存，至少还能打两年。</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://tiandaochouqin2026.github.io/tags/ai%E7%A1%AC%E4%BB%B6/">AI硬件</a></li>
+      <li><a href="https://tiandaochouqin2026.github.io/tags/%E6%98%BE%E5%AD%98/">显存</a></li>
+      <li><a href="https://tiandaochouqin2026.github.io/tags/%E5%86%85%E5%AD%98/">内存</a></li>
+      <li><a href="https://tiandaochouqin2026.github.io/tags/%E5%AD%98%E5%82%A8/">存储</a></li>
+      <li><a href="https://tiandaochouqin2026.github.io/tags/%E5%B1%95%E6%9C%9B/">展望</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="https://tiandaochouqin2026.github.io/posts/06-qwen7b-vs-14b-comparison/">
+    <span class="title">« </span>
+    <span>qwen2.5:7b vs 14b 实测：速度、质量、显存怎么选</span>
+  </a>
+  <a class="next" href="https://tiandaochouqin2026.github.io/posts/04-ollama-windows-pitfalls/">
+    <span class="title"> »</span>
+    <span>Windows 部署 Ollama 踩坑记录：GitHub 下载失败、局域网访问、OLLAMA_HOST</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="https://tiandaochouqin2026.github.io/">本地 AI 实验室</a></span> · 
+
+    
+    
+    <span>
+        Powered by
+        <a href="https://gohugo.io/?utm_source=papermod" rel="noopener" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" id="top-link" class="top-link hidden" aria-label="go to top" title="Go to Top (Alt + G)" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevrons-up">
+        <polyline points="17 11 12 6 7 11"></polyline>
+        <polyline points="17 18 12 13 7 18"></polyline>
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var toplink = document.getElementById("top-link");
+    window.onscroll = function () {
+        const scrollThreshold = window.innerHeight;
+        if (document.body.scrollTop > scrollThreshold || document.documentElement.scrollTop > scrollThreshold) {
+            toplink.classList.remove("hidden");
+        } else {
+            toplink.classList.add("hidden");
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>
