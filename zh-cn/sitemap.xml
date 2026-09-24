@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://tiandaochouqin2026.github.io/categories/</loc>
-    <lastmod>2026-09-22T11:34:44+08:00</lastmod>
+    <lastmod>2026-09-24T09:00:00+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
@@ -16,10 +16,10 @@
                 />
   </url><url>
     <loc>https://tiandaochouqin2026.github.io/en/</loc>
-    <lastmod>2026-09-22T11:34:44+08:00</lastmod>
+    <lastmod>2026-09-24T09:00:00+08:00</lastmod>
   </url><url>
     <loc>https://tiandaochouqin2026.github.io/tags/ollama/</loc>
-    <lastmod>2026-09-22T11:34:44+08:00</lastmod>
+    <lastmod>2026-09-24T09:00:00+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
@@ -32,7 +32,88 @@
                 />
   </url><url>
     <loc>https://tiandaochouqin2026.github.io/en/posts/</loc>
-    <lastmod>2026-09-22T11:34:44+08:00</lastmod>
+    <lastmod>2026-09-24T09:00:00+08:00</lastmod>
+  </url><url>
+    <loc>https://tiandaochouqin2026.github.io/tags/</loc>
+    <lastmod>2026-09-24T09:00:00+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://tiandaochouqin2026.github.io/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tiandaochouqin2026.github.io/en/tags/"
+                />
+  </url><url>
+    <loc>https://tiandaochouqin2026.github.io/categories/tutorial/</loc>
+    <lastmod>2026-09-24T09:00:00+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://tiandaochouqin2026.github.io/categories/tutorial/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tiandaochouqin2026.github.io/en/categories/tutorial/"
+                />
+  </url><url>
+    <loc>https://tiandaochouqin2026.github.io/en/posts/07-openclaw-telegram-channel/</loc>
+    <lastmod>2026-09-24T09:00:00+08:00</lastmod>
+  </url><url>
+    <loc>https://tiandaochouqin2026.github.io/tags/windows/</loc>
+    <lastmod>2026-09-24T09:00:00+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://tiandaochouqin2026.github.io/tags/windows/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tiandaochouqin2026.github.io/en/tags/windows/"
+                />
+  </url><url>
+    <loc>https://tiandaochouqin2026.github.io/</loc>
+    <lastmod>2026-09-24T09:00:00+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://tiandaochouqin2026.github.io/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tiandaochouqin2026.github.io/en/"
+                />
+  </url><url>
+    <loc>https://tiandaochouqin2026.github.io/posts/</loc>
+    <lastmod>2026-09-24T09:00:00+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://tiandaochouqin2026.github.io/posts/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tiandaochouqin2026.github.io/en/posts/"
+                />
+  </url><url>
+    <loc>https://tiandaochouqin2026.github.io/posts/07-openclaw-telegram-channel/</loc>
+    <lastmod>2026-09-24T09:00:00+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://tiandaochouqin2026.github.io/posts/07-openclaw-telegram-channel/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tiandaochouqin2026.github.io/en/posts/07-openclaw-telegram-channel/"
+                />
   </url><url>
     <loc>https://tiandaochouqin2026.github.io/posts/06-qwen7b-vs-14b-comparison/</loc>
     <lastmod>2026-09-22T11:34:44+08:00</lastmod>
@@ -49,71 +130,6 @@
   </url><url>
     <loc>https://tiandaochouqin2026.github.io/en/posts/06-qwen7b-vs-14b-comparison/</loc>
     <lastmod>2026-09-22T11:34:44+08:00</lastmod>
-  </url><url>
-    <loc>https://tiandaochouqin2026.github.io/tags/</loc>
-    <lastmod>2026-09-22T11:34:44+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="https://tiandaochouqin2026.github.io/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://tiandaochouqin2026.github.io/en/tags/"
-                />
-  </url><url>
-    <loc>https://tiandaochouqin2026.github.io/categories/tutorial/</loc>
-    <lastmod>2026-09-22T11:34:44+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="https://tiandaochouqin2026.github.io/categories/tutorial/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://tiandaochouqin2026.github.io/en/categories/tutorial/"
-                />
-  </url><url>
-    <loc>https://tiandaochouqin2026.github.io/tags/windows/</loc>
-    <lastmod>2026-09-22T11:34:44+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="https://tiandaochouqin2026.github.io/tags/windows/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://tiandaochouqin2026.github.io/en/tags/windows/"
-                />
-  </url><url>
-    <loc>https://tiandaochouqin2026.github.io/</loc>
-    <lastmod>2026-09-22T11:34:44+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="https://tiandaochouqin2026.github.io/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://tiandaochouqin2026.github.io/en/"
-                />
-  </url><url>
-    <loc>https://tiandaochouqin2026.github.io/posts/</loc>
-    <lastmod>2026-09-22T11:34:44+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="https://tiandaochouqin2026.github.io/posts/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://tiandaochouqin2026.github.io/en/posts/"
-                />
   </url><url>
     <loc>https://tiandaochouqin2026.github.io/posts/15-ai-memory-storage-outlook/</loc>
     <lastmod>2026-09-22T11:30:00+08:00</lastmod>

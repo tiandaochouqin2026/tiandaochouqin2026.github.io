@@ -6,8 +6,22 @@
     <description>Recent content in Windows on 本地 AI 实验室</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 22 Sep 2026 11:34:44 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 24 Sep 2026 09:00:00 +0800</lastBuildDate>
     <atom:link href="https://tiandaochouqin2026.github.io/tags/windows/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>use-openclaw-with-telegram-chat-with-local-model-on-mobile</title>
+      <link>https://tiandaochouqin2026.github.io/en/posts/07-openclaw-telegram-channel/</link>
+      <pubDate>Thu, 24 Sep 2026 09:00:00 +0800</pubDate>
+      <guid>https://tiandaochouqin2026.github.io/en/posts/07-openclaw-telegram-channel/</guid>
+      <description>Integrate Ollama language model deployed locally with Telegram via OpenClaw.</description>
+    </item>
+    <item>
+      <title>用 OpenClaw 接 Telegram：在手机上和本地模型聊天</title>
+      <link>https://tiandaochouqin2026.github.io/posts/07-openclaw-telegram-channel/</link>
+      <pubDate>Thu, 24 Sep 2026 09:00:00 +0800</pubDate>
+      <guid>https://tiandaochouqin2026.github.io/posts/07-openclaw-telegram-channel/</guid>
+      <description>通过 OpenClaw 在 Telegram 上使用本地部署的 Ollama 语言模型。</description>
+    </item>
     <item>
       <title>qwen2.5:7b vs 14b 实测：速度、质量、显存怎么选</title>
       <link>https://tiandaochouqin2026.github.io/posts/06-qwen7b-vs-14b-comparison/</link>

@@ -6,8 +6,15 @@
     <description>Recent content in Ollama on Local AI Lab</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 22 Sep 2026 11:34:44 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 24 Sep 2026 09:00:00 +0800</lastBuildDate>
     <atom:link href="https://tiandaochouqin2026.github.io/en/tags/ollama/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>use-openclaw-with-telegram-chat-with-local-model-on-mobile</title>
+      <link>https://tiandaochouqin2026.github.io/en/posts/07-openclaw-telegram-channel/</link>
+      <pubDate>Thu, 24 Sep 2026 09:00:00 +0800</pubDate>
+      <guid>https://tiandaochouqin2026.github.io/en/posts/07-openclaw-telegram-channel/</guid>
+      <description>Integrate Ollama language model deployed locally with Telegram via OpenClaw.</description>
+    </item>
     <item>
       <title>qwen2.5:7b-vs-14b-performance-comparison</title>
       <link>https://tiandaochouqin2026.github.io/en/posts/06-qwen7b-vs-14b-comparison/</link>

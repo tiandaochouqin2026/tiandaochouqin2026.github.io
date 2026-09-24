@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="auto" data-theme="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>用 OpenClaw 接 Telegram：在手机上和本地模型聊天 | 本地 AI 实验室</title>
+<meta name="keywords" content="Ollama, Windows">
+<meta name="description" content="通过 OpenClaw 在 Telegram 上使用本地部署的 Ollama 语言模型。">
+<meta name="author" content="Local AI Lab">
+<link rel="canonical" href="https://tiandaochouqin2026.github.io/posts/07-openclaw-telegram-channel/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.cd9298b33628769aa1bc1acebbbfd7aa11ce81dfe03484d479e1907760249a1d.css" integrity="sha256-zZKYszYodpqhvBrOu7/XqhHOgd/gNITUeeGQd2Akmh0=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://tiandaochouqin2026.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://tiandaochouqin2026.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://tiandaochouqin2026.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://tiandaochouqin2026.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://tiandaochouqin2026.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="zh-cn" href="https://tiandaochouqin2026.github.io/posts/07-openclaw-telegram-channel/">
+<link rel="alternate" hreflang="en" href="https://tiandaochouqin2026.github.io/en/posts/07-openclaw-telegram-channel/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><meta property="og:url" content="https://tiandaochouqin2026.github.io/posts/07-openclaw-telegram-channel/">
+  <meta property="og:site_name" content="本地 AI 实验室">
+  <meta property="og:title" content="用 OpenClaw 接 Telegram：在手机上和本地模型聊天">
+  <meta property="og:description" content="通过 OpenClaw 在 Telegram 上使用本地部署的 Ollama 语言模型。">
+  <meta property="og:locale" content="zh_cn">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2026-09-24T09:00:00+08:00">
+    <meta property="article:modified_time" content="2026-09-24T09:00:00+08:00">
+    <meta property="article:tag" content="Ollama">
+    <meta property="article:tag" content="Windows">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="用 OpenClaw 接 Telegram：在手机上和本地模型聊天">
+  <meta name="twitter:description" content="通过 OpenClaw 在 Telegram 上使用本地部署的 Ollama 语言模型。">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "文章",
+      "item": "https://tiandaochouqin2026.github.io/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "用 OpenClaw 接 Telegram：在手机上和本地模型聊天",
+      "item": "https://tiandaochouqin2026.github.io/posts/07-openclaw-telegram-channel/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "用 OpenClaw 接 Telegram：在手机上和本地模型聊天",
+  "name": "用 OpenClaw 接 Telegram：在手机上和本地模型聊天",
+  "description": "通过 OpenClaw 在 Telegram 上使用本地部署的 Ollama 语言模型。",
+  "keywords": [
+    "Ollama", "Windows"
+  ],
+  "articleBody": "部署本地语言模型并使其在移动设备上可用，能显著减少数据传输开销和提高响应速度。本教程介绍如何通过 OpenClaw，将本地的 Ollama 模型与 Telegram 集成，实现在手机上直接与本地模型进行对话。\n环境准备 硬件：最低配置要求为4GB RAM，推荐8GB RAM或更高。 软件：Windows 10或更高版本，Python 3.8以上版本。 模型：下载并安装 Ollama，建议使用较小的模型如llama-7b以减少资源消耗。 安装 OpenClaw 克隆 OpenClaw 仓库：\ngit clone https://github.com/OpenClaw/OpenClaw.git cd OpenClaw 安装依赖：\npip install -r requirements.txt 配置 Ollama 安装 Ollama 模型：\nollama install llama-7b 启动 Ollama 服务：\nollama run llama-7b 设置 Ollama 的 API 地址：\n{ \"api\": \"http://localhost:5000\" } 配置 OpenClaw 编辑 OpenClaw 的配置文件 config.yaml，添加 Ollama 的 API 地址：\nollama_api: host: \"localhost\" port: 5000 安装 Telegram Bot API：\npip install python-telegram-bot 创建 Telegram Bot：\n访问 https://t.me/BotFather。 生成一个新的 Telegram Bot 并获取 API Token。 编辑 OpenClaw 的配置文件，添加 Telegram Bot 的 Token：\ntelegram: token: \"YOUR_TELEGRAM_BOT_TOKEN\" 集成 Telegram 和 Ollama 编写 Telegram Bot 的消息处理逻辑，用于与 Ollama 交互。例如，当接收到用户消息时，调用 Ollama 的 API 进行处理： from telegram import Update from telegram.ext import Updater, CommandHandler, MessageHandler, Filters, CallbackContext import requests def start(update: Update, context: CallbackContext) -\u003e None: update.message.reply_text('Hello! Send me a message and I will reply with the OpenClaw response.') def echo(update: Update, context: CallbackContext) -\u003e None: response = requests.get(f\"http://localhost:5000/generate\", json={\"prompt\": update.message.text}) update.message.reply_text(response.json()['response']) def main() -\u003e None: updater = Updater(\"YOUR_TELEGRAM_BOT_TOKEN\") dispatcher = updater.dispatcher dispatcher.add_handler(CommandHandler(\"start\", start)) dispatcher.add_handler(MessageHandler(Filters.text \u0026 ~Filters.command, echo)) updater.start_polling() updater.idle() if __name__ == '__main__': main() 运行 OpenClaw 启动 OpenClaw 服务：\npython start.py 在 Telegram 上与您的 Bot 交互，验证消息是否能正常传递给 Ollama 并获得响应。\n总结 通过上述步骤，您已经成功地将本地部署的 Ollama 模型与 Telegram 集成，可以在手机上直接与模型进行对话。这不仅提供了便利性，还提高了数据的安全性和隐私性。希望本教程能帮助您快速实现这一功能，并为您的开发项目提供灵感。\n",
+  "wordCount" : "627",
+  "inLanguage": "zh-cn",
+  "datePublished": "2026-09-24T09:00:00+08:00",
+  "dateModified": "2026-09-24T09:00:00+08:00",
+  "author":{
+    "@type": "Person",
+    "name": "Local AI Lab"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://tiandaochouqin2026.github.io/posts/07-openclaw-telegram-channel/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "本地 AI 实验室",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://tiandaochouqin2026.github.io/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="header-nav">
+        <div class="logo">
+            <a href="https://tiandaochouqin2026.github.io/" accesskey="h" title="🏠 本地 AI 实验室 (Alt + H)">🏠 本地 AI 实验室</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" class="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg class="sun" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button><span class="nav-sep">|</span>
+                    <ul class="lang-menu">
+                        <li>
+                            <a href="https://tiandaochouqin2026.github.io/en/" title="🇬🇧 English"
+                                aria-label="🇬🇧 English">En</a>
+                        </li>
+                    </ul>
+            </div>
+        </div>
+        <ul id="menu" class="menu">
+            <li>
+                <a href="https://tiandaochouqin2026.github.io/archives/" title="归档">
+                    <span>归档</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://tiandaochouqin2026.github.io/categories/" title="分类">
+                    <span>分类</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://tiandaochouqin2026.github.io/tags/" title="标签">
+                    <span>标签</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://tiandaochouqin2026.github.io/search/" title="搜索 (Alt &#43; /)" accesskey=/>
+                    <span>搜索</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <nav class="breadcrumbs" role="navigation" aria-label="Breadcrumb">
+            <a href="/">Home</a>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+                <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+            <a href="/posts/">文章</a>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+        <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+</nav>
+    <h1 class="post-title entry-hint-parent">
+      用 OpenClaw 接 Telegram：在手机上和本地模型聊天
+    </h1>
+    <div class="post-description">
+      通过 OpenClaw 在 Telegram 上使用本地部署的 Ollama 语言模型。
+    </div>
+    <div class="post-meta">
+
+<span title='2026-09-24 09:00:00 +0800 CST'>September 24, 2026</span>&nbsp;·&nbsp;<span>2 min</span>&nbsp;·&nbsp;<span>Local AI Lab</span>&nbsp;|&nbsp;<span>Translations:</span>
+    <ul class="i18n_list">
+        <li>
+            <a href="https://tiandaochouqin2026.github.io/en/posts/07-openclaw-telegram-channel/">En</a>
+        </li>
+    </ul>
+
+</div>
+  </header> 
+  <div class="post-content md-content"><p>部署本地语言模型并使其在移动设备上可用，能显著减少数据传输开销和提高响应速度。本教程介绍如何通过 OpenClaw，将本地的 Ollama 模型与 Telegram 集成，实现在手机上直接与本地模型进行对话。</p>
+<h2 id="环境准备">环境准备<a hidden class="anchor" aria-hidden="true" href="#环境准备">#</a></h2>
+<ul>
+<li>硬件：最低配置要求为4GB RAM，推荐8GB RAM或更高。</li>
+<li>软件：Windows 10或更高版本，Python 3.8以上版本。</li>
+<li>模型：下载并安装 Ollama，建议使用较小的模型如<code>llama-7b</code>以减少资源消耗。</li>
+</ul>
+<h2 id="安装-openclaw">安装 OpenClaw<a hidden class="anchor" aria-hidden="true" href="#安装-openclaw">#</a></h2>
+<ol>
+<li>
+<p>克隆 OpenClaw 仓库：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git clone https://github.com/OpenClaw/OpenClaw.git
+</span></span><span style="display:flex;"><span>cd OpenClaw
+</span></span></code></pre></div></li>
+<li>
+<p>安装依赖：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pip install -r requirements.txt
+</span></span></code></pre></div></li>
+</ol>
+<h2 id="配置-ollama">配置 Ollama<a hidden class="anchor" aria-hidden="true" href="#配置-ollama">#</a></h2>
+<ol>
+<li>
+<p>安装 Ollama 模型：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ollama install llama-7b
+</span></span></code></pre></div></li>
+<li>
+<p>启动 Ollama 服务：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ollama run llama-7b
+</span></span></code></pre></div></li>
+<li>
+<p>设置 Ollama 的 API 地址：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;api&#34;</span>: <span style="color:#e6db74">&#34;http://localhost:5000&#34;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
+</ol>
+<h2 id="配置-openclaw">配置 OpenClaw<a hidden class="anchor" aria-hidden="true" href="#配置-openclaw">#</a></h2>
+<ol>
+<li>
+<p>编辑 OpenClaw 的配置文件 <code>config.yaml</code>，添加 Ollama 的 API 地址：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">ollama_api</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">host</span>: <span style="color:#e6db74">&#34;localhost&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">port</span>: <span style="color:#ae81ff">5000</span>
+</span></span></code></pre></div></li>
+<li>
+<p>安装 Telegram Bot API：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pip install python-telegram-bot
+</span></span></code></pre></div></li>
+<li>
+<p>创建 Telegram Bot：</p>
+<ul>
+<li>访问 <code>https://t.me/BotFather</code>。</li>
+<li>生成一个新的 Telegram Bot 并获取 API Token。</li>
+</ul>
+</li>
+<li>
+<p>编辑 OpenClaw 的配置文件，添加 Telegram Bot 的 Token：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">telegram</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">token</span>: <span style="color:#e6db74">&#34;YOUR_TELEGRAM_BOT_TOKEN&#34;</span>
+</span></span></code></pre></div></li>
+</ol>
+<h2 id="集成-telegram-和-ollama">集成 Telegram 和 Ollama<a hidden class="anchor" aria-hidden="true" href="#集成-telegram-和-ollama">#</a></h2>
+<ol>
+<li>编写 Telegram Bot 的消息处理逻辑，用于与 Ollama 交互。例如，当接收到用户消息时，调用 Ollama 的 API 进行处理：
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> telegram <span style="color:#f92672">import</span> Update
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> telegram.ext <span style="color:#f92672">import</span> Updater, CommandHandler, MessageHandler, Filters, CallbackContext
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> requests
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">start</span>(update: Update, context: CallbackContext) <span style="color:#f92672">-&gt;</span> <span style="color:#66d9ef">None</span>:
+</span></span><span style="display:flex;"><span>    update<span style="color:#f92672">.</span>message<span style="color:#f92672">.</span>reply_text(<span style="color:#e6db74">&#39;Hello! Send me a message and I will reply with the OpenClaw response.&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">echo</span>(update: Update, context: CallbackContext) <span style="color:#f92672">-&gt;</span> <span style="color:#66d9ef">None</span>:
+</span></span><span style="display:flex;"><span>    response <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>get(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;http://localhost:5000/generate&#34;</span>, json<span style="color:#f92672">=</span>{<span style="color:#e6db74">&#34;prompt&#34;</span>: update<span style="color:#f92672">.</span>message<span style="color:#f92672">.</span>text})
+</span></span><span style="display:flex;"><span>    update<span style="color:#f92672">.</span>message<span style="color:#f92672">.</span>reply_text(response<span style="color:#f92672">.</span>json()[<span style="color:#e6db74">&#39;response&#39;</span>])
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">main</span>() <span style="color:#f92672">-&gt;</span> <span style="color:#66d9ef">None</span>:
+</span></span><span style="display:flex;"><span>    updater <span style="color:#f92672">=</span> Updater(<span style="color:#e6db74">&#34;YOUR_TELEGRAM_BOT_TOKEN&#34;</span>)
+</span></span><span style="display:flex;"><span>    dispatcher <span style="color:#f92672">=</span> updater<span style="color:#f92672">.</span>dispatcher
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    dispatcher<span style="color:#f92672">.</span>add_handler(CommandHandler(<span style="color:#e6db74">&#34;start&#34;</span>, start))
+</span></span><span style="display:flex;"><span>    dispatcher<span style="color:#f92672">.</span>add_handler(MessageHandler(Filters<span style="color:#f92672">.</span>text <span style="color:#f92672">&amp;</span> <span style="color:#f92672">~</span>Filters<span style="color:#f92672">.</span>command, echo))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    updater<span style="color:#f92672">.</span>start_polling()
+</span></span><span style="display:flex;"><span>    updater<span style="color:#f92672">.</span>idle()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;__main__&#39;</span>:
+</span></span><span style="display:flex;"><span>    main()
+</span></span></code></pre></div></li>
+</ol>
+<h2 id="运行-openclaw">运行 OpenClaw<a hidden class="anchor" aria-hidden="true" href="#运行-openclaw">#</a></h2>
+<ol>
+<li>
+<p>启动 OpenClaw 服务：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>python start.py
+</span></span></code></pre></div></li>
+<li>
+<p>在 Telegram 上与您的 Bot 交互，验证消息是否能正常传递给 Ollama 并获得响应。</p>
+</li>
+</ol>
+<h2 id="总结">总结<a hidden class="anchor" aria-hidden="true" href="#总结">#</a></h2>
+<p>通过上述步骤，您已经成功地将本地部署的 Ollama 模型与 Telegram 集成，可以在手机上直接与模型进行对话。这不仅提供了便利性，还提高了数据的安全性和隐私性。希望本教程能帮助您快速实现这一功能，并为您的开发项目提供灵感。</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://tiandaochouqin2026.github.io/tags/ollama/">Ollama</a></li>
+      <li><a href="https://tiandaochouqin2026.github.io/tags/windows/">Windows</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="next" href="https://tiandaochouqin2026.github.io/posts/06-qwen7b-vs-14b-comparison/">
+    <span class="title"> »</span>
+    <span>qwen2.5:7b vs 14b 实测：速度、质量、显存怎么选</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="https://tiandaochouqin2026.github.io/">本地 AI 实验室</a></span> · 
+
+    
+    
+    <span>
+        Powered by
+        <a href="https://gohugo.io/?utm_source=papermod" rel="noopener" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" id="top-link" class="top-link hidden" aria-label="go to top" title="Go to Top (Alt + G)" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevrons-up">
+        <polyline points="17 11 12 6 7 11"></polyline>
+        <polyline points="17 18 12 13 7 18"></polyline>
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var toplink = document.getElementById("top-link");
+    window.onscroll = function () {
+        const scrollThreshold = window.innerHeight;
+        if (document.body.scrollTop > scrollThreshold || document.documentElement.scrollTop > scrollThreshold) {
+            toplink.classList.remove("hidden");
+        } else {
+            toplink.classList.add("hidden");
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>
