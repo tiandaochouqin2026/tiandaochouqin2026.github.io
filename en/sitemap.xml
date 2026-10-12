@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://tiandaochouqin2026.github.io/en/categories/</loc>
-    <lastmod>2026-09-24T09:00:00+08:00</lastmod>
+    <lastmod>2026-10-12T09:00:00+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
@@ -16,7 +16,7 @@
                 />
   </url><url>
     <loc>https://tiandaochouqin2026.github.io/en/</loc>
-    <lastmod>2026-09-24T09:00:00+08:00</lastmod>
+    <lastmod>2026-10-12T09:00:00+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
@@ -29,7 +29,7 @@
                 />
   </url><url>
     <loc>https://tiandaochouqin2026.github.io/en/tags/ollama/</loc>
-    <lastmod>2026-09-24T09:00:00+08:00</lastmod>
+    <lastmod>2026-10-12T09:00:00+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
@@ -42,7 +42,7 @@
                 />
   </url><url>
     <loc>https://tiandaochouqin2026.github.io/en/posts/</loc>
-    <lastmod>2026-09-24T09:00:00+08:00</lastmod>
+    <lastmod>2026-10-12T09:00:00+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
@@ -54,8 +54,21 @@
                 href="https://tiandaochouqin2026.github.io/en/posts/"
                 />
   </url><url>
+    <loc>https://tiandaochouqin2026.github.io/en/posts/08-quantization-formats/</loc>
+    <lastmod>2026-10-12T09:00:00+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://tiandaochouqin2026.github.io/posts/08-quantization-formats/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tiandaochouqin2026.github.io/en/posts/08-quantization-formats/"
+                />
+  </url><url>
     <loc>https://tiandaochouqin2026.github.io/en/tags/</loc>
-    <lastmod>2026-09-24T09:00:00+08:00</lastmod>
+    <lastmod>2026-10-12T09:00:00+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
@@ -68,7 +81,7 @@
                 />
   </url><url>
     <loc>https://tiandaochouqin2026.github.io/en/categories/tutorial/</loc>
-    <lastmod>2026-09-24T09:00:00+08:00</lastmod>
+    <lastmod>2026-10-12T09:00:00+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
@@ -78,6 +91,19 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://tiandaochouqin2026.github.io/en/categories/tutorial/"
+                />
+  </url><url>
+    <loc>https://tiandaochouqin2026.github.io/en/tags/windows/</loc>
+    <lastmod>2026-10-12T09:00:00+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://tiandaochouqin2026.github.io/tags/windows/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tiandaochouqin2026.github.io/en/tags/windows/"
                 />
   </url><url>
     <loc>https://tiandaochouqin2026.github.io/en/posts/07-openclaw-telegram-channel/</loc>
@@ -91,19 +117,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://tiandaochouqin2026.github.io/en/posts/07-openclaw-telegram-channel/"
-                />
-  </url><url>
-    <loc>https://tiandaochouqin2026.github.io/en/tags/windows/</loc>
-    <lastmod>2026-09-24T09:00:00+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="https://tiandaochouqin2026.github.io/tags/windows/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://tiandaochouqin2026.github.io/en/tags/windows/"
                 />
   </url><url>
     <loc>https://tiandaochouqin2026.github.io/en/posts/06-qwen7b-vs-14b-comparison/</loc>

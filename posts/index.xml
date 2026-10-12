@@ -6,8 +6,15 @@
     <description>Recent content in 文章 on 本地 AI 实验室</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 24 Sep 2026 09:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 12 Oct 2026 09:00:00 +0800</lastBuildDate>
     <atom:link href="https://tiandaochouqin2026.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Q4_K_M、Q5_K_M、Q8_0 到底差多少？量化格式实测对比</title>
+      <link>https://tiandaochouqin2026.github.io/posts/08-quantization-formats/</link>
+      <pubDate>Mon, 12 Oct 2026 09:00:00 +0800</pubDate>
+      <guid>https://tiandaochouqin2026.github.io/posts/08-quantization-formats/</guid>
+      <description>量化格式Q4_K_M、Q5_K_M、Q8_0实测对比，详细探讨性能差异</description>
+    </item>
     <item>
       <title>用 OpenClaw 接 Telegram：在手机上和本地模型聊天</title>
       <link>https://tiandaochouqin2026.github.io/posts/07-openclaw-telegram-channel/</link>

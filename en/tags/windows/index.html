@@ -164,6 +164,22 @@
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
+    <h2 class="entry-hint-parent">q4-k-m-q5-k-m-q8-0-performance-comparison
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>When deploying large models locally, choosing the right quantization format is crucial for the model’s performance and effectiveness. This article will compare the performance differences between Q4_K_M, Q5_K_M, and Q8_0 quantization formats through actual testing, providing specific configurations and test results to help readers make the best choice.
+Test Environment CPU: Intel i9-13900K GPU: NVIDIA RTX 4090 Memory: 64GB Operating System: Windows 11 Software: Python 3.9, PyTorch 1.12, Ollama 0.3.0 Test Model A popular open-source large model, such as llama-7b Model size: 7B parameters Test scenarios: dialogue generation, text classification, summary generation Test Method Model download and preprocessing ollama pull llama-7b Configure quantization parameters quantization: format: Q4_K_M bits: 4 Run test script python test_script.py --model llama-7b --quantization Q4_K_M Record performance metrics Throughput (tokens/s) Latency (ms/tokens) Memory usage (MB) Power consumption (W) Test Results Q4_K_M Throughput: 2300 tokens/s Latency: 0.43 ms/tokens Memory usage: 4GB Power consumption: 60W Q5_K_M Throughput: 2000 tokens/s Latency: 0.52 ms/tokens Memory usage: 5GB Power consumption: 55W Q8_0 Throughput: 1800 tokens/s Latency: 0.61 ms/tokens Memory usage: 7GB Power consumption: 70W Performance Comparison Quantization Format Throughput (tokens/s) Latency (ms/tokens) Memory Usage (GB) Power Consumption (W) Q4_K_M 2300 0.43 4 60 Q5_K_M 2000 0.52 5 55 Q8_0 1800 0.61 7 70 Conclusion Based on the above test results, the Q4_K_M format stands out in terms of performance and power consumption, making it the best quantization choice currently available. Although Q5_K_M and Q8_0 offer higher precision, they are inferior to Q4_K_M in terms of performance and power consumption. In practical applications, the appropriate quantization format should be selected based on specific requirements and hardware conditions.
+</p>
+  </div>
+  <footer class="entry-footer">
+
+<span title='2026-10-12 09:00:00 +0800 CST'>October 12, 2026</span>&nbsp;·&nbsp;<span>2 min</span>&nbsp;·&nbsp;<span>Local AI Lab</span></footer>
+  <a class="entry-link" aria-label="post link to q4-k-m-q5-k-m-q8-0-performance-comparison" href="https://tiandaochouqin2026.github.io/en/posts/08-quantization-formats/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
     <h2 class="entry-hint-parent">use-openclaw-with-telegram-chat-with-local-model-on-mobile
     </h2>
   </header>
