@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="auto" data-theme="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>本地模型 vs 云端 API：隐私、成本、速度的真实账本 | 本地 AI 实验室</title>
+<meta name="keywords" content="Ollama, Windows">
+<meta name="description" content="比较本地模型和云端API在隐私、成本和速度上的差异，提供真实数据和操作指南。">
+<meta name="author" content="Local AI Lab">
+<link rel="canonical" href="https://tiandaochouqin2026.github.io/posts/09-local-vs-cloud-llm/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.cd9298b33628769aa1bc1acebbbfd7aa11ce81dfe03484d479e1907760249a1d.css" integrity="sha256-zZKYszYodpqhvBrOu7/XqhHOgd/gNITUeeGQd2Akmh0=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://tiandaochouqin2026.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://tiandaochouqin2026.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://tiandaochouqin2026.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://tiandaochouqin2026.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://tiandaochouqin2026.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="zh-cn" href="https://tiandaochouqin2026.github.io/posts/09-local-vs-cloud-llm/">
+<link rel="alternate" hreflang="en" href="https://tiandaochouqin2026.github.io/en/posts/09-local-vs-cloud-llm/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><meta property="og:url" content="https://tiandaochouqin2026.github.io/posts/09-local-vs-cloud-llm/">
+  <meta property="og:site_name" content="本地 AI 实验室">
+  <meta property="og:title" content="本地模型 vs 云端 API：隐私、成本、速度的真实账本">
+  <meta property="og:description" content="比较本地模型和云端API在隐私、成本和速度上的差异，提供真实数据和操作指南。">
+  <meta property="og:locale" content="zh_cn">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2026-10-19T09:30:31+08:00">
+    <meta property="article:modified_time" content="2026-10-19T09:30:31+08:00">
+    <meta property="article:tag" content="Ollama">
+    <meta property="article:tag" content="Windows">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="本地模型 vs 云端 API：隐私、成本、速度的真实账本">
+  <meta name="twitter:description" content="比较本地模型和云端API在隐私、成本和速度上的差异，提供真实数据和操作指南。">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "文章",
+      "item": "https://tiandaochouqin2026.github.io/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "本地模型 vs 云端 API：隐私、成本、速度的真实账本",
+      "item": "https://tiandaochouqin2026.github.io/posts/09-local-vs-cloud-llm/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "本地模型 vs 云端 API：隐私、成本、速度的真实账本",
+  "name": "本地模型 vs 云端 API：隐私、成本、速度的真实账本",
+  "description": "比较本地模型和云端API在隐私、成本和速度上的差异，提供真实数据和操作指南。",
+  "keywords": [
+    "Ollama", "Windows"
+  ],
+  "articleBody": "在AI模型部署中，本地模型和云端API是两种常见的选择。本文将通过实际案例来探讨这两种方案在隐私保护、成本控制和响应速度方面的差异，以及如何根据具体需求做出最佳选择。\n隐私保护 本地模型部署的最大优势在于数据和模型的全部控制权。用户可以在自己的机器上部署模型，确保数据不离开本地环境，从而防止数据泄露。例如，使用Ollama部署本地模型时，可以配置以下设置确保数据安全：\nollama run --local my-model 此外，通过限制网络访问，确保只有内部网络可以访问本地模型，进一步提高安全性。例如，配置防火墙规则，只允许公司内部IP访问本地模型端口。\n成本分析 云端API的成本结构通常包括计算资源、存储和带宽费用。与之相比，本地部署的成本主要集中在硬件和软件许可费用上，但可以节省大量的带宽成本。例如，使用AWS Lambda部署模型，按每次调用和计算时间收费：\n计算时间：$0.00001667/100ms 带宽费用：$0.09/GB 本地部署时，硬件成本包括GPU和服务器的购买或租赁费用。例如，一台NVIDIA A100 GPU的成本大约为11000美元，而每月的电费和维护成本可能在100美元左右。\n响应速度 本地部署在响应速度上有明显优势，因为减少了网络延迟和数据传输时间。对于延迟敏感的应用，如实时语音识别，本地部署可以大大提升用户体验。例如，部署Ollama模型时，本地响应时间可以控制在毫秒级：\n# 测试本地响应时间 curl -s -w \"%{time_total}\\n\" -o /dev/null http://localhost:8080 相比之下，云端API的响应时间可能受到网络状况的影响，尤其是在带宽受限或网络延迟较高的情况下。通过基准测试，可以比较本地和云端API的实际响应时间。\n配置示例 以下是使用Ollama在本地部署模型的配置示例：\n# Ollama配置文件示例 model: name: my-model path: /path/to/my-model local: true port: 8080 在云端部署时，需要配置相应的服务端口和网络规则，例如在AWS上使用以下命令创建Lambda函数：\naws lambda create-function --function-name MyModel --runtime python3.8 --handler mymodel.handler --role arn:aws:iam::123456789012:role/service-role/MyModelLambdaRole --zip-file fileb://package.zip 总结 本地模型部署和云端API各有优劣，选择哪种方案取决于具体的应用场景和需求。对于需要严格数据保护和低延迟的应用，本地部署是更好的选择。而对于成本敏感且不关心数据隐私的应用，则可以考虑使用云端API。通过本文提供的实际案例和配置示例，希望能帮助读者做出明智的选择。\n",
+  "wordCount" : "905",
+  "inLanguage": "zh-cn",
+  "datePublished": "2026-10-19T09:30:31+08:00",
+  "dateModified": "2026-10-19T09:30:31+08:00",
+  "author":{
+    "@type": "Person",
+    "name": "Local AI Lab"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://tiandaochouqin2026.github.io/posts/09-local-vs-cloud-llm/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "本地 AI 实验室",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://tiandaochouqin2026.github.io/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="header-nav">
+        <div class="logo">
+            <a href="https://tiandaochouqin2026.github.io/" accesskey="h" title="🏠 本地 AI 实验室 (Alt + H)">🏠 本地 AI 实验室</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" class="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg class="sun" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button><span class="nav-sep">|</span>
+                    <ul class="lang-menu">
+                        <li>
+                            <a href="https://tiandaochouqin2026.github.io/en/" title="🇬🇧 English"
+                                aria-label="🇬🇧 English">En</a>
+                        </li>
+                    </ul>
+            </div>
+        </div>
+        <ul id="menu" class="menu">
+            <li>
+                <a href="https://tiandaochouqin2026.github.io/archives/" title="归档">
+                    <span>归档</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://tiandaochouqin2026.github.io/categories/" title="分类">
+                    <span>分类</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://tiandaochouqin2026.github.io/tags/" title="标签">
+                    <span>标签</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://tiandaochouqin2026.github.io/search/" title="搜索 (Alt &#43; /)" accesskey=/>
+                    <span>搜索</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <nav class="breadcrumbs" role="navigation" aria-label="Breadcrumb">
+            <a href="/">Home</a>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+                <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+            <a href="/posts/">文章</a>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+        <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+</nav>
+    <h1 class="post-title entry-hint-parent">
+      本地模型 vs 云端 API：隐私、成本、速度的真实账本
+    </h1>
+    <div class="post-description">
+      比较本地模型和云端API在隐私、成本和速度上的差异，提供真实数据和操作指南。
+    </div>
+    <div class="post-meta">
+
+<span title='2026-10-19 09:30:31 +0800 CST'>October 19, 2026</span>&nbsp;·&nbsp;<span>2 min</span>&nbsp;·&nbsp;<span>Local AI Lab</span>&nbsp;|&nbsp;<span>Translations:</span>
+    <ul class="i18n_list">
+        <li>
+            <a href="https://tiandaochouqin2026.github.io/en/posts/09-local-vs-cloud-llm/">En</a>
+        </li>
+    </ul>
+
+</div>
+  </header> 
+  <div class="post-content md-content"><p>在AI模型部署中，本地模型和云端API是两种常见的选择。本文将通过实际案例来探讨这两种方案在隐私保护、成本控制和响应速度方面的差异，以及如何根据具体需求做出最佳选择。</p>
+<h2 id="隐私保护">隐私保护<a hidden class="anchor" aria-hidden="true" href="#隐私保护">#</a></h2>
+<p>本地模型部署的最大优势在于数据和模型的全部控制权。用户可以在自己的机器上部署模型，确保数据不离开本地环境，从而防止数据泄露。例如，使用Ollama部署本地模型时，可以配置以下设置确保数据安全：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ollama run --local my-model
+</span></span></code></pre></div><p>此外，通过限制网络访问，确保只有内部网络可以访问本地模型，进一步提高安全性。例如，配置防火墙规则，只允许公司内部IP访问本地模型端口。</p>
+<h2 id="成本分析">成本分析<a hidden class="anchor" aria-hidden="true" href="#成本分析">#</a></h2>
+<p>云端API的成本结构通常包括计算资源、存储和带宽费用。与之相比，本地部署的成本主要集中在硬件和软件许可费用上，但可以节省大量的带宽成本。例如，使用AWS Lambda部署模型，按每次调用和计算时间收费：</p>
+<ul>
+<li>计算时间：$0.00001667/100ms</li>
+<li>带宽费用：$0.09/GB</li>
+</ul>
+<p>本地部署时，硬件成本包括GPU和服务器的购买或租赁费用。例如，一台NVIDIA A100 GPU的成本大约为11000美元，而每月的电费和维护成本可能在100美元左右。</p>
+<h2 id="响应速度">响应速度<a hidden class="anchor" aria-hidden="true" href="#响应速度">#</a></h2>
+<p>本地部署在响应速度上有明显优势，因为减少了网络延迟和数据传输时间。对于延迟敏感的应用，如实时语音识别，本地部署可以大大提升用户体验。例如，部署Ollama模型时，本地响应时间可以控制在毫秒级：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 测试本地响应时间</span>
+</span></span><span style="display:flex;"><span>curl -s -w <span style="color:#e6db74">&#34;%{time_total}\n&#34;</span> -o /dev/null http://localhost:8080
+</span></span></code></pre></div><p>相比之下，云端API的响应时间可能受到网络状况的影响，尤其是在带宽受限或网络延迟较高的情况下。通过基准测试，可以比较本地和云端API的实际响应时间。</p>
+<h2 id="配置示例">配置示例<a hidden class="anchor" aria-hidden="true" href="#配置示例">#</a></h2>
+<p>以下是使用Ollama在本地部署模型的配置示例：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#75715e"># Ollama配置文件示例</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">model</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">my-model</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">path</span>: <span style="color:#ae81ff">/path/to/my-model</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">local</span>: <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">port</span>: <span style="color:#ae81ff">8080</span>
+</span></span></code></pre></div><p>在云端部署时，需要配置相应的服务端口和网络规则，例如在AWS上使用以下命令创建Lambda函数：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>aws lambda create-function --function-name MyModel --runtime python3.8 --handler mymodel.handler --role arn:aws:iam::123456789012:role/service-role/MyModelLambdaRole --zip-file fileb://package.zip
+</span></span></code></pre></div><h2 id="总结">总结<a hidden class="anchor" aria-hidden="true" href="#总结">#</a></h2>
+<p>本地模型部署和云端API各有优劣，选择哪种方案取决于具体的应用场景和需求。对于需要严格数据保护和低延迟的应用，本地部署是更好的选择。而对于成本敏感且不关心数据隐私的应用，则可以考虑使用云端API。通过本文提供的实际案例和配置示例，希望能帮助读者做出明智的选择。</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://tiandaochouqin2026.github.io/tags/ollama/">Ollama</a></li>
+      <li><a href="https://tiandaochouqin2026.github.io/tags/windows/">Windows</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="next" href="https://tiandaochouqin2026.github.io/posts/08-quantization-formats/">
+    <span class="title"> »</span>
+    <span>Q4_K_M、Q5_K_M、Q8_0 到底差多少？量化格式实测对比</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="https://tiandaochouqin2026.github.io/">本地 AI 实验室</a></span> · 
+
+    
+    
+    <span>
+        Powered by
+        <a href="https://gohugo.io/?utm_source=papermod" rel="noopener" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" id="top-link" class="top-link hidden" aria-label="go to top" title="Go to Top (Alt + G)" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevrons-up">
+        <polyline points="17 11 12 6 7 11"></polyline>
+        <polyline points="17 18 12 13 7 18"></polyline>
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var toplink = document.getElementById("top-link");
+    window.onscroll = function () {
+        const scrollThreshold = window.innerHeight;
+        if (document.body.scrollTop > scrollThreshold || document.documentElement.scrollTop > scrollThreshold) {
+            toplink.classList.remove("hidden");
+        } else {
+            toplink.classList.add("hidden");
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

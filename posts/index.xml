@@ -6,8 +6,15 @@
     <description>Recent content in 文章 on 本地 AI 实验室</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 12 Oct 2026 09:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 19 Oct 2026 09:30:31 +0800</lastBuildDate>
     <atom:link href="https://tiandaochouqin2026.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>本地模型 vs 云端 API：隐私、成本、速度的真实账本</title>
+      <link>https://tiandaochouqin2026.github.io/posts/09-local-vs-cloud-llm/</link>
+      <pubDate>Mon, 19 Oct 2026 09:30:31 +0800</pubDate>
+      <guid>https://tiandaochouqin2026.github.io/posts/09-local-vs-cloud-llm/</guid>
+      <description>比较本地模型和云端API在隐私、成本和速度上的差异，提供真实数据和操作指南。</description>
+    </item>
     <item>
       <title>Q4_K_M、Q5_K_M、Q8_0 到底差多少？量化格式实测对比</title>
       <link>https://tiandaochouqin2026.github.io/posts/08-quantization-formats/</link>
