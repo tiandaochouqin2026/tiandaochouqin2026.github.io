@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>量化 on 本地 AI 实验室</title>
+    <link>https://tiandaochouqin2026.github.io/tags/%E9%87%8F%E5%8C%96/</link>
+    <description>Recent content in 量化 on 本地 AI 实验室</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Mon, 21 Sep 2026 12:00:00 +0800</lastBuildDate>
+    <atom:link href="https://tiandaochouqin2026.github.io/tags/%E9%87%8F%E5%8C%96/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>12GB 显存跑 14B 模型：Q4 量化、上下文窗口、CPU/GPU 混合的实测</title>
+      <link>https://tiandaochouqin2026.github.io/posts/03-12gb-vram-14b-realworld/</link>
+      <pubDate>Mon, 21 Sep 2026 12:00:00 +0800</pubDate>
+      <guid>https://tiandaochouqin2026.github.io/posts/03-12gb-vram-14b-realworld/</guid>
+      <description>Qwen2.5-14B 在 RTX 4070 SUPER 12G 上的显存分配实测：不同上下文长度下 GPU/CPU 比例和推理速度。</description>
+    </item>
+  </channel>
+</rss>

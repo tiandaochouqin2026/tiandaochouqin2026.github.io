@@ -1,9 +1,364 @@
 <!DOCTYPE html>
-<html lang="zh-cn">
-	<head>
-		<title>https://tiandaochouqin2026.github.io/</title>
-		<link rel="canonical" href="https://tiandaochouqin2026.github.io/">
-		<meta charset="utf-8">
-		<meta http-equiv="refresh" content="0; url=https://tiandaochouqin2026.github.io/">
-	</head>
+<html lang="zh-cn" dir="auto" data-theme="auto">
+
+<head>
+	<meta name="generator" content="Hugo 0.166.0"><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>本地 AI 实验室</title>
+<meta name="keywords" content="本地大模型, Ollama, Qwen, 本地部署, AI 自动化, 开源模型, local LLM, self-hosted AI">
+<meta name="description" content="在自己的电脑上跑开源大模型。教程、踩坑记录、个人 AI 自动化实践。 / Run open-source LLMs on your own machine.">
+<meta name="author" content="Local AI Lab">
+<link rel="canonical" href="https://tiandaochouqin2026.github.io/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.cd9298b33628769aa1bc1acebbbfd7aa11ce81dfe03484d479e1907760249a1d.css" integrity="sha256-zZKYszYodpqhvBrOu7/XqhHOgd/gNITUeeGQd2Akmh0=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://tiandaochouqin2026.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://tiandaochouqin2026.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://tiandaochouqin2026.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://tiandaochouqin2026.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://tiandaochouqin2026.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" type="application/rss+xml" href="https://tiandaochouqin2026.github.io/index.xml" title="rss">
+<link rel="alternate" type="application/json" href="https://tiandaochouqin2026.github.io/index.json" title="json">
+<link rel="alternate" hreflang="zh-cn" href="https://tiandaochouqin2026.github.io/">
+<link rel="alternate" hreflang="en" href="https://tiandaochouqin2026.github.io/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><meta property="og:url" content="https://tiandaochouqin2026.github.io/">
+  <meta property="og:site_name" content="本地 AI 实验室">
+  <meta property="og:title" content="本地 AI 实验室">
+  <meta property="og:description" content="在自己的电脑上跑开源大模型。教程、踩坑记录、个人 AI 自动化实践。 / Run open-source LLMs on your own machine.">
+  <meta property="og:locale" content="zh_cn">
+  <meta property="og:type" content="website">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="本地 AI 实验室">
+  <meta name="twitter:description" content="在自己的电脑上跑开源大模型。教程、踩坑记录、个人 AI 自动化实践。 / Run open-source LLMs on your own machine.">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "本地 AI 实验室",
+  "url": "https://tiandaochouqin2026.github.io/",
+  "description": "在自己的电脑上跑开源大模型。教程、踩坑记录、个人 AI 自动化实践。 / Run open-source LLMs on your own machine.",
+  "logo": "https://tiandaochouqin2026.github.io/favicon.ico",
+  "sameAs": [
+      
+  ]
+}
+</script>
+</head>
+<body class="list" id="top">
+    <header class="header">
+    <nav class="header-nav">
+        <div class="logo">
+            <a href="https://tiandaochouqin2026.github.io/" accesskey="h" title="🏠 本地 AI 实验室 (Alt + H)">🏠 本地 AI 实验室</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" class="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg class="sun" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button><span class="nav-sep">|</span>
+                    <ul class="lang-menu">
+                        <li>
+                            <a href="https://tiandaochouqin2026.github.io/" title="🇬🇧 English"
+                                aria-label="🇬🇧 English">En</a>
+                        </li>
+                    </ul>
+            </div>
+        </div>
+        <ul id="menu" class="menu">
+            <li>
+                <a href="https://tiandaochouqin2026.github.io/archives/" title="归档">
+                    <span>归档</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://tiandaochouqin2026.github.io/categories/" title="分类">
+                    <span>分类</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://tiandaochouqin2026.github.io/tags/" title="标签">
+                    <span>标签</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://tiandaochouqin2026.github.io/search/" title="搜索 (Alt &#43; /)" accesskey=/>
+                    <span>搜索</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main"> 
+
+<article class="first-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">写一个自己的 Modelfile：系统提示词、停止词、参数调优
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>在本地部署大型语言模型（LLM）时，Modelfile是配置模型行为的核心文件。它允许你定制模型的提示词、停止词以及调整参数，从而达到最佳性能。本文将详细介绍如何编写和优化自己的Modelfile。
+...</p>
+  </div>
+  <footer class="entry-footer">
+
+<span title='2026-11-20 03:58:24 +0800 CST'>November 20, 2026</span>&nbsp;·&nbsp;<span>2 min</span>&nbsp;·&nbsp;<span>Local AI Lab</span></footer>
+  <a class="entry-link" aria-label="post link to 写一个自己的 Modelfile：系统提示词、停止词、参数调优" href="https://tiandaochouqin2026.github.io/posts/14-ollama-custom-modelfile/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Open WebUI vs OpenClaw：本地模型的两种打开方式
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>在本地环境中部署大模型是当前热门的话题，尤其是对于Windows用户。本文将对比分析Ollama的两种本地部署方式：Open WebUI和OpenClaw，并提供详细的配置和使用方法。
+...</p>
+  </div>
+  <footer class="entry-footer">
+
+<span title='2026-11-20 03:57:40 +0800 CST'>November 20, 2026</span>&nbsp;·&nbsp;<span>2 min</span>&nbsp;·&nbsp;<span>Local AI Lab</span></footer>
+  <a class="entry-link" aria-label="post link to Open WebUI vs OpenClaw：本地模型的两种打开方式" href="https://tiandaochouqin2026.github.io/posts/13-openwebui-vs-openclaw/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">12GB 显存能跑哪些开源模型？一份实测清单
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>在本地部署大模型时，显存大小往往是限制因素之一。对于12GB显存的设备来说，哪些开源模型可以流畅运行呢？本文通过实测提供了一份详细的清单，帮助大家在资源有限的情况下做出最佳选择。
+...</p>
+  </div>
+  <footer class="entry-footer">
+
+<span title='2026-11-20 03:51:53 +0800 CST'>November 20, 2026</span>&nbsp;·&nbsp;<span>2 min</span>&nbsp;·&nbsp;<span>Local AI Lab</span></footer>
+  <a class="entry-link" aria-label="post link to 12GB 显存能跑哪些开源模型？一份实测清单" href="https://tiandaochouqin2026.github.io/posts/12-12gb-gpu-models-list/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">在本地搭一个 RAG 知识库：把 PDF 和笔记交给 qwen2.5
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>在本地搭建一个 RAG (Retrieval-Augmented Generation) 知识库，能够让 qwen2.5 更好地处理和回答与本地文档相关的问题。这篇文章将介绍如何利用 Ollama 服务将 PDF 和笔记集成到本地知识库中。
+准备工作 确保已经安装了 ollama，并可以正常使用。 准备好需要导入的 PDF 和笔记文件，放在一个易于访问的目录下。 安装依赖 pip install ollama 上传 PDF 文件 首先将 PDF 文件上传到本地服务器的指定目录。 cd /path/to/your/files 使用 ollama ingest 命令将 PDF 转换并上传到知识库。 ollama ingest -t pdf -i /path/to/your/files/*.pdf -o /path/to/your/output -t 参数指定了文件类型，这里是 pdf。 -i 参数指定了输入文件路径。 -o 参数指定了输出目录，用于存放生成的向量文件。 整合笔记文件 将笔记文件（例如 Markdown 文件）上传到服务器。 使用 ollama ingest 命令将笔记文件转换并上传。 ollama ingest -t markdown -i /path/to/your/note/*.md -o /path/to/your/output -t 参数改为 markdown。 -i 参数指定笔记文件的路径。 配置知识库 创建或修改 ollama.yaml 文件，配置知识库。 sources: - name: local-kb type: local path: /path/to/your/output 使用 ollama create 命令创建知识库。 ollama create local-kb -f ollama.yaml 启动服务 ollama run local-kb 现在，你就可以通过 Ollama 提供的 API 与本地知识库进行交互了。
+...</p>
+  </div>
+  <footer class="entry-footer">
+
+<span title='2026-11-20 03:51:07 +0800 CST'>November 20, 2026</span>&nbsp;·&nbsp;<span>2 min</span>&nbsp;·&nbsp;<span>Local AI Lab</span></footer>
+  <a class="entry-link" aria-label="post link to 在本地搭一个 RAG 知识库：把 PDF 和笔记交给 qwen2.5" href="https://tiandaochouqin2026.github.io/posts/11-local-rag-knowledge-base/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">用 OpenClaw 定时任务跑每日自动化（邮件摘要、天气、RSS）
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>在日常工作中，自动化是一个提高效率的好方法。本文将介绍如何使用OpenClaw在Windows环境下设置每日自动化任务，包括邮件摘要、天气查询和RSS阅读。这些自动化任务可以节省时间，减少手动操作的需要。
+...</p>
+  </div>
+  <footer class="entry-footer">
+
+<span title='2026-11-20 03:49:40 +0800 CST'>November 20, 2026</span>&nbsp;·&nbsp;<span>2 min</span>&nbsp;·&nbsp;<span>Local AI Lab</span></footer>
+  <a class="entry-link" aria-label="post link to 用 OpenClaw 定时任务跑每日自动化（邮件摘要、天气、RSS）" href="https://tiandaochouqin2026.github.io/posts/10-openclaw-automation-cron/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">本地模型 vs 云端 API：隐私、成本、速度的真实账本
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>在AI模型部署中，本地模型和云端API是两种常见的选择。本文将通过实际案例来探讨这两种方案在隐私保护、成本控制和响应速度方面的差异，以及如何根据具体需求做出最佳选择。
+...</p>
+  </div>
+  <footer class="entry-footer">
+
+<span title='2026-10-19 09:30:31 +0800 CST'>October 19, 2026</span>&nbsp;·&nbsp;<span>2 min</span>&nbsp;·&nbsp;<span>Local AI Lab</span></footer>
+  <a class="entry-link" aria-label="post link to 本地模型 vs 云端 API：隐私、成本、速度的真实账本" href="https://tiandaochouqin2026.github.io/posts/09-local-vs-cloud-llm/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Q4_K_M、Q5_K_M、Q8_0 到底差多少？量化格式实测对比
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>在本地部署大模型时，选择合适的量化格式对于模型的运行效率和效果至关重要。本文将通过实际测试，对比Q4_K_M、Q5_K_M和Q8_0三种量化格式在性能上的差异，给出具体配置和实测结果，帮助读者做出最佳选择。
+...</p>
+  </div>
+  <footer class="entry-footer">
+
+<span title='2026-10-12 09:00:00 +0800 CST'>October 12, 2026</span>&nbsp;·&nbsp;<span>2 min</span>&nbsp;·&nbsp;<span>Local AI Lab</span></footer>
+  <a class="entry-link" aria-label="post link to Q4_K_M、Q5_K_M、Q8_0 到底差多少？量化格式实测对比" href="https://tiandaochouqin2026.github.io/posts/08-quantization-formats/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">用 OpenClaw 接 Telegram：在手机上和本地模型聊天
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>部署本地语言模型并使其在移动设备上可用，能显著减少数据传输开销和提高响应速度。本教程介绍如何通过 OpenClaw，将本地的 Ollama 模型与 Telegram 集成，实现在手机上直接与本地模型进行对话。
+...</p>
+  </div>
+  <footer class="entry-footer">
+
+<span title='2026-09-24 09:00:00 +0800 CST'>September 24, 2026</span>&nbsp;·&nbsp;<span>2 min</span>&nbsp;·&nbsp;<span>Local AI Lab</span></footer>
+  <a class="entry-link" aria-label="post link to 用 OpenClaw 接 Telegram：在手机上和本地模型聊天" href="https://tiandaochouqin2026.github.io/posts/07-openclaw-telegram-channel/"></a>
+</article>
+<footer class="page-footer">
+  <nav class="pagination">
+    <a class="next" href="https://tiandaochouqin2026.github.io/page/2/">&nbsp;&nbsp;»
+    </a>
+  </nav>
+</footer>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="https://tiandaochouqin2026.github.io/">本地 AI 实验室</a></span> · 
+
+    
+    
+    <span>
+        Powered by
+        <a href="https://gohugo.io/?utm_source=papermod" rel="noopener" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" id="top-link" class="top-link hidden" aria-label="go to top" title="Go to Top (Alt + G)" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevrons-up">
+        <polyline points="17 11 12 6 7 11"></polyline>
+        <polyline points="17 18 12 13 7 18"></polyline>
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var toplink = document.getElementById("top-link");
+    window.onscroll = function () {
+        const scrollThreshold = window.innerHeight;
+        if (document.body.scrollTop > scrollThreshold || document.documentElement.scrollTop > scrollThreshold) {
+            toplink.classList.remove("hidden");
+        } else {
+            toplink.classList.add("hidden");
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
 </html>

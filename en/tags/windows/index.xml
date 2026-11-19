@@ -2,94 +2,94 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Windows on Local AI Lab</title>
-    <link>https://tiandaochouqin2026.github.io/en/tags/windows/</link>
+    <link>https://tiandaochouqin2026.github.io/tags/windows/</link>
     <description>Recent content in Windows on Local AI Lab</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Fri, 20 Nov 2026 03:58:24 +0800</lastBuildDate>
-    <atom:link href="https://tiandaochouqin2026.github.io/en/tags/windows/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://tiandaochouqin2026.github.io/tags/windows/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>write-your-own-modelfile-system-prompt-stopwords-parameter-tuning</title>
-      <link>https://tiandaochouqin2026.github.io/en/posts/14-ollama-custom-modelfile/</link>
+      <link>https://tiandaochouqin2026.github.io/posts/14-ollama-custom-modelfile/</link>
       <pubDate>Fri, 20 Nov 2026 03:58:24 +0800</pubDate>
-      <guid>https://tiandaochouqin2026.github.io/en/posts/14-ollama-custom-modelfile/</guid>
+      <guid>https://tiandaochouqin2026.github.io/posts/14-ollama-custom-modelfile/</guid>
       <description>optimize local LLM deployment with system prompts, stopwords, and parameter tuning</description>
     </item>
     <item>
       <title>open-webui-vs-openclaw-local-model-deployment-methods</title>
-      <link>https://tiandaochouqin2026.github.io/en/posts/13-openwebui-vs-openclaw/</link>
+      <link>https://tiandaochouqin2026.github.io/posts/13-openwebui-vs-openclaw/</link>
       <pubDate>Fri, 20 Nov 2026 03:57:40 +0800</pubDate>
-      <guid>https://tiandaochouqin2026.github.io/en/posts/13-openwebui-vs-openclaw/</guid>
+      <guid>https://tiandaochouqin2026.github.io/posts/13-openwebui-vs-openclaw/</guid>
       <description>Comparison and analysis of two local deployment methods of Ollama: Open WebUI and OpenClaw, suitable for Windows environment.</description>
     </item>
     <item>
       <title>which-open-source-models-can-run-with-12gb-graphics-memory</title>
-      <link>https://tiandaochouqin2026.github.io/en/posts/12-12gb-gpu-models-list/</link>
+      <link>https://tiandaochouqin2026.github.io/posts/12-12gb-gpu-models-list/</link>
       <pubDate>Fri, 20 Nov 2026 03:51:53 +0800</pubDate>
-      <guid>https://tiandaochouqin2026.github.io/en/posts/12-12gb-gpu-models-list/</guid>
+      <guid>https://tiandaochouqin2026.github.io/posts/12-12gb-gpu-models-list/</guid>
       <description>this-article-detailedly-documents-the-open-source-models-that-can-run-under-12gb-graphics-memory-and-their-tested-configurations</description>
     </item>
     <item>
       <title>set-up-a-rag-knowledge-base-locally-with-qwen2-5</title>
-      <link>https://tiandaochouqin2026.github.io/en/posts/11-local-rag-knowledge-base/</link>
+      <link>https://tiandaochouqin2026.github.io/posts/11-local-rag-knowledge-base/</link>
       <pubDate>Fri, 20 Nov 2026 03:51:07 +0800</pubDate>
-      <guid>https://tiandaochouqin2026.github.io/en/posts/11-local-rag-knowledge-base/</guid>
+      <guid>https://tiandaochouqin2026.github.io/posts/11-local-rag-knowledge-base/</guid>
       <description>how to use qwen2.5 to set up a rag knowledge base locally and integrate pdf and notes</description>
     </item>
     <item>
       <title>using-openclaw-to-run-daily-automation-tasks-email-summary-weather-rss</title>
-      <link>https://tiandaochouqin2026.github.io/en/posts/10-openclaw-automation-cron/</link>
+      <link>https://tiandaochouqin2026.github.io/posts/10-openclaw-automation-cron/</link>
       <pubDate>Fri, 20 Nov 2026 03:49:40 +0800</pubDate>
-      <guid>https://tiandaochouqin2026.github.io/en/posts/10-openclaw-automation-cron/</guid>
+      <guid>https://tiandaochouqin2026.github.io/posts/10-openclaw-automation-cron/</guid>
       <description>This article introduces how to use OpenClaw to set up daily automation tasks on Windows, including email summaries, weather queries, and RSS reading.</description>
     </item>
     <item>
       <title>local-model-vs-cloud-api-real-account-of-privacy-cost-and-speed</title>
-      <link>https://tiandaochouqin2026.github.io/en/posts/09-local-vs-cloud-llm/</link>
+      <link>https://tiandaochouqin2026.github.io/posts/09-local-vs-cloud-llm/</link>
       <pubDate>Mon, 19 Oct 2026 09:30:31 +0800</pubDate>
-      <guid>https://tiandaochouqin2026.github.io/en/posts/09-local-vs-cloud-llm/</guid>
+      <guid>https://tiandaochouqin2026.github.io/posts/09-local-vs-cloud-llm/</guid>
       <description>compare the differences between local models and cloud APIs in terms of privacy, cost, and speed, providing real data and operational guidelines.</description>
     </item>
     <item>
       <title>q4-k-m-q5-k-m-q8-0-performance-comparison</title>
-      <link>https://tiandaochouqin2026.github.io/en/posts/08-quantization-formats/</link>
+      <link>https://tiandaochouqin2026.github.io/posts/08-quantization-formats/</link>
       <pubDate>Mon, 12 Oct 2026 09:00:00 +0800</pubDate>
-      <guid>https://tiandaochouqin2026.github.io/en/posts/08-quantization-formats/</guid>
+      <guid>https://tiandaochouqin2026.github.io/posts/08-quantization-formats/</guid>
       <description>performance comparison of quantization formats q4-k-m, q5-k-m, and q8-0</description>
     </item>
     <item>
       <title>use-openclaw-with-telegram-chat-with-local-model-on-mobile</title>
-      <link>https://tiandaochouqin2026.github.io/en/posts/07-openclaw-telegram-channel/</link>
+      <link>https://tiandaochouqin2026.github.io/posts/07-openclaw-telegram-channel/</link>
       <pubDate>Thu, 24 Sep 2026 09:00:00 +0800</pubDate>
-      <guid>https://tiandaochouqin2026.github.io/en/posts/07-openclaw-telegram-channel/</guid>
+      <guid>https://tiandaochouqin2026.github.io/posts/07-openclaw-telegram-channel/</guid>
       <description>Integrate Ollama language model deployed locally with Telegram via OpenClaw.</description>
     </item>
     <item>
       <title>qwen2.5:7b-vs-14b-performance-comparison</title>
-      <link>https://tiandaochouqin2026.github.io/en/posts/06-qwen7b-vs-14b-comparison/</link>
+      <link>https://tiandaochouqin2026.github.io/posts/06-qwen7b-vs-14b-comparison/</link>
       <pubDate>Tue, 22 Sep 2026 11:34:44 +0800</pubDate>
-      <guid>https://tiandaochouqin2026.github.io/en/posts/06-qwen7b-vs-14b-comparison/</guid>
+      <guid>https://tiandaochouqin2026.github.io/posts/06-qwen7b-vs-14b-comparison/</guid>
       <description>benchmarking qwen2.5 model&amp;#39;s 7B and 14B versions for speed, quality, and memory usage</description>
     </item>
     <item>
       <title>Windows Deployment of Ollama Troubleshooting: GitHub Download Failure, Local Network Access, OLLAMA_HOST</title>
-      <link>https://tiandaochouqin2026.github.io/en/posts/04-ollama-windows-pitfalls/</link>
+      <link>https://tiandaochouqin2026.github.io/posts/04-ollama-windows-pitfalls/</link>
       <pubDate>Mon, 21 Sep 2026 13:00:00 +0800</pubDate>
-      <guid>https://tiandaochouqin2026.github.io/en/posts/04-ollama-windows-pitfalls/</guid>
+      <guid>https://tiandaochouqin2026.github.io/posts/04-ollama-windows-pitfalls/</guid>
       <description>Three real issues encountered when deploying Ollama on Windows: download failure due to domestic network, default listening only on loopback, and OLLAMA_HOST settings not being recognized after service restart.</description>
     </item>
     <item>
       <title>correct-way-to-auto-start-ollama-on-windows-without-black-window</title>
-      <link>https://tiandaochouqin2026.github.io/en/posts/05-ollama-windows-autostart/</link>
+      <link>https://tiandaochouqin2026.github.io/posts/05-ollama-windows-autostart/</link>
       <pubDate>Mon, 21 Sep 2026 12:57:23 +0800</pubDate>
-      <guid>https://tiandaochouqin2026.github.io/en/posts/05-ollama-windows-autostart/</guid>
+      <guid>https://tiandaochouqin2026.github.io/posts/05-ollama-windows-autostart/</guid>
       <description>this-article-will-provide-a-detailed-guide-on-how-to-set-up-ollama-to-auto-start-on-windows-without-displaying-a-black-window-ideal-for-users-needing-ollama-to-run-continuously</description>
     </item>
     <item>
       <title>Full Guide to Running Qwen2.5-14B on RTX 4070 SUPER 12G (Windows &#43; Ollama)</title>
-      <link>https://tiandaochouqin2026.github.io/en/posts/01-qwen25-14b-on-4070s/</link>
+      <link>https://tiandaochouqin2026.github.io/posts/01-qwen25-14b-on-4070s/</link>
       <pubDate>Mon, 21 Sep 2026 10:00:00 +0800</pubDate>
-      <guid>https://tiandaochouqin2026.github.io/en/posts/01-qwen25-14b-on-4070s/</guid>
+      <guid>https://tiandaochouqin2026.github.io/posts/01-qwen25-14b-on-4070s/</guid>
       <description>A comprehensive guide to deploying Qwen2.5-14B on Windows with a 4070 SUPER 12G: download, model pull, local network access, and performance testing.</description>
     </item>
   </channel>

@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Vram on Local AI Lab</title>
-    <link>https://tiandaochouqin2026.github.io/en/tags/vram/</link>
+    <link>https://tiandaochouqin2026.github.io/tags/vram/</link>
     <description>Recent content in Vram on Local AI Lab</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Tue, 22 Sep 2026 11:30:00 +0800</lastBuildDate>
-    <atom:link href="https://tiandaochouqin2026.github.io/en/tags/vram/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://tiandaochouqin2026.github.io/tags/vram/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>The Coming War on Memory and Storage: How Much VRAM, RAM, and Disk Will You Need in the Next Two Years?</title>
-      <link>https://tiandaochouqin2026.github.io/en/posts/15-ai-memory-storage-outlook/</link>
+      <link>https://tiandaochouqin2026.github.io/posts/15-ai-memory-storage-outlook/</link>
       <pubDate>Tue, 22 Sep 2026 11:30:00 +0800</pubDate>
-      <guid>https://tiandaochouqin2026.github.io/en/posts/15-ai-memory-storage-outlook/</guid>
+      <guid>https://tiandaochouqin2026.github.io/posts/15-ai-memory-storage-outlook/</guid>
       <description>Based on real experience running a 14B model on a 4070 SUPER 12G, this post looks at how local AI hardware requirements will evolve over the next 1-2 years and what ordinary users should upgrade.</description>
     </item>
     <item>
       <title>Running 14B Model with 12GB VRAM: Practical Measurements on Q4 Quantization, Context Window, and CPU/GPU Hybrid</title>
-      <link>https://tiandaochouqin2026.github.io/en/posts/03-12gb-vram-14b-realworld/</link>
+      <link>https://tiandaochouqin2026.github.io/posts/03-12gb-vram-14b-realworld/</link>
       <pubDate>Mon, 21 Sep 2026 12:00:00 +0800</pubDate>
-      <guid>https://tiandaochouqin2026.github.io/en/posts/03-12gb-vram-14b-realworld/</guid>
+      <guid>https://tiandaochouqin2026.github.io/posts/03-12gb-vram-14b-realworld/</guid>
       <description>Real-world VRAM allocation measurements for Qwen2.5-14B on RTX 4070 SUPER 12G: GPU/CPU ratio and inference speed under different context lengths.</description>
     </item>
   </channel>
