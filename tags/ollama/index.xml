@@ -6,8 +6,22 @@
     <description>Recent content in Ollama on 本地 AI 实验室</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 20 Nov 2026 03:57:40 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 20 Nov 2026 03:58:24 +0800</lastBuildDate>
     <atom:link href="https://tiandaochouqin2026.github.io/tags/ollama/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>write-your-own-modelfile-system-prompt-stopwords-parameter-tuning</title>
+      <link>https://tiandaochouqin2026.github.io/en/posts/14-ollama-custom-modelfile/</link>
+      <pubDate>Fri, 20 Nov 2026 03:58:24 +0800</pubDate>
+      <guid>https://tiandaochouqin2026.github.io/en/posts/14-ollama-custom-modelfile/</guid>
+      <description>optimize local LLM deployment with system prompts, stopwords, and parameter tuning</description>
+    </item>
+    <item>
+      <title>写一个自己的 Modelfile：系统提示词、停止词、参数调优</title>
+      <link>https://tiandaochouqin2026.github.io/posts/14-ollama-custom-modelfile/</link>
+      <pubDate>Fri, 20 Nov 2026 03:58:24 +0800</pubDate>
+      <guid>https://tiandaochouqin2026.github.io/posts/14-ollama-custom-modelfile/</guid>
+      <description>通过系统提示词、停止词和参数调优，优化本地LLM部署</description>
+    </item>
     <item>
       <title>Open WebUI vs OpenClaw：本地模型的两种打开方式</title>
       <link>https://tiandaochouqin2026.github.io/posts/13-openwebui-vs-openclaw/</link>

@@ -6,8 +6,15 @@
     <description>Recent content in Ollama on Local AI Lab</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 20 Nov 2026 03:57:40 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 20 Nov 2026 03:58:24 +0800</lastBuildDate>
     <atom:link href="https://tiandaochouqin2026.github.io/en/tags/ollama/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>write-your-own-modelfile-system-prompt-stopwords-parameter-tuning</title>
+      <link>https://tiandaochouqin2026.github.io/en/posts/14-ollama-custom-modelfile/</link>
+      <pubDate>Fri, 20 Nov 2026 03:58:24 +0800</pubDate>
+      <guid>https://tiandaochouqin2026.github.io/en/posts/14-ollama-custom-modelfile/</guid>
+      <description>optimize local LLM deployment with system prompts, stopwords, and parameter tuning</description>
+    </item>
     <item>
       <title>open-webui-vs-openclaw-local-model-deployment-methods</title>
       <link>https://tiandaochouqin2026.github.io/en/posts/13-openwebui-vs-openclaw/</link>
