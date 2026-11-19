@@ -6,8 +6,15 @@
     <description>Recent content in Posts on Local AI Lab</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 20 Nov 2026 03:51:53 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 20 Nov 2026 03:57:40 +0800</lastBuildDate>
     <atom:link href="https://tiandaochouqin2026.github.io/en/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>open-webui-vs-openclaw-local-model-deployment-methods</title>
+      <link>https://tiandaochouqin2026.github.io/en/posts/13-openwebui-vs-openclaw/</link>
+      <pubDate>Fri, 20 Nov 2026 03:57:40 +0800</pubDate>
+      <guid>https://tiandaochouqin2026.github.io/en/posts/13-openwebui-vs-openclaw/</guid>
+      <description>Comparison and analysis of two local deployment methods of Ollama: Open WebUI and OpenClaw, suitable for Windows environment.</description>
+    </item>
     <item>
       <title>which-open-source-models-can-run-with-12gb-graphics-memory</title>
       <link>https://tiandaochouqin2026.github.io/en/posts/12-12gb-gpu-models-list/</link>

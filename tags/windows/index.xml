@@ -6,8 +6,22 @@
     <description>Recent content in Windows on 本地 AI 实验室</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 20 Nov 2026 03:51:53 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 20 Nov 2026 03:57:40 +0800</lastBuildDate>
     <atom:link href="https://tiandaochouqin2026.github.io/tags/windows/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Open WebUI vs OpenClaw：本地模型的两种打开方式</title>
+      <link>https://tiandaochouqin2026.github.io/posts/13-openwebui-vs-openclaw/</link>
+      <pubDate>Fri, 20 Nov 2026 03:57:40 +0800</pubDate>
+      <guid>https://tiandaochouqin2026.github.io/posts/13-openwebui-vs-openclaw/</guid>
+      <description>对比分析Ollama的两种本地部署方式：Open WebUI和OpenClaw，适合Windows环境使用。</description>
+    </item>
+    <item>
+      <title>open-webui-vs-openclaw-local-model-deployment-methods</title>
+      <link>https://tiandaochouqin2026.github.io/en/posts/13-openwebui-vs-openclaw/</link>
+      <pubDate>Fri, 20 Nov 2026 03:57:40 +0800</pubDate>
+      <guid>https://tiandaochouqin2026.github.io/en/posts/13-openwebui-vs-openclaw/</guid>
+      <description>Comparison and analysis of two local deployment methods of Ollama: Open WebUI and OpenClaw, suitable for Windows environment.</description>
+    </item>
     <item>
       <title>12GB 显存能跑哪些开源模型？一份实测清单</title>
       <link>https://tiandaochouqin2026.github.io/posts/12-12gb-gpu-models-list/</link>
