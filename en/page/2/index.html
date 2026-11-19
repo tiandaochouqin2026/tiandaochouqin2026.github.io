@@ -155,6 +155,22 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2 class="entry-hint-parent">Running 14B Model with 12GB VRAM: Practical Measurements on Q4 Quantization, Context Window, and CPU/GPU Hybrid
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Problem How much context can a 12GB VRAM handle when running a 14B model? This is one of the most critical questions when deploying large models locally. This article answers it with real data.
+Test Environment GPU: RTX 4070 SUPER (12GB) Model: Qwen2.5-14B-Instruct, Q4_K_M quantization, weights around 9GB Inference Engine: Ollama 0.34 Monitoring Command: ollama ps Practical Measurements Context Length (num_ctx) Model Usage GPU/CPU Ratio Inference Speed 4096 9.5 GB 100% GPU ~49 tok/s 16384 ~11 GB 100% GPU (critical) ~40 tok/s 32768 ~15 GB 34% CPU &#43; 66% GPU ~15-20 tok/s 65536 VRAM overflow Mostly CPU Unavailable Principles The weights of a 14B Q4 model are around 9GB. The remaining 3GB VRAM must accommodate:
+...</p>
+  </div>
+  <footer class="entry-footer">
+
+<span title='2026-09-21 12:00:00 +0800 CST'>September 21, 2026</span>&nbsp;·&nbsp;<span>2 min</span>&nbsp;·&nbsp;<span>Local AI Lab</span></footer>
+  <a class="entry-link" aria-label="post link to Running 14B Model with 12GB VRAM: Practical Measurements on Q4 Quantization, Context Window, and CPU/GPU Hybrid" href="https://tiandaochouqin2026.github.io/en/posts/03-12gb-vram-14b-realworld/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2 class="entry-hint-parent">Deploying OpenClaw in Practice: Setting Up a Personal AI Assistant with Local Large Models
     </h2>
   </header>

@@ -6,8 +6,15 @@
     <description>Recent content in 文章 on 本地 AI 实验室</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 19 Oct 2026 09:30:31 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 20 Nov 2026 03:49:40 +0800</lastBuildDate>
     <atom:link href="https://tiandaochouqin2026.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>用 OpenClaw 定时任务跑每日自动化（邮件摘要、天气、RSS）</title>
+      <link>https://tiandaochouqin2026.github.io/posts/10-openclaw-automation-cron/</link>
+      <pubDate>Fri, 20 Nov 2026 03:49:40 +0800</pubDate>
+      <guid>https://tiandaochouqin2026.github.io/posts/10-openclaw-automation-cron/</guid>
+      <description>介绍如何使用OpenClaw在Windows上设置每日自动化任务，包括邮件摘要、天气查询和RSS阅读。</description>
+    </item>
     <item>
       <title>本地模型 vs 云端 API：隐私、成本、速度的真实账本</title>
       <link>https://tiandaochouqin2026.github.io/posts/09-local-vs-cloud-llm/</link>
