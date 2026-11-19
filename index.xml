@@ -6,8 +6,22 @@
     <description>Recent content on 本地 AI 实验室</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 20 Nov 2026 03:49:40 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 20 Nov 2026 03:51:07 +0800</lastBuildDate>
     <atom:link href="https://tiandaochouqin2026.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>set-up-a-rag-knowledge-base-locally-with-qwen2-5</title>
+      <link>https://tiandaochouqin2026.github.io/en/posts/11-local-rag-knowledge-base/</link>
+      <pubDate>Fri, 20 Nov 2026 03:51:07 +0800</pubDate>
+      <guid>https://tiandaochouqin2026.github.io/en/posts/11-local-rag-knowledge-base/</guid>
+      <description>how to use qwen2.5 to set up a rag knowledge base locally and integrate pdf and notes</description>
+    </item>
+    <item>
+      <title>在本地搭一个 RAG 知识库：把 PDF 和笔记交给 qwen2.5</title>
+      <link>https://tiandaochouqin2026.github.io/posts/11-local-rag-knowledge-base/</link>
+      <pubDate>Fri, 20 Nov 2026 03:51:07 +0800</pubDate>
+      <guid>https://tiandaochouqin2026.github.io/posts/11-local-rag-knowledge-base/</guid>
+      <description>如何使用 qwen2.5 在本地部署 RAG 知识库，集成 PDF 和笔记</description>
+    </item>
     <item>
       <title>using-openclaw-to-run-daily-automation-tasks-email-summary-weather-rss</title>
       <link>https://tiandaochouqin2026.github.io/en/posts/10-openclaw-automation-cron/</link>

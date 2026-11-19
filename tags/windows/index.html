@@ -164,6 +164,38 @@
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
+    <h2 class="entry-hint-parent">set-up-a-rag-knowledge-base-locally-with-qwen2-5
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Setting up a RAG (Retrieval-Augmented Generation) knowledge base locally allows qwen2.5 to better handle and answer questions related to local documents. This article will introduce how to use the Ollama service to integrate PDFs and notes into a local knowledge base.
+Preparation Ensure that ollama is installed and can be used normally. Prepare the PDF and note files to be imported and place them in an easily accessible directory. Install Dependencies pip install ollama Upload PDF Files First, upload the PDF files to the designated directory on the local server. cd /path/to/your/files Use the ollama ingest command to convert and upload the PDF files to the knowledge base. ollama ingest -t pdf -i /path/to/your/files/*.pdf -o /path/to/your/output The -t parameter specifies the file type, which is pdf in this case. The -i parameter specifies the input file path. The -o parameter specifies the output directory, where the generated vector files will be stored. Integrate Note Files Upload the note files (e.g., Markdown files) to the server. Use the ollama ingest command to convert and upload the note files. ollama ingest -t markdown -i /path/to/your/note/*.md -o /path/to/your/output Change the -t parameter to markdown. The -i parameter specifies the path to the note files. Configure the Knowledge Base Create or modify the ollama.yaml file to configure the knowledge base. sources: - name: local-kb type: local path: /path/to/your/output Use the ollama create command to create the knowledge base. ollama create local-kb -f ollama.yaml Start the Service ollama run local-kb Now, you can interact with the local knowledge base via the API provided by Ollama.
+...</p>
+  </div>
+  <footer class="entry-footer">
+
+<span title='2026-11-20 03:51:07 +0800 CST'>November 20, 2026</span>&nbsp;·&nbsp;<span>1 min</span>&nbsp;·&nbsp;<span>Local AI Lab</span></footer>
+  <a class="entry-link" aria-label="post link to set-up-a-rag-knowledge-base-locally-with-qwen2-5" href="https://tiandaochouqin2026.github.io/en/posts/11-local-rag-knowledge-base/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">在本地搭一个 RAG 知识库：把 PDF 和笔记交给 qwen2.5
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>在本地搭建一个 RAG (Retrieval-Augmented Generation) 知识库，能够让 qwen2.5 更好地处理和回答与本地文档相关的问题。这篇文章将介绍如何利用 Ollama 服务将 PDF 和笔记集成到本地知识库中。
+准备工作 确保已经安装了 ollama，并可以正常使用。 准备好需要导入的 PDF 和笔记文件，放在一个易于访问的目录下。 安装依赖 pip install ollama 上传 PDF 文件 首先将 PDF 文件上传到本地服务器的指定目录。 cd /path/to/your/files 使用 ollama ingest 命令将 PDF 转换并上传到知识库。 ollama ingest -t pdf -i /path/to/your/files/*.pdf -o /path/to/your/output -t 参数指定了文件类型，这里是 pdf。 -i 参数指定了输入文件路径。 -o 参数指定了输出目录，用于存放生成的向量文件。 整合笔记文件 将笔记文件（例如 Markdown 文件）上传到服务器。 使用 ollama ingest 命令将笔记文件转换并上传。 ollama ingest -t markdown -i /path/to/your/note/*.md -o /path/to/your/output -t 参数改为 markdown。 -i 参数指定笔记文件的路径。 配置知识库 创建或修改 ollama.yaml 文件，配置知识库。 sources: - name: local-kb type: local path: /path/to/your/output 使用 ollama create 命令创建知识库。 ollama create local-kb -f ollama.yaml 启动服务 ollama run local-kb 现在，你就可以通过 Ollama 提供的 API 与本地知识库进行交互了。
+...</p>
+  </div>
+  <footer class="entry-footer">
+
+<span title='2026-11-20 03:51:07 +0800 CST'>November 20, 2026</span>&nbsp;·&nbsp;<span>2 min</span>&nbsp;·&nbsp;<span>Local AI Lab</span></footer>
+  <a class="entry-link" aria-label="post link to 在本地搭一个 RAG 知识库：把 PDF 和笔记交给 qwen2.5" href="https://tiandaochouqin2026.github.io/posts/11-local-rag-knowledge-base/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
     <h2 class="entry-hint-parent">using-openclaw-to-run-daily-automation-tasks-email-summary-weather-rss
     </h2>
   </header>
@@ -253,37 +285,6 @@ Test Environment CPU: Intel i9-13900K GPU: NVIDIA RTX 4090 Memory: 64GB Operatin
 
 <span title='2026-10-12 09:00:00 +0800 CST'>October 12, 2026</span>&nbsp;·&nbsp;<span>2 min</span>&nbsp;·&nbsp;<span>Local AI Lab</span></footer>
   <a class="entry-link" aria-label="post link to q4-k-m-q5-k-m-q8-0-performance-comparison" href="https://tiandaochouqin2026.github.io/en/posts/08-quantization-formats/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">use-openclaw-with-telegram-chat-with-local-model-on-mobile
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>Deploying a local language model and making it accessible on mobile devices can significantly reduce data transfer costs and improve response times. This tutorial explains how to integrate a locally deployed Ollama model with Telegram using OpenClaw, enabling direct conversations with the local model on your phone.
-Environment Setup Hardware: Minimum requirement is 4GB RAM, recommended 8GB RAM or higher. Software: Windows 10 or higher, Python 3.8 or above. Model: Download and install Ollama, it is recommended to use a smaller model like llama-7b to reduce resource consumption. Install OpenClaw Clone the OpenClaw repository:
-...</p>
-  </div>
-  <footer class="entry-footer">
-
-<span title='2026-09-24 09:00:00 +0800 CST'>September 24, 2026</span>&nbsp;·&nbsp;<span>2 min</span>&nbsp;·&nbsp;<span>Local AI Lab</span></footer>
-  <a class="entry-link" aria-label="post link to use-openclaw-with-telegram-chat-with-local-model-on-mobile" href="https://tiandaochouqin2026.github.io/en/posts/07-openclaw-telegram-channel/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">用 OpenClaw 接 Telegram：在手机上和本地模型聊天
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>部署本地语言模型并使其在移动设备上可用，能显著减少数据传输开销和提高响应速度。本教程介绍如何通过 OpenClaw，将本地的 Ollama 模型与 Telegram 集成，实现在手机上直接与本地模型进行对话。
-...</p>
-  </div>
-  <footer class="entry-footer">
-
-<span title='2026-09-24 09:00:00 +0800 CST'>September 24, 2026</span>&nbsp;·&nbsp;<span>2 min</span>&nbsp;·&nbsp;<span>Local AI Lab</span></footer>
-  <a class="entry-link" aria-label="post link to 用 OpenClaw 接 Telegram：在手机上和本地模型聊天" href="https://tiandaochouqin2026.github.io/posts/07-openclaw-telegram-channel/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

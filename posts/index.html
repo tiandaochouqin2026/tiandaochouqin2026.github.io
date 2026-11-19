@@ -174,6 +174,22 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2 class="entry-hint-parent">在本地搭一个 RAG 知识库：把 PDF 和笔记交给 qwen2.5
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>在本地搭建一个 RAG (Retrieval-Augmented Generation) 知识库，能够让 qwen2.5 更好地处理和回答与本地文档相关的问题。这篇文章将介绍如何利用 Ollama 服务将 PDF 和笔记集成到本地知识库中。
+准备工作 确保已经安装了 ollama，并可以正常使用。 准备好需要导入的 PDF 和笔记文件，放在一个易于访问的目录下。 安装依赖 pip install ollama 上传 PDF 文件 首先将 PDF 文件上传到本地服务器的指定目录。 cd /path/to/your/files 使用 ollama ingest 命令将 PDF 转换并上传到知识库。 ollama ingest -t pdf -i /path/to/your/files/*.pdf -o /path/to/your/output -t 参数指定了文件类型，这里是 pdf。 -i 参数指定了输入文件路径。 -o 参数指定了输出目录，用于存放生成的向量文件。 整合笔记文件 将笔记文件（例如 Markdown 文件）上传到服务器。 使用 ollama ingest 命令将笔记文件转换并上传。 ollama ingest -t markdown -i /path/to/your/note/*.md -o /path/to/your/output -t 参数改为 markdown。 -i 参数指定笔记文件的路径。 配置知识库 创建或修改 ollama.yaml 文件，配置知识库。 sources: - name: local-kb type: local path: /path/to/your/output 使用 ollama create 命令创建知识库。 ollama create local-kb -f ollama.yaml 启动服务 ollama run local-kb 现在，你就可以通过 Ollama 提供的 API 与本地知识库进行交互了。
+...</p>
+  </div>
+  <footer class="entry-footer">
+
+<span title='2026-11-20 03:51:07 +0800 CST'>November 20, 2026</span>&nbsp;·&nbsp;<span>2 min</span>&nbsp;·&nbsp;<span>Local AI Lab</span></footer>
+  <a class="entry-link" aria-label="post link to 在本地搭一个 RAG 知识库：把 PDF 和笔记交给 qwen2.5" href="https://tiandaochouqin2026.github.io/posts/11-local-rag-knowledge-base/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2 class="entry-hint-parent">用 OpenClaw 定时任务跑每日自动化（邮件摘要、天气、RSS）
     </h2>
   </header>
@@ -276,21 +292,6 @@
 
 <span title='2026-09-21 13:00:00 +0800 CST'>September 21, 2026</span>&nbsp;·&nbsp;<span>2 min</span>&nbsp;·&nbsp;<span>Local AI Lab</span></footer>
   <a class="entry-link" aria-label="post link to Windows 部署 Ollama 踩坑记录：GitHub 下载失败、局域网访问、OLLAMA_HOST" href="https://tiandaochouqin2026.github.io/posts/04-ollama-windows-pitfalls/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Windows 开机自启 Ollama 的正确姿势（不弹黑窗口）
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>在 Windows 系统中部署 Ollama 并实现开机自启动可以极大地方便日常使用。然而，直接使用默认的命令行方式可能会导致每次开机时弹出黑窗口，影响美观和用户体验。本文将详细介绍如何在 Windows 系统下实现 Ollama 的开机自启动，并且不弹出黑窗口，适合需要长时间运行 Ollama 服务的用户。
-...</p>
-  </div>
-  <footer class="entry-footer">
-
-<span title='2026-09-21 12:57:23 +0800 CST'>September 21, 2026</span>&nbsp;·&nbsp;<span>2 min</span>&nbsp;·&nbsp;<span>Local AI Lab</span></footer>
-  <a class="entry-link" aria-label="post link to Windows 开机自启 Ollama 的正确姿势（不弹黑窗口）" href="https://tiandaochouqin2026.github.io/posts/05-ollama-windows-autostart/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">
