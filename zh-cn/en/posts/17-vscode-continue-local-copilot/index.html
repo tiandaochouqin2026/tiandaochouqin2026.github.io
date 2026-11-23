@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="auto" data-theme="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>use-vs-code-continue-with-local-models-offline-code-writing | 本地 AI 实验室</title>
+<meta name="keywords" content="ollama, windows">
+<meta name="description" content="how to deploy large models locally and use the VS Code plugin Continue for code editing, enabling efficient coding without an internet connection.">
+<meta name="author" content="Local AI Lab">
+<link rel="canonical" href="https://tiandaochouqin2026.github.io/en/posts/17-vscode-continue-local-copilot/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.cd9298b33628769aa1bc1acebbbfd7aa11ce81dfe03484d479e1907760249a1d.css" integrity="sha256-zZKYszYodpqhvBrOu7/XqhHOgd/gNITUeeGQd2Akmh0=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://tiandaochouqin2026.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://tiandaochouqin2026.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://tiandaochouqin2026.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://tiandaochouqin2026.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://tiandaochouqin2026.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="zh-cn" href="https://tiandaochouqin2026.github.io/en/posts/17-vscode-continue-local-copilot/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><meta property="og:url" content="https://tiandaochouqin2026.github.io/en/posts/17-vscode-continue-local-copilot/">
+  <meta property="og:site_name" content="本地 AI 实验室">
+  <meta property="og:title" content="use-vs-code-continue-with-local-models-offline-code-writing">
+  <meta property="og:description" content="how to deploy large models locally and use the VS Code plugin Continue for code editing, enabling efficient coding without an internet connection.">
+  <meta property="og:locale" content="zh_cn">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="en">
+    <meta property="article:published_time" content="2026-11-23T09:43:14+08:00">
+    <meta property="article:modified_time" content="2026-11-23T09:43:14+08:00">
+    <meta property="article:tag" content="Ollama">
+    <meta property="article:tag" content="Windows">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="use-vs-code-continue-with-local-models-offline-code-writing">
+  <meta name="twitter:description" content="how to deploy large models locally and use the VS Code plugin Continue for code editing, enabling efficient coding without an internet connection.">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Ens",
+      "item": "https://tiandaochouqin2026.github.io/en/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Posts",
+      "item": "https://tiandaochouqin2026.github.io/en/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  3 ,
+      "name": "use-vs-code-continue-with-local-models-offline-code-writing",
+      "item": "https://tiandaochouqin2026.github.io/en/posts/17-vscode-continue-local-copilot/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "use-vs-code-continue-with-local-models-offline-code-writing",
+  "name": "use-vs-code-continue-with-local-models-offline-code-writing",
+  "description": "how to deploy large models locally and use the VS Code plugin Continue for code editing, enabling efficient coding without an internet connection.",
+  "keywords": [
+    "ollama", "windows"
+  ],
+  "articleBody": "Deploying large models locally and using the VS Code plugin Continue for code editing allows you to write code efficiently even without an internet connection. This article will provide a detailed guide on how to deploy a local large model on a Windows 11 system using Ollama and use the VS Code plugin Continue for real-time code suggestions. My machine configuration includes an NVIDIA RTX 4070 SUPER with 12GB VRAM, an AMD CPU, and 32GB RAM. Installed models include qwen2.5:14b, gemma4:12b, and hermes-agent.\nDeploying Ollama First, ensure you have installed Ollama, version 0.34.2. Next, you need to download and configure the model. Below is an example of a Modelfile configuration for qwen2.5:14b:\nFROM ollama/qwen2.5:14b SYSTEM Windows 11 PARAMETER temperature 0.7 PARAMETER num_ctx 8192 PARAMETER stop \"EOF\" Deploy the model using the following Ollama command:\nollama run qwen2.5:14b Configuring the VS Code Plugin Continue To use the VS Code plugin Continue, you first need to install the plugin. After installation, you need to configure the plugin to connect to your locally deployed model. In VS Code, open the command palette (Ctrl+Shift+P), then enter “Continue: Connect” and select your local Ollama instance.\nNext, you need to set up the VS Code launch configuration so that it automatically connects to the local model every time you open VS Code. In VS Code settings, add the following configuration:\n{ \"continue.server\": \"http://127.0.0.1:8000\", \"continue.model\": \"qwen2.5:14b\", \"continue.context\": 4096 } With this configuration, you can use VS Code for code editing and code suggestions without an internet connection.\nPerformance Optimization To better utilize the local model, pay attention to its performance. On my machine, using qwen2.5:14b, the throughput is approximately 49 tok/s with 4096 context, 100% GPU usage, and 9.5GB VRAM occupied. With 32768 context, the throughput is around 15-20 tok/s, with 34% CPU + 66% GPU usage, and approximately 15GB memory used in total.\nYou can optimize performance by adjusting the num_ctx parameter, such as setting num_ctx to 4096 to achieve better performance with lower memory usage.\nConclusion With the guidance provided in this article, you should be able to deploy large models in a local environment and use the VS Code plugin Continue for real-time code editing. This technology enables efficient coding and development even without an internet connection, significantly enhancing the flexibility and practicality of local development environments.\n",
+  "wordCount" : "383",
+  "inLanguage": "zh-cn",
+  "datePublished": "2026-11-23T09:43:14+08:00",
+  "dateModified": "2026-11-23T09:43:14+08:00",
+  "author":{
+    "@type": "Person",
+    "name": "Local AI Lab"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://tiandaochouqin2026.github.io/en/posts/17-vscode-continue-local-copilot/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "本地 AI 实验室",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://tiandaochouqin2026.github.io/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="header-nav">
+        <div class="logo">
+            <a href="https://tiandaochouqin2026.github.io/" accesskey="h" title="🏠 本地 AI 实验室 (Alt + H)">🏠 本地 AI 实验室</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" class="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg class="sun" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button><span class="nav-sep">|</span>
+                    <ul class="lang-menu">
+                        <li>
+                            <a href="https://tiandaochouqin2026.github.io/" title="🇬🇧 English"
+                                aria-label="🇬🇧 English">En</a>
+                        </li>
+                    </ul>
+            </div>
+        </div>
+        <ul id="menu" class="menu">
+            <li>
+                <a href="https://tiandaochouqin2026.github.io/archives/" title="归档">
+                    <span>归档</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://tiandaochouqin2026.github.io/categories/" title="分类">
+                    <span>分类</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://tiandaochouqin2026.github.io/tags/" title="标签">
+                    <span>标签</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://tiandaochouqin2026.github.io/search/" title="搜索 (Alt &#43; /)" accesskey=/>
+                    <span>搜索</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <nav class="breadcrumbs" role="navigation" aria-label="Breadcrumb">
+            <a href="/">Home</a>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+                <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+            <a href="/en/">Ens</a>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+                <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+            <a href="/en/posts/">Posts</a>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+        <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+</nav>
+    <h1 class="post-title entry-hint-parent">
+      use-vs-code-continue-with-local-models-offline-code-writing
+    </h1>
+    <div class="post-description">
+      how to deploy large models locally and use the VS Code plugin Continue for code editing, enabling efficient coding without an internet connection.
+    </div>
+    <div class="post-meta">
+
+<span title='2026-11-23 09:43:14 +0800 CST'>November 23, 2026</span>&nbsp;·&nbsp;<span>2 min</span>&nbsp;·&nbsp;<span>Local AI Lab</span>
+
+</div>
+  </header> 
+  <div class="post-content md-content"><p>Deploying large models locally and using the VS Code plugin Continue for code editing allows you to write code efficiently even without an internet connection. This article will provide a detailed guide on how to deploy a local large model on a Windows 11 system using Ollama and use the VS Code plugin Continue for real-time code suggestions. My machine configuration includes an NVIDIA RTX 4070 SUPER with 12GB VRAM, an AMD CPU, and 32GB RAM. Installed models include qwen2.5:14b, gemma4:12b, and hermes-agent.</p>
+<h2 id="deploying-ollama">Deploying Ollama<a hidden class="anchor" aria-hidden="true" href="#deploying-ollama">#</a></h2>
+<p>First, ensure you have installed Ollama, version 0.34.2. Next, you need to download and configure the model. Below is an example of a Modelfile configuration for qwen2.5:14b:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>FROM ollama/qwen2.5:14b
+</span></span><span style="display:flex;"><span>SYSTEM Windows 11
+</span></span><span style="display:flex;"><span>PARAMETER temperature 0.7
+</span></span><span style="display:flex;"><span>PARAMETER num_ctx 8192
+</span></span><span style="display:flex;"><span>PARAMETER stop &#34;EOF&#34;
+</span></span></code></pre></div><p>Deploy the model using the following Ollama command:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ollama run qwen2.5:14b
+</span></span></code></pre></div><h2 id="configuring-the-vs-code-plugin-continue">Configuring the VS Code Plugin Continue<a hidden class="anchor" aria-hidden="true" href="#configuring-the-vs-code-plugin-continue">#</a></h2>
+<p>To use the VS Code plugin Continue, you first need to install the plugin. After installation, you need to configure the plugin to connect to your locally deployed model. In VS Code, open the command palette (Ctrl+Shift+P), then enter &ldquo;Continue: Connect&rdquo; and select your local Ollama instance.</p>
+<p>Next, you need to set up the VS Code launch configuration so that it automatically connects to the local model every time you open VS Code. In VS Code settings, add the following configuration:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;continue.server&#34;</span>: <span style="color:#e6db74">&#34;http://127.0.0.1:8000&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;continue.model&#34;</span>: <span style="color:#e6db74">&#34;qwen2.5:14b&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;continue.context&#34;</span>: <span style="color:#ae81ff">4096</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>With this configuration, you can use VS Code for code editing and code suggestions without an internet connection.</p>
+<h2 id="performance-optimization">Performance Optimization<a hidden class="anchor" aria-hidden="true" href="#performance-optimization">#</a></h2>
+<p>To better utilize the local model, pay attention to its performance. On my machine, using qwen2.5:14b, the throughput is approximately 49 tok/s with 4096 context, 100% GPU usage, and 9.5GB VRAM occupied. With 32768 context, the throughput is around 15-20 tok/s, with 34% CPU + 66% GPU usage, and approximately 15GB memory used in total.</p>
+<p>You can optimize performance by adjusting the <code>num_ctx</code> parameter, such as setting <code>num_ctx</code> to 4096 to achieve better performance with lower memory usage.</p>
+<h2 id="conclusion">Conclusion<a hidden class="anchor" aria-hidden="true" href="#conclusion">#</a></h2>
+<p>With the guidance provided in this article, you should be able to deploy large models in a local environment and use the VS Code plugin Continue for real-time code editing. This technology enables efficient coding and development even without an internet connection, significantly enhancing the flexibility and practicality of local development environments.</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://tiandaochouqin2026.github.io/tags/ollama/">Ollama</a></li>
+      <li><a href="https://tiandaochouqin2026.github.io/tags/windows/">Windows</a></li>
+    </ul>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="https://tiandaochouqin2026.github.io/">本地 AI 实验室</a></span> · 
+
+    
+    
+    <span>
+        Powered by
+        <a href="https://gohugo.io/?utm_source=papermod" rel="noopener" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" id="top-link" class="top-link hidden" aria-label="go to top" title="Go to Top (Alt + G)" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevrons-up">
+        <polyline points="17 11 12 6 7 11"></polyline>
+        <polyline points="17 18 12 13 7 18"></polyline>
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var toplink = document.getElementById("top-link");
+    window.onscroll = function () {
+        const scrollThreshold = window.innerHeight;
+        if (document.body.scrollTop > scrollThreshold || document.documentElement.scrollTop > scrollThreshold) {
+            toplink.classList.remove("hidden");
+        } else {
+            toplink.classList.add("hidden");
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

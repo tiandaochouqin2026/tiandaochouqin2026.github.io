@@ -6,8 +6,15 @@
     <description>Recent content in Windows on Local AI Lab</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 23 Nov 2026 09:35:31 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 23 Nov 2026 09:43:14 +0800</lastBuildDate>
     <atom:link href="https://tiandaochouqin2026.github.io/tags/windows/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>use-vs-code-continue-with-local-models-offline-code-writing</title>
+      <link>https://tiandaochouqin2026.github.io/posts/17-vscode-continue-local-copilot/</link>
+      <pubDate>Mon, 23 Nov 2026 09:43:14 +0800</pubDate>
+      <guid>https://tiandaochouqin2026.github.io/posts/17-vscode-continue-local-copilot/</guid>
+      <description>how to deploy large models locally and use the VS Code plugin Continue for code editing, enabling efficient coding without an internet connection.</description>
+    </item>
     <item>
       <title>deploy-ollama-as-family-shared-ai-service</title>
       <link>https://tiandaochouqin2026.github.io/posts/16-ollama-home-ai-server/</link>

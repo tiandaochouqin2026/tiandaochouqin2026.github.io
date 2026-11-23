@@ -6,8 +6,22 @@
     <description>Recent content on 本地 AI 实验室</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 23 Nov 2026 09:35:31 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 23 Nov 2026 09:43:14 +0800</lastBuildDate>
     <atom:link href="https://tiandaochouqin2026.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>use-vs-code-continue-with-local-models-offline-code-writing</title>
+      <link>https://tiandaochouqin2026.github.io/en/posts/17-vscode-continue-local-copilot/</link>
+      <pubDate>Mon, 23 Nov 2026 09:43:14 +0800</pubDate>
+      <guid>https://tiandaochouqin2026.github.io/en/posts/17-vscode-continue-local-copilot/</guid>
+      <description>how to deploy large models locally and use the VS Code plugin Continue for code editing, enabling efficient coding without an internet connection.</description>
+    </item>
+    <item>
+      <title>用 VS Code &#43; Continue 接本地模型：不联网也能写代码</title>
+      <link>https://tiandaochouqin2026.github.io/posts/17-vscode-continue-local-copilot/</link>
+      <pubDate>Mon, 23 Nov 2026 09:43:14 +0800</pubDate>
+      <guid>https://tiandaochouqin2026.github.io/posts/17-vscode-continue-local-copilot/</guid>
+      <description>如何在本地部署大模型，并通过VS Code插件Continue进行代码编辑，实现在没有网络的情况下也能高效编程。</description>
+    </item>
     <item>
       <title>deploy-ollama-as-family-shared-ai-service</title>
       <link>https://tiandaochouqin2026.github.io/en/posts/16-ollama-home-ai-server/</link>
