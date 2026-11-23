@@ -6,8 +6,15 @@
     <description>Recent content in Ollama on Local AI Lab</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 20 Nov 2026 03:58:24 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 23 Nov 2026 09:35:31 +0800</lastBuildDate>
     <atom:link href="https://tiandaochouqin2026.github.io/tags/ollama/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>deploy-ollama-as-family-shared-ai-service</title>
+      <link>https://tiandaochouqin2026.github.io/posts/16-ollama-home-ai-server/</link>
+      <pubDate>Mon, 23 Nov 2026 09:35:31 +0800</pubDate>
+      <guid>https://tiandaochouqin2026.github.io/posts/16-ollama-home-ai-server/</guid>
+      <description>deploy ollama server to enable family-wide sharing of ai services, accessible via local network.</description>
+    </item>
     <item>
       <title>write-your-own-modelfile-system-prompt-stopwords-parameter-tuning</title>
       <link>https://tiandaochouqin2026.github.io/posts/14-ollama-custom-modelfile/</link>

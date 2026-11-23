@@ -164,6 +164,37 @@
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
+    <h2 class="entry-hint-parent">deploy-ollama-as-family-shared-ai-service
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Introduction This article will guide you through deploying the Ollama service on a Windows 11 system to enable a family-wide shared AI service accessible via a local network. With an NVIDIA RTX 4070 SUPER GPU and AMD platform, large models like qwen2.5:14b and gemma4:12b can run smoothly, allowing flexible access across different devices.
+Environment Setup Ensure that the latest version of Ollama (0.34.2) and OpenClaw (2026.9.5) are installed on the system. During configuration, adjust the Modelfile to suit the needs of different devices. For example, for the qwen2.5 model, the following configuration can be used:
+...</p>
+  </div>
+  <footer class="entry-footer">
+
+<span title='2026-11-23 09:35:31 +0800 CST'>November 23, 2026</span>&nbsp;·&nbsp;<span>1 min</span>&nbsp;·&nbsp;<span>Local AI Lab</span></footer>
+  <a class="entry-link" aria-label="post link to deploy-ollama-as-family-shared-ai-service" href="https://tiandaochouqin2026.github.io/en/posts/16-ollama-home-ai-server/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">把 Ollama 做成全家共用的 AI 服务：局域网、手机、平板都能连
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>引言 本文将介绍如何在 Windows 11 系统上部署 Ollama 服务，通过局域网实现全家共享的 AI 服务。使用 NVIDIA RTX 4070 SUPER GPU 和 AMD 平台，可以流畅运行 qwen2.5:14b 和 gemma4:12b 等大模型，实现在不同设备上的灵活访问。
+...</p>
+  </div>
+  <footer class="entry-footer">
+
+<span title='2026-11-23 09:35:31 +0800 CST'>November 23, 2026</span>&nbsp;·&nbsp;<span>2 min</span>&nbsp;·&nbsp;<span>Local AI Lab</span></footer>
+  <a class="entry-link" aria-label="post link to 把 Ollama 做成全家共用的 AI 服务：局域网、手机、平板都能连" href="https://tiandaochouqin2026.github.io/posts/16-ollama-home-ai-server/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
     <h2 class="entry-hint-parent">write-your-own-modelfile-system-prompt-stopwords-parameter-tuning
     </h2>
   </header>
@@ -255,38 +286,6 @@ Basic Configuration Graphics Memory: 12GB CPU: Intel i7-10700K OS: Windows 11 Su
 
 <span title='2026-11-20 03:51:53 +0800 CST'>November 20, 2026</span>&nbsp;·&nbsp;<span>2 min</span>&nbsp;·&nbsp;<span>Local AI Lab</span></footer>
   <a class="entry-link" aria-label="post link to which-open-source-models-can-run-with-12gb-graphics-memory" href="https://tiandaochouqin2026.github.io/en/posts/12-12gb-gpu-models-list/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">set-up-a-rag-knowledge-base-locally-with-qwen2-5
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>Setting up a RAG (Retrieval-Augmented Generation) knowledge base locally allows qwen2.5 to better handle and answer questions related to local documents. This article will introduce how to use the Ollama service to integrate PDFs and notes into a local knowledge base.
-Preparation Ensure that ollama is installed and can be used normally. Prepare the PDF and note files to be imported and place them in an easily accessible directory. Install Dependencies pip install ollama Upload PDF Files First, upload the PDF files to the designated directory on the local server. cd /path/to/your/files Use the ollama ingest command to convert and upload the PDF files to the knowledge base. ollama ingest -t pdf -i /path/to/your/files/*.pdf -o /path/to/your/output The -t parameter specifies the file type, which is pdf in this case. The -i parameter specifies the input file path. The -o parameter specifies the output directory, where the generated vector files will be stored. Integrate Note Files Upload the note files (e.g., Markdown files) to the server. Use the ollama ingest command to convert and upload the note files. ollama ingest -t markdown -i /path/to/your/note/*.md -o /path/to/your/output Change the -t parameter to markdown. The -i parameter specifies the path to the note files. Configure the Knowledge Base Create or modify the ollama.yaml file to configure the knowledge base. sources: - name: local-kb type: local path: /path/to/your/output Use the ollama create command to create the knowledge base. ollama create local-kb -f ollama.yaml Start the Service ollama run local-kb Now, you can interact with the local knowledge base via the API provided by Ollama.
-...</p>
-  </div>
-  <footer class="entry-footer">
-
-<span title='2026-11-20 03:51:07 +0800 CST'>November 20, 2026</span>&nbsp;·&nbsp;<span>1 min</span>&nbsp;·&nbsp;<span>Local AI Lab</span></footer>
-  <a class="entry-link" aria-label="post link to set-up-a-rag-knowledge-base-locally-with-qwen2-5" href="https://tiandaochouqin2026.github.io/en/posts/11-local-rag-knowledge-base/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">在本地搭一个 RAG 知识库：把 PDF 和笔记交给 qwen2.5
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>在本地搭建一个 RAG (Retrieval-Augmented Generation) 知识库，能够让 qwen2.5 更好地处理和回答与本地文档相关的问题。这篇文章将介绍如何利用 Ollama 服务将 PDF 和笔记集成到本地知识库中。
-准备工作 确保已经安装了 ollama，并可以正常使用。 准备好需要导入的 PDF 和笔记文件，放在一个易于访问的目录下。 安装依赖 pip install ollama 上传 PDF 文件 首先将 PDF 文件上传到本地服务器的指定目录。 cd /path/to/your/files 使用 ollama ingest 命令将 PDF 转换并上传到知识库。 ollama ingest -t pdf -i /path/to/your/files/*.pdf -o /path/to/your/output -t 参数指定了文件类型，这里是 pdf。 -i 参数指定了输入文件路径。 -o 参数指定了输出目录，用于存放生成的向量文件。 整合笔记文件 将笔记文件（例如 Markdown 文件）上传到服务器。 使用 ollama ingest 命令将笔记文件转换并上传。 ollama ingest -t markdown -i /path/to/your/note/*.md -o /path/to/your/output -t 参数改为 markdown。 -i 参数指定笔记文件的路径。 配置知识库 创建或修改 ollama.yaml 文件，配置知识库。 sources: - name: local-kb type: local path: /path/to/your/output 使用 ollama create 命令创建知识库。 ollama create local-kb -f ollama.yaml 启动服务 ollama run local-kb 现在，你就可以通过 Ollama 提供的 API 与本地知识库进行交互了。
-...</p>
-  </div>
-  <footer class="entry-footer">
-
-<span title='2026-11-20 03:51:07 +0800 CST'>November 20, 2026</span>&nbsp;·&nbsp;<span>2 min</span>&nbsp;·&nbsp;<span>Local AI Lab</span></footer>
-  <a class="entry-link" aria-label="post link to 在本地搭一个 RAG 知识库：把 PDF 和笔记交给 qwen2.5" href="https://tiandaochouqin2026.github.io/posts/11-local-rag-knowledge-base/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

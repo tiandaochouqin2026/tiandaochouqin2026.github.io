@@ -6,8 +6,15 @@
     <description>Recent content in 文章 on 本地 AI 实验室</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 20 Nov 2026 03:58:24 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 23 Nov 2026 09:35:31 +0800</lastBuildDate>
     <atom:link href="https://tiandaochouqin2026.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>把 Ollama 做成全家共用的 AI 服务：局域网、手机、平板都能连</title>
+      <link>https://tiandaochouqin2026.github.io/posts/16-ollama-home-ai-server/</link>
+      <pubDate>Mon, 23 Nov 2026 09:35:31 +0800</pubDate>
+      <guid>https://tiandaochouqin2026.github.io/posts/16-ollama-home-ai-server/</guid>
+      <description>部署 Ollama 服务器，实现全家共享AI服务，支持局域网访问。</description>
+    </item>
     <item>
       <title>写一个自己的 Modelfile：系统提示词、停止词、参数调优</title>
       <link>https://tiandaochouqin2026.github.io/posts/14-ollama-custom-modelfile/</link>
